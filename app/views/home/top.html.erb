@@ -1,14 +1,14 @@
 <header class="page-header">
   <nav>
-    <ul class="nav">
+    <ul class="navbar navbar-dark bg-info">
       <li class="nav-item">
-        <img class="logo" src="zatsu_meshi.png">
+        <img src="zatsu_meshi.png" alt="">
       </li>
       <li class="nav-item">
         <%= link_to "登録",new_user_registration_path, class: "btn btn-primary" %>
       </li>
       <li class="nav-item">
-        <%= link_to("ログイン", new_user_session_path) %>
+        <%= link_to "ログイン",new_user_session_path, class:"btn btn-primary" %>
       </li>
     </ul>
   </nav>
