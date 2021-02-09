@@ -15,16 +15,19 @@
     <nav>
       <ul class="navbar navbar-dark bg-info">
         <% if user_signed_in? %>
-          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <li class="nav-item">
+          <%= image_tag "zatsu_meshi.png", class: "pull-left" %>
+          </li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-primary pull-right"  %></li>
         <% else %>
           <li class="nav-item">
-          <%= image_tag "zatsu_meshi.png" %>
+            <%= image_tag "zatsu_meshi.png", class: "pull-left" %>
           </li>
           <li class="nav-item">
-            <%= link_to "登録",new_user_registration_path, class: "btn btn-primary" %>
+            <%= link_to "登録",new_user_registration_path, class: "btn btn-primary pull-right" %>
           </li>
           <li class="nav-item">
-            <%= link_to "ログイン",new_user_session_path, class:"btn btn-primary" %>
+            <%= link_to "ログイン",new_user_session_path, class:"btn btn-primary pull-right" %>
           </li>
          <% end %>
       </ul>
