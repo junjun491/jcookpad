@@ -13,11 +13,13 @@
 
   <body>
     <nav>
-      <ul class="navbar navbar-dark bg-info">
+      <ul class="navbar navbar-dark bg-info navbar-nav mr-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
           <%= image_tag "zatsu_meshi.png", class: "pull-left" %>
           </li>
+      </ul>
+      <ul class="navbar navbar-dark bg-info navbar-nav">
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-primary pull-right"  %></li>
         <% else %>
           <li class="nav-item">
