@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  rname: MyString
+  rinformation: MyText
+  rimage: MyString
+  ingredient: MyText
+  procedure_1: MyText
+  procedure_2: MyText
+  procedure_3: MyText
+
+two:
+  user_id: 1
+  rname: MyString
+  rinformation: MyText
+  rimage: MyString
+  ingredient: MyText
+  procedure_1: MyText
+  procedure_2: MyText
+  procedure_3: MyText

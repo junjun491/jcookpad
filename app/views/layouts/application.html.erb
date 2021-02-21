@@ -20,7 +20,8 @@
       </ul>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-primary pull-right"  %></li>
+          <li class="nav-item"><%= link_to '"' + current_user.name + '"でログイン中', edit_user_registration_path, class: "btn btn-primary"  %></li>
+          <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-primary"  %></li>
         <% else %>
           <li class="nav-item">
             <%= link_to "登録",new_user_registration_path, class: "btn btn-primary" %>
