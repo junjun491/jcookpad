@@ -7,7 +7,13 @@
   <%= f.label :name%><br />
   <%= f.text_field :name, autofocus: true  %>
   </div>
-  
+
+  <div class="field">
+  <%= f.label :image %><br/>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
