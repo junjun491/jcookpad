@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true #追記
-  mount_uploader :image, ImageUploader＃追加
+  mount_uploader :image, ImageUploader #追記
 
 end
