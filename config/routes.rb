@@ -11,6 +11,7 @@ devise_scope :user do
   get "logout", :to => "users/sessions#destroy"
 end
 
+resources :posts
 
   root 'home#top'
   get 'top' => "home#top"
