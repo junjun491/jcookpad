@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :name, presence: true #追記
   mount_uploader :image, ImageUploader #追記
 
+  has_many :posts
+
 end
