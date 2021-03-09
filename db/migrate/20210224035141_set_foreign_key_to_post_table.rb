@@ -1,5 +1,5 @@
 class SetForeignKeyToPostTable < ActiveRecord::Migration[6.1]
   def change
-    t.references :user, foreign_key: true
+    add_foreign_key :posts, :users
   end
 end
