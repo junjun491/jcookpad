@@ -12,9 +12,12 @@ class PostsController < ApplicationController
     @post.save
     redirect_to action: 'index'
   end
+  
+
+
 
   private
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:rname, :rinformation, :rimage, :rimage_cache, :ingredient, :procedure_1, :procedure_2, :procedure_3)
     end
 end

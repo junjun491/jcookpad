@@ -2,20 +2,19 @@
 <p>Find me in app/views/posts/new.html.erb</p>
   <%= form_with model: @post, local: true do |form| %>
     <div class="field">
-      <%= form.label :name%><br>
-      <%= form.text_field :name%>
+      <%= form.label :rname%><br>
+      <%= form.text_field :rname%>
     </div>
 
   <div class="field">
-  <%= f.label :image %><br/>
-    <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache %>
+  <%= form.label :rimage %><br/>
+    <%= form.file_field :rimage %>
   </div>
 
 
     <div class="field">
-      <%= form.label :information%><br>
-      <%= form.text_area :information%>
+      <%= form.label :rinformation%><br>
+      <%= form.text_area :rinformation%>
 
     </div>
 

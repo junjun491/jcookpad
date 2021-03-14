@@ -4,9 +4,6 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'
   }
 
-  root 'posts#index'
-  get 'top' => "posts#index"
-
 devise_scope :user do
   get "user/:id", :to => "users/registrations#detail"
   get "signup", :to => "users/registrations#new"
@@ -16,6 +13,8 @@ end
 
 resources :posts
 
+  root 'home#top'
+  get 'top' => "home#top"
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
