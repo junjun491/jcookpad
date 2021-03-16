@@ -11,7 +11,7 @@
   <% @posts.each do |post| %>
   <tr>
     <td><%= post.rname %></td>
-    <td><img src="<%= "#{post.rimage}" %>"></td>
+    <td><%= image_tag post.rimage.to_s %></td>
   </tr>
   <% end %>
 </table>
