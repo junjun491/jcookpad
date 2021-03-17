@@ -4,11 +4,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.build
+    @post = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build
     @post.save!
     redirect_to action: 'index'
   end
