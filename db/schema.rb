@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_24_035141) do
+ActiveRecord::Schema.define(version: 2021_03_18_234403) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.string "rname"
     t.text "rinformation"
-    t.string "rimage"
+    t.string "image"
     t.text "ingredient"
     t.text "procedure_1"
     t.text "procedure_2"
