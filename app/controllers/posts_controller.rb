@@ -8,8 +8,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build
-    @post.save!
+    @post = current_user.posts.build(post_params)
+    @post.save
     redirect_to action: 'index'
   end
 
