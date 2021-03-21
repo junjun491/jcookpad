@@ -3,6 +3,11 @@
 <h2>ALL POST!</h2>
 <%= link_to 'New Post!', new_post_path %>
 <table>
+  <p>検索</p>
+  <%= form_tag(search_posts_path,:method => 'get') do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag 'Search', :name => nil %>
+  <% end %>
   <tr>
     <th>title</th>
     <th>text</th>

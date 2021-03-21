@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def search
+    #Viewのformで取得したパラメータをモデルに渡す
+    @post = Post.search(params[:search])
+  end
 
 
 
