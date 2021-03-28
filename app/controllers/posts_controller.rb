@@ -43,6 +43,12 @@ class PostsController < ApplicationController
     end 
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to request.referer
+  end
+
   private
     def post_params
       params.require(:post).permit(:rname, :rinformation, :rimage, :rimage_cache, :ingredient, :procedure_1, :procedure_2, :procedure_3)
