@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root 'posts#index'
   get 'top' => "posts#index"
 
+  get "user/:id/list", :to => "posts#list"
+
+
 devise_scope :user do
   get "user/:id", :to => "users/registrations#detail"
   get "signup", :to => "users/registrations#new"

@@ -18,4 +18,10 @@ class Post < ApplicationRecord
 
   end
 
+  def mypost
+    return Post.find_by(id: self.user_id)
+  end
+
+
+
 end

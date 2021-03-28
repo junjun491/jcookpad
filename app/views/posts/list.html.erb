@@ -1,0 +1,11 @@
+
+<% @post.each do |post| %>
+<tr>
+  <td><%=link_to(post.rname,"/posts/#{post.id}/edit")%></td>
+<br>
+  <td><%= image_tag post.rimage.to_s %></td>
+</tr>
+<br>
+
+<br>
+<% end %>

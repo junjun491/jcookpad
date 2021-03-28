@@ -15,7 +15,7 @@
     <nav class="navbar navbar-dark bg-info navbar-expand-lg">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-          <%= link_to image_tag("zatsu_meshi.png"), top_path %>
+          <%= link_to image_tag("zatsu_meshi.png"), root_path %>
           </li>
       </ul>
       <ul class="navbar-nav">
@@ -41,6 +41,9 @@
 
         <li class="nav-item">
         <%= link_to "レシピ作成",new_post_path, class:"btn btn-danger text-light" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "作成したレシピ", "user/:id/list" , class:"btn btn-danger text-light" %>
         </li>
         <% else %>
         <% end %>
