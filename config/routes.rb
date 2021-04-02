@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   get 'top' => "posts#index"
 
-  get "user/:id/list", :to => "posts#list"
+  get "user/:id/list", :to => "posts#list", as: 'user_list'
 
 
 devise_scope :user do

@@ -43,7 +43,7 @@
         <%= link_to "レシピ作成",new_post_path, class:"btn btn-danger text-light" %>
         </li>
         <li class="nav-item">
-        <%= link_to "作成したレシピ", "user/:id/list" , class:"btn btn-danger text-light" %>
+        <%= link_to "作成したレシピ", user_list_path(current_user.id) , class:"btn btn-danger text-light" %>
         </li>
         <% else %>
         <% end %>
