@@ -4,6 +4,13 @@
       <%=@post.rname%><br>
     </div>
 
+    <h5>お気に入り件数: <%= @post.likes.count %></h5>
+    <% if current_user.already_liked?(@post) %>
+      <%= button_to 'お気に入りを取り消す', post_like_path(@post), method: :delete %>
+    <% else %>
+      <%= button_to 'お気に入り', post_likes_path(@post) %>
+    <% end %>
+
     <div>
       <td><%= image_tag @post.rimage.to_s %></td>
     </div>

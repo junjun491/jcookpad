@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get "user/:id/list", :to => "posts#list", as: 'user_list'
 
 
+  get "user/:id/favorite", :to => "likes#list", as: 'like_list'
+
+
+
+
 devise_scope :user do
   get "user/:id", :to => "users/registrations#detail"
   get "signup", :to => "users/registrations#new"
@@ -17,7 +22,11 @@ devise_scope :user do
   get "logout", :to => "users/sessions#destroy"
 end
 
+
+
 resources :posts do
+
+resources :likes, only: [:create, :destroy]
 
 collection do
   get 'search'
