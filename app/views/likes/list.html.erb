@@ -2,7 +2,6 @@
 <% @user.liked_posts.each do |post| %>
 <tr>
   <td><%=link_to(post.rname,"/posts/#{post.id}")%></td>
-  <td><%= link_to "削除", post_path(post) , method: :delete , class:"btn btn-outline-dark"%></td>
 <br>
   <td><%= image_tag post.rimage.to_s %></td>
 </tr>

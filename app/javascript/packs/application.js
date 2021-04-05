@@ -10,6 +10,7 @@ import "channels"
 import 'bootstrap';
 import '../stylesheets/application';
 
+//= require Chart.min　追加
 
 Rails.start()
 Turbolinks.start()
