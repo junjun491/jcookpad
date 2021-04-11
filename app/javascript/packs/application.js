@@ -3,7 +3,7 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-//= require Chart.min　追加
+import Chart from "chart.js"
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
