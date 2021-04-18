@@ -18,6 +18,23 @@ var myChart = new Chart(ctx, {
     }]
   }
 });
+
+var ans = Array(14);
+ans.fill(0);
+
+var two = Array(14);
+two.fill(2);
+
+var four = Array(14);
+four.fill(4);
+
+for (var i = 0; i < 14; ++i) {
+ans[i] = two[i] / four[i]
+}
+
+
+document.write(ans);
+
 </script>
 <p>Find me in app/views/posts/new.html.erb</p>
   <%= form_with model: @post, local: true do |form| %>

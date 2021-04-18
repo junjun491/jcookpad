@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   devise_for :users, :controllers =>{
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
   }
-
-  root 'posts#index'
-  get 'top' => "posts#index"
+root to: 'home#top'
 
   get "user/:id/list", :to => "posts#list", as: 'user_list'
 
@@ -33,5 +32,13 @@ collection do
 end
 
 end
+
+  # APIコントローラへのルーティング
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
+      resources :posts, only: [:index, :show]
+    end
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
