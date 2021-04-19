@@ -9,15 +9,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import PostIndexPage from 'PostIndexPage.vue'
-import EmployeeNewPage from 'EmployeeNewPage.vue'
+import PostNewPage from 'PostNewPage.vue'
 
 const router = new VueRouter({
   routes: [
     { path: '/',
       component: PostIndexPage  },
-    { path: '/employees/new',
-      name: 'EmployeeNewPage',
-      component: EmployeeNewPage    }
+    { path: '/posts/new',
+      name: 'PostNewPage',
+      component: PostNewPage    }
   ]
 })
 
