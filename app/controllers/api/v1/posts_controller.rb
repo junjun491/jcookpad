@@ -1,28 +1,27 @@
 class Api::V1::PostsController < ApiController
   before_action :set_post, only: [:show]
-  rescue_from ActiveRecord::RecordNotFound do |exception|
-    render json: { error: '404 not found' }, status: 404
-  end
+
+  # 拾えなかったExceptionが発生したら500 Internal server errorを応答する
+  rescue_from Exception, with: :render_status_500
+
+  # ActiveRecordのレコードが見つからなければ404 not foundを応答する
+  rescue_from ActiveRecord::RecordNotFound, with: :render_status_404
 
   def index
     @posts = Post.all
     render json: @posts
   end
 
-  def new
-    @post = Post.new
-  end
 
   def create
-    @post = current_user.posts.build(post_params)
-    @post.save
-    redirect_to action: 'index'
+    post = post.new(post_params)
+    if post.save
+      render json: post, status: :created
+    else
+      render json: { errors: post.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
-  def search
-    #Viewのformで取得したパラメータをモデルに渡す
-    @post = Post.search(params[:search])
-  end
 
   def show
     @post = Post.find_by(id: params[:id])
@@ -30,41 +29,22 @@ class Api::V1::PostsController < ApiController
     render json: @post
   end
 
-  def edit
-    @post = Post.find_by(id: params[:id])
-  end
-
-  def list
-    @post = Post.where(user_id: current_user.id )
-  end
-
-  def edit
-    @post = Post.find_by(id: params[:id])
-  end
-
-  def update
-    @post = Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to request.referer
-    else
-      render :new
-    end 
-  end
-
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to request.referer
-  end
 
   private
     def post_params
-      params.require(:post).permit(:rname, :rinformation, :rimage, :rimage_cache, :ingredient, :procedure_1, :procedure_2, :procedure_3)
+      params.fetch(:post).permit(:rname, :rinformation, :rimage, :rimage_cache, :ingredient, :procedure_1, :procedure_2, :procedure_3)
     end
 
     def set_post
       @post= Post.find(params[:id])
     end
 
+    def render_status_404(exception)
+      render json: { errors: [exception] }, status: 404
+    end
+
+    def render_status_500(exception)
+      render json: { errors: [exception] }, status: 500
+    end
 
 end
