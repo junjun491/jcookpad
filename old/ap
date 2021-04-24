@@ -1,4 +1,3 @@
-
 <template>
   <form @submit.prevent="createPost">
     <div v-if="errors.length != 0">
@@ -40,6 +39,7 @@
 
 <script>
 import axios from 'axios';
+
 export default {
   data: function () {
     return {
@@ -82,6 +82,8 @@ export default {
           }
         });
     }
+
+
   }
 }
 </script>
