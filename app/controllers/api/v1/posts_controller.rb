@@ -14,7 +14,8 @@ class Api::V1::PostsController < ApiController
 
 
   def create
-    post = post.new(post_params)
+    post = Post.new(post_params)
+    binding.pry
     if post.save
       render json: post, status: :created
     else

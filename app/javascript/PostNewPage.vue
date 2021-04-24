@@ -68,9 +68,9 @@ export default {
       data.append('procedure_1', this.procedure_1);    // file形式以外も送信可能
       data.append('procedure_2', this.procedure_2);    // file形式以外も送信可能
       data.append('procedure_3', this.procedure_3);    // file形式以外も送信可能
-      data.append('file', this.uploadFile);
+      data.append('rimage', this.uploadFile);
       axios
-        .post('/api/v1/posts', this.post)
+        .post('/api/v1/posts', data)
         .then(response => {
           let e = response.data;
           this.$router.push('/');
