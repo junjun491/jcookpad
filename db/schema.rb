@@ -26,15 +26,6 @@ ActiveRecord::Schema.define(version: 2021_04_18_045735) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
   end
 
-  create_table "favorite", force: :cascade do |t|
-    t.integer "post_id", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_favorite_on_post_id"
-    t.index ["user_id"], name: "index_favorite_on_user_id"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.integer "post_id", null: false
     t.integer "user_id", null: false
@@ -71,8 +62,6 @@ ActiveRecord::Schema.define(version: 2021_04_18_045735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "favorite", "posts"
-  add_foreign_key "favorite", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"

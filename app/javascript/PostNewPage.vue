@@ -15,7 +15,7 @@
     </div>
     <div>
       <label>rimage</label>
-      <input v-model="post.rimage" type="text">
+      <input type="file" name="rimage" @change="selectedFile">
     </div>
     <div>
       <label>ingredient</label>
@@ -56,7 +56,19 @@ export default {
     }
   },
   methods: {
+    selectedFile(e) {
+      e.preventDefault();
+        this.uploadFile = e.target.files[0]    // fileにはreadonly制約があり、v-modelは使えない。代わりにchangeイベントが推奨されている
+      },
     createPost: function() {
+      const data = new FormData();    // multipart/form-data形式のため、new FormData()を使う
+      data.append('rname', this.rname);    // file形式以外も送信可能
+      data.append('rinformation', this.rinformation);    // file形式以外も送信可能
+      data.append('ingredient', this.ingredient);    // file形式以外も送信可能
+      data.append('procedure_1', this.procedure_1);    // file形式以外も送信可能
+      data.append('procedure_2', this.procedure_2);    // file形式以外も送信可能
+      data.append('procedure_3', this.procedure_3);    // file形式以外も送信可能
+      data.append('file', this.uploadFile);
       axios
         .post('/api/v1/posts', this.post)
         .then(response => {
@@ -70,6 +82,8 @@ export default {
           }
         });
     }
+
+
   }
 }
 </script>
