@@ -77,6 +77,11 @@
         </tr>
       </tbody>
     </table>
+    <div id="app">
+      <ul v-for="e in posts" :key="e.id">
+        <li>{{ e.rname }}</li>
+      </ul>
+    </div>
     <button type="submit">Commit</button>
   </form>
 </template>
@@ -108,6 +113,7 @@ export default {
         VitaminC: '',
         Salt_equivalent: ''       
       },
+      posts: [],
       errors: '',
       uploadFile: null
     }
