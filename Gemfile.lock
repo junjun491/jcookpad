@@ -324,6 +324,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   jbuilder (~> 2.7)
+  kaminari
   listen (~> 3.3)
   mini_magick
   omniauth-twitter
