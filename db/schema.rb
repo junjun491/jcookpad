@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_18_045735) do
+ActiveRecord::Schema.define(version: 2021_04_29_083817) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 2021_04_18_045735) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
+  end
+
+  create_table "favorite", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_favorite_on_post_id"
+    t.index ["user_id"], name: "index_favorite_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -46,6 +55,20 @@ ActiveRecord::Schema.define(version: 2021_04_18_045735) do
     t.text "procedure_3"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "Energy", precision: 7, scale: 2
+    t.decimal "Protein", precision: 7, scale: 2
+    t.decimal "Lipid", precision: 7, scale: 2
+    t.decimal "Carbohydrate", precision: 7, scale: 2
+    t.decimal "Dietary_fiber", precision: 7, scale: 2
+    t.decimal "Potassium", precision: 7, scale: 2
+    t.decimal "Calcium", precision: 7, scale: 2
+    t.decimal "iron", precision: 7, scale: 2
+    t.decimal "Zinc", precision: 7, scale: 2
+    t.decimal "VitaminA", precision: 7, scale: 2
+    t.decimal "VitaminB1", precision: 7, scale: 2
+    t.decimal "VitaminB2", precision: 7, scale: 2
+    t.decimal "VitaminC", precision: 7, scale: 2
+    t.decimal "Salt_equivalent", precision: 7, scale: 2
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +85,8 @@ ActiveRecord::Schema.define(version: 2021_04_18_045735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorite", "posts"
+  add_foreign_key "favorite", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
