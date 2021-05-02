@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-  <div>
-    <h3>円グラフを描画する</h3>
-    <PieChart :data="pieChartData" :options="options"></PieChart>
-  </div>
     <table>
       <tbody>
         <tr>
@@ -34,35 +30,9 @@
 <script>
 import axios from 'axios';
 
-import PieChart from '/packs/components/chart/PieChart.vue'
 
 export default {
-  components: {
-    PieChart
-  },
   data: function () {
-    pieChartData : {
-        // ラベル
-        labels: ["天領", "薩摩", "長州", "土佐"],
-        // データ詳細
-        datasets: [{
-            label: '藩と人口',
-            data: [13740000, 9072000, 7150000, 6148000],
-            backgroundColor: [
-               'rgba(255, 100, 130, 0.2)',
-               'rgba(100, 130, 255, 0.2)',
-               'rgba(130, 255, 100, 0.2)',
-               'rgba(230, 210, 85, 0.2)'
-            ]
-        }]
-    },
-    // グラフオプション
-    options : {
-        title: {
-            display: true,
-            text: '藩と人口'
-        }
-    },
     return {
       posts: []
     }

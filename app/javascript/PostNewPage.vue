@@ -77,9 +77,13 @@
         </tr>
       </tbody>
     </table>
-    <div id="app">
-      <ul v-for="e in posts" :key="e.id">
-        <li>{{ e.rname }}</li>
+    <div>
+<p>{{ingrd_prm}}</p>
+    </div>
+    <div>
+      <input type="text" v-model="keyword">
+      <ul v-for="post in filteredPosts" :key="post.id">
+        <li>{{ post.rname }}</li><button type="button" @click="add_ingredient">材料に追加</button>
       </ul>
     </div>
     <button type="submit">Commit</button>
@@ -114,16 +118,67 @@ export default {
         Salt_equivalent: ''       
       },
       posts: [],
+      ingrd_prm: [],
+      keyword: '',
       errors: '',
       uploadFile: null
     }
   },
+
+  computed: {
+            filteredPosts: function() {
+                if(this.keyword === "")
+                  {return null}
+                else
+
+                var posts = [];
+                for(var i in this.posts) {
+
+                    var post = this.posts[i];
+
+                    if(post.rname.indexOf(this.keyword) !== -1)
+               {
+
+                        posts.push(post);
+
+                    }
+
+                }
+
+                return posts;
+
+            }
+  },
+
+
+
+
+
+
+
+
+ mounted () {
+    axios
+      .get('/api/v1/posts.json')
+      .then(response => (this.posts= response.data))
+  },
+
+
   methods: {
     selectedFile(e) {
       console.log(e.target.files[0])
       e.preventDefault();
       this.uploadFile = e.target.files[0]    // fileにはreadonly制約があり、v-modelは使えない。代わりにchangeイベントが推奨されている
     },
+    add_ingredient: function(post) {
+      var ingrd_prm = [];
+      ingrd_prm.push(post);
+
+
+
+    },
+
+
     createPost: function() {
       const data = new FormData();    // multipart/form-data形式のため、new FormData()を使う
       data.append('rname', this.post.rname);    // file形式以外も送信可能

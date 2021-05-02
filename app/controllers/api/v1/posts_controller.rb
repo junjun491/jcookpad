@@ -9,8 +9,6 @@ class Api::V1::PostsController < ApiController
     render json: @posts
   end
   def create
-    @posts = Post.all
-    render json: @posts
 
     post = Post.new(post_params)
     if post.save
