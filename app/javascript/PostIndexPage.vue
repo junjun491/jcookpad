@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+
+  <div>
+    <h3>円グラフを描画する</h3>
+    <PieChart :data="pieChartData" :options="options"></PieChart>
+  </div>
+
+    
     <table>
       <tbody>
         <tr>
@@ -37,14 +44,13 @@ export default {
   },
   data: function () {
     return {
-      posts: []
-    },
+      posts: [],
 
-    pieChartData : {
+      pieChartData : {
           // ラベル
-      labels: ["天領", "薩摩", "長州", "土佐"],
+        labels: ["天領", "薩摩", "長州", "土佐"],
           // データ詳細
-      datasets: [{
+        datasets: [{
               label: '藩と人口',
               data: [13740000, 9072000, 7150000, 6148000],
               backgroundColor: [
@@ -53,15 +59,23 @@ export default {
                  'rgba(130, 255, 100, 0.2)',
                  'rgba(230, 210, 85, 0.2)'
               ]
-      }]
-    },
+        }]
+      },
       // グラフオプション
-    options : {
+      options : {
           title: {
               display: true,
               text: '藩と人口'
-      },
+          },
+      }
+
+
+
+
+
     }
+
+
 
 
 

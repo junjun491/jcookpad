@@ -70,7 +70,7 @@
           <td><input v-model="post.iron" type="number" step="0.01"></td>
           <td><input v-model="post.Zinc" type="number" step="0.01"></td>
           <td><input v-model="post.VitaminA" type="number" step="0.01"></td>
-          <td><input v-model="post.VitaminB1"f type="number" step="0.01"></td>
+          <td><input v-model="post.VitaminB1" type="number" step="0.01"></td>
           <td><input v-model="post.VitaminB2" type="number" step="0.01"></td>
           <td><input v-model="post.VitaminC" type="number" step="0.01"></td>
           <td><input v-model="post.Salt_equivalent" type="number" step="0.01"></td>
@@ -78,12 +78,17 @@
       </tbody>
     </table>
     <div>
-<p>{{ingrd_prm}}</p>
+<p>利用する材料の栄養合算</p>
+<p>{{addNutrients}}</p>
+    </div>
+    <div>
+<p>利用する材料</p>
+<p>{{ingrd_sum}}</p>
     </div>
     <div>
       <input type="text" v-model="keyword">
       <ul v-for="post in filteredPosts" :key="post.id">
-        <li>{{ post.rname }}</li><button type="button" @click="add_ingredient">材料に追加</button>
+        <li>{{ post.rname }}</li><button type="button" @click="add_ingredient(post)">材料に追加</button>
       </ul>
     </div>
     <button type="submit">Commit</button>
@@ -117,8 +122,24 @@ export default {
         VitaminC: '',
         Salt_equivalent: ''       
       },
+      sum_nutrients: {
+        Energy: '',
+        Protein: '',
+        Lipid: '',
+        Carbohydrate: '',
+        Dietary_fiber: '',
+        Potassium: '',
+        Calcium: '',
+        iron: '',
+        Zinc: '',
+        VitaminA: '',
+        VitaminB1: '',
+        VitaminB2: '',
+        VitaminC: '',
+        Salt_equivalent: ''       
+      },
       posts: [],
-      ingrd_prm: [],
+      ingrd_sum: [],
       keyword: '',
       errors: '',
       uploadFile: null
@@ -130,24 +151,28 @@ export default {
                 if(this.keyword === "")
                   {return null}
                 else
-
                 var posts = [];
                 for(var i in this.posts) {
-
                     var post = this.posts[i];
-
                     if(post.rname.indexOf(this.keyword) !== -1)
-               {
+                     {posts.push(post);}
+                }
+              return posts;
+            },
+            addNutrients: function() {
+                var sum_nutrients = [];
+                for(var i in this.ingrd_sum) {
+                    var ingrd = this.ingrd_sum[i];
+                     for (let i = 0; i < 14; i++){
+                        var num1 = parseFloat(sum_nutrients[i])
+                        var num2 = parseFloat(ingrd[i+7])
 
-                        posts.push(post);
-
-                    }
+                        sum_nutrients[i] = num1 + num2;
+                      }
 
                 }
-
-                return posts;
-
-            }
+              return sum_nutrients;
+            },
   },
 
 
@@ -171,8 +196,8 @@ export default {
       this.uploadFile = e.target.files[0]    // fileにはreadonly制約があり、v-modelは使えない。代わりにchangeイベントが推奨されている
     },
     add_ingredient: function(post) {
-      var ingrd_prm = [];
-      ingrd_prm.push(post);
+      
+      this.ingrd_sum.push(post);
 
 
 
