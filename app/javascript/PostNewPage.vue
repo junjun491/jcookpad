@@ -152,22 +152,30 @@ export default {
                   {return null}
                 else
                 var posts = [];
-                for(var i in this.posts) {
-                    var post = this.posts[i];
+                for(let i in this.posts) {
+                    let post = this.posts[i];
                     if(post.rname.indexOf(this.keyword) !== -1)
                      {posts.push(post);}
                 }
               return posts;
             },
             addNutrients: function() {
-                var sum_nutrients = [];
-                for(var i in this.ingrd_sum) {
-                    var ingrd = this.ingrd_sum[i];
+                let sum_nutrients = [];
+                for(let i in this.ingrd_sum) {
+                  console.log(`i: ${i}`)
+                  console.log(`this.ingrd_sum[i]: ${JSON.stringify(this.ingrd_sum[i])}`)
+                    let ingrd = this.ingrd_sum[i];
+                    console.log(`ingrd: ${JSON.stringify(ingrd)}`)
+                    console.log(`sum_nutrients: ${sum_nutrients}`)
                      for (let i = 0; i < 14; i++){
-                        var num1 = parseFloat(sum_nutrients[i])
-                        var num2 = parseFloat(ingrd[i+7])
-
+                       console.log(`sum_nutrients: ${sum_nutrients}`)
+                       console.log(`i: ${i}`)
+                        let num1 = parseFloat(sum_nutrients[i])
+                        let num2 = parseFloat(ingrd[i+7])
+console.log(`num1: ${num1}`)
+console.log(`num2: ${num2}`)
                         sum_nutrients[i] = num1 + num2;
+                        console.log(`sum_nutrients[i]: ${sum_nutrients[i]}`)
                       }
 
                 }
