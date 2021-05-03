@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   #入力フォームからアカウント情報をdbに保存するために追加
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :image, :image_cache])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :image_cache]) #追記
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :image, :age, :sex, :image_cache])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :age, :sex, :image_cache]) #追記
   end
 end
