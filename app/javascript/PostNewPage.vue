@@ -80,10 +80,12 @@
     <div>
 <p>利用する材料の栄養合算</p>
 <p>{{addNutrients}}</p>
+<button type="button" @click="Reflect_Nutrients(post)">材料を反映</button>
     </div>
     <div>
 <p>利用する材料</p>
-<p>{{ingrd_sum}}</p>
+<p>{{ingrd_sum[0]}}</p>
+<p>利用する材料</p>
     </div>
     <div>
       <input type="text" v-model="keyword">
@@ -160,27 +162,48 @@ export default {
               return posts;
             },
             addNutrients: function() {
-                let sum_nutrients = [];
-                for(let i in this.ingrd_sum) {
+               let sum_nutrients = {
+                Energy: '0',
+                Protein: '0',
+                Lipid: '0',
+                Carbohydrate: '0',
+                Dietary_fiber: '0',
+                Potassium: '0',
+                Calcium: '0',
+                iron: '0',
+                Zinc: '0',
+                VitaminA: '0',
+                VitaminB1: '0',
+                VitaminB2: '0',
+                VitaminC: '0',
+                Salt_equivalent: '0'       
+               };
+                console.log(`sum_nutrients: ${sum_nutrients}`)
+                let sn_keys = Object.keys(sum_nutrients)
+                console.log(`sn_keys: ${sn_keys}`)
+               for(let i in this.ingrd_sum) {
                   console.log(`i: ${i}`)
                   console.log(`this.ingrd_sum[i]: ${JSON.stringify(this.ingrd_sum[i])}`)
-                    let ingrd = this.ingrd_sum[i];
-                    console.log(`ingrd: ${JSON.stringify(ingrd)}`)
-                    console.log(`sum_nutrients: ${sum_nutrients}`)
-                     for (let i = 0; i < 14; i++){
-                       console.log(`sum_nutrients: ${sum_nutrients}`)
-                       console.log(`i: ${i}`)
-                        let num1 = parseFloat(sum_nutrients[i])
-                        let num2 = parseFloat(ingrd[i+7])
-console.log(`num1: ${num1}`)
-console.log(`num2: ${num2}`)
-                        sum_nutrients[i] = num1 + num2;
-                        console.log(`sum_nutrients[i]: ${sum_nutrients[i]}`)
-                      }
-
+                let ingrd = this.ingrd_sum[i];
+                  console.log(`ingrd: ${JSON.stringify(ingrd)}`)
+                  console.log(`sum_nutrients: ${JSON.stringify(sum_nutrients)}`)
+                  
+                   for (let i = 0; i < 14; i++){
+                     console.log(`sum_nutrients: ${JSON.stringify(sum_nutrients)}`)
+                     console.log(`i: ${i}`)
+                     let sn_key = sn_keys[i]
+                     console.log(`sn_key: ${sn_key}`)
+                     let num1 = parseFloat(sum_nutrients[sn_key])
+                     let num2 = parseFloat(ingrd[sn_key])
+                     console.log(`num1: ${JSON.stringify(num1)}`)
+                     console.log(`num2: ${JSON.stringify(num2)}`)
+                     sum_nutrients[sn_key] = num1 + num2;
+                      console.log(`sum_nutrients[sn_key]: ${JSON.stringify(sum_nutrients[sn_key])}`)
+                   }
                 }
               return sum_nutrients;
             },
+            
   },
 
 
@@ -204,11 +227,25 @@ console.log(`num2: ${num2}`)
       this.uploadFile = e.target.files[0]    // fileにはreadonly制約があり、v-modelは使えない。代わりにchangeイベントが推奨されている
     },
     add_ingredient: function(post) {
-      
       this.ingrd_sum.push(post);
-
-
-
+    },
+    Reflect_Nutrients: function(post) {
+      console.log(`this.post.Energy: ${this.post.Energy}`)
+      console.log(`this.sum_nutrients: ${JSON.stringify(this.sum_nutrients)}`)
+      this.post.Energy = this.addNutrients.Energy
+      this.post.Protein = this.addNutrients.Protein
+      this.post.Lipid = this.addNutrients.Lipid
+      this.post.Carbohydrate = this.addNutrients.Carbohydrate
+      this.post.Dietary_fiber = this.addNutrients.Dietary_fiber
+      this.post.Potassium = this.addNutrients.Potassium
+      this.post.Calcium = this.addNutrients.Calcium
+      this.post.iron = this.addNutrients.iron
+      this.post.Zinc = this.addNutrients.Zinc
+      this.post.VitaminA = this.addNutrients.VitaminA
+      this.post.VitaminB1 = this.addNutrients.VitaminB1
+      this.post.VitaminB2 = this.addNutrients.VitaminB2
+      this.post.VitaminC = this.addNutrients.VitaminC
+      this.post.Salt_equivalent = this.addNutrients.Salt_equivalent
     },
 
 
