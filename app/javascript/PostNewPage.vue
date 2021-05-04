@@ -84,7 +84,7 @@
     </div>
     <div>
 <p>利用する材料</p>
-<p>{{ingrd_sum[0]}}</p>
+<p>{{ingrd_sum[0].rname}}</p>
 <p>利用する材料</p>
     </div>
     <div>
@@ -141,7 +141,29 @@ export default {
         Salt_equivalent: ''       
       },
       posts: [],
-      ingrd_sum: [],
+      ingrd_sum: [{
+        rname: '',
+        rinformation: '',
+        rimage: '',
+        ingredient: '',
+        procedure_1: '',
+        procedure_2: '',
+        procedure_3: '',
+        Energy: '',
+        Protein: '',
+        Lipid: '',
+        Carbohydrate: '',
+        Dietary_fiber: '',
+        Potassium: '',
+        Calcium: '',
+        iron: '',
+        Zinc: '',
+        VitaminA: '',
+        VitaminB1: '',
+        VitaminB2: '',
+        VitaminC: '',
+        Salt_equivalent: ''       
+      }],
       keyword: '',
       errors: '',
       uploadFile: null
