@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_03_080736) do
+ActiveRecord::Schema.define(version: 2021_05_05_062919) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -69,6 +69,26 @@ ActiveRecord::Schema.define(version: 2021_05_03_080736) do
     t.decimal "VitaminB2", precision: 7, scale: 2
     t.decimal "VitaminC", precision: 7, scale: 2
     t.decimal "Salt_equivalent", precision: 7, scale: 2
+  end
+
+  create_table "standards", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "Category"
+    t.decimal "xEnergy", precision: 7, scale: 2
+    t.decimal "xProtein", precision: 7, scale: 2
+    t.decimal "xLipid", precision: 7, scale: 2
+    t.decimal "xCarbohydrate", precision: 7, scale: 2
+    t.decimal "xDietary_fiber", precision: 7, scale: 2
+    t.decimal "xPotassium", precision: 7, scale: 2
+    t.decimal "xCalcium", precision: 7, scale: 2
+    t.decimal "xiron", precision: 7, scale: 2
+    t.decimal "xZinc", precision: 7, scale: 2
+    t.decimal "xVitaminA", precision: 7, scale: 2
+    t.decimal "xVitaminB1", precision: 7, scale: 2
+    t.decimal "xVitaminB2", precision: 7, scale: 2
+    t.decimal "xVitaminC", precision: 7, scale: 2
+    t.decimal "xSalt_equivalent", precision: 7, scale: 2
   end
 
   create_table "users", force: :cascade do |t|

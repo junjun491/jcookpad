@@ -1,4 +1,3 @@
-
 <h1>Posts#index</h1>
 <p><%= @user %> </p>
 <p>Find me in app/views/posts/index.html.erb</p>
@@ -16,16 +15,18 @@
     <th colspan="3"></th>
   </tr>
   <% @posts.each do |post| %>
-  <tr>
-    <td><%=link_to(post.rname, "/posts/#{post.id}" )%></td>
-    <td><%= image_tag post.rimage.to_s %></td>
-    <td>
+    <tr>
+      <td><%=link_to(post.rname, "/posts/#{post.id}" )%></td>
+      <td><%= image_tag post.rimage.to_s %></td>
+      <td><canvas class="col-xs-12 col-sm-12 col-md-6 canvas" style="position: relative; height:10; width:7"></td>
+    </tr>
+  <% end %>
+</table>
 
-
-    <canvas id="myChart" class="col-xs-12 col-sm-12 col-md-6" style="position: relative; height:10; width:7"></canvas>
-    <script>
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
+<script>
+  var canvases = document.querySelectorAll("canvas.myChart");
+  canvases.forEach(canvas =>
+    new Chart(canvas, {
       type: 'radar',
       data: {
         labels: ["エネルギー", "タンパク質", "脂質", "糖質", "食物繊維", "カリウム", "カルシウム", "鉄", "亜鉛", "ビタミンA", "ビタミンB1", "ビタミンB2", "ビタミンC", "食塩相当量"],
@@ -42,15 +43,5 @@
         }]
       }
     });
-    </script>
-
-
-
-
-
-
-
-    </td>
-  </tr>
-  <% end %>
-</table>
+  )
+</script>
