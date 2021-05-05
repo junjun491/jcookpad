@@ -84,8 +84,9 @@
     </div>
     <div>
 <p>利用する材料</p>
-<p>{{ingrd_sum[0].rname}}</p>
-<p>利用する材料</p>
+<li v-for="item in ingrd_sum" :key="item.rname">
+  {{ item.rname }}
+</li>
     </div>
     <div>
       <input type="text" v-model="keyword">
@@ -141,29 +142,7 @@ export default {
         Salt_equivalent: ''       
       },
       posts: [],
-      ingrd_sum: [{
-        rname: '',
-        rinformation: '',
-        rimage: '',
-        ingredient: '',
-        procedure_1: '',
-        procedure_2: '',
-        procedure_3: '',
-        Energy: '',
-        Protein: '',
-        Lipid: '',
-        Carbohydrate: '',
-        Dietary_fiber: '',
-        Potassium: '',
-        Calcium: '',
-        iron: '',
-        Zinc: '',
-        VitaminA: '',
-        VitaminB1: '',
-        VitaminB2: '',
-        VitaminC: '',
-        Salt_equivalent: ''       
-      }],
+      ingrd_sum: [],
       keyword: '',
       errors: '',
       uploadFile: null
