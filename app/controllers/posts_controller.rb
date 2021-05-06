@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @user = current_user
+    @stds = Standard.all
+    @std = Standard.find_by(Category: "m1～2")
+    gon.std = @std
     gon.user = @user.name
   end
 

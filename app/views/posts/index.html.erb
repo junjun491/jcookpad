@@ -1,3 +1,4 @@
+
 <h1>Posts#index</h1>
 <p><%= @user %> </p>
 <p>Find me in app/views/posts/index.html.erb</p>
@@ -14,34 +15,61 @@
     <th>text</th>
     <th colspan="3"></th>
   </tr>
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%=link_to(post.rname, "/posts/#{post.id}" )%></td>
-      <td><%= image_tag post.rimage.to_s %></td>
-      <td><canvas class="col-xs-12 col-sm-12 col-md-6 canvas" style="position: relative; height:10; width:7"></td>
-    </tr>
-  <% end %>
-</table>
-
-<script>
-  var canvases = document.querySelectorAll("canvas.myChart");
-  canvases.forEach(canvas =>
-    new Chart(canvas, {
-      type: 'radar',
-      data: {
-        labels: ["エネルギー", "タンパク質", "脂質", "糖質", "食物繊維", "カリウム", "カルシウム", "鉄", "亜鉛", "ビタミンA", "ビタミンB1", "ビタミンB2", "ビタミンC", "食塩相当量"],
-        datasets: [{
-          label: gon.user,
-          backgroundColor: "rgba(0,0,80,0.4)",
-          borderColor: "rgba(0,0,80,1)",
-          data: [80, 90, 60, 70, 100, 70, 70, 70, 70, 70, 70, 70, 70, 70]
-        }, {
-          label: 'B_kun',
-          backgroundColor: "rgba(0,255,0,0.4)",
-          borderColor: "rgba(0,255,0,1)",
-          data: [90, 75, 80, 65, 80, 70, 70, 70, 70, 70, 70, 70, 70, 70]
-        }]
-      }
-    });
-  )
-</script>
+<!--
+<p><%= @std.xEnergy %></p>
+  <% @stds.each do |std| %>
+    <p><%= std.Category %>
+    <p><%= std.xEnergy %>
+    <p><%= std.xProtein %>
+    <p><%= std.xLipid %>
+    <p><%= std.xCarbohydrate %>
+    <p><%= std.xDietary_fiber %>
+    <p><%= std.xPotassium %>
+    <p><%= std.xCalcium %>
+    <p><%= std.xiron %>
+    <p><%= std.xZinc %>
+    <p><%= std.xVitaminA %>
+    <p><%= std.xVitaminB1 %>
+    <p><%= std.xVitaminB2 %>
+    <p><%= std.xVitaminC %>]
+    <p><%= std.xSalt_equivalent %>
+    <% end %>
+    -->
+    <% @posts.each_with_index do |post, i| %>
+      <tr>
+      <td id="pos_<%= i %>"><%= post.rname %></td>
+        <td><%=link_to(post.rname, "/posts/#{post.id}" )%></td>
+        <td><%= image_tag post.rimage.to_s %></td>
+        <td><canvas class="col-xs-12 col-sm-12 col-md-6 canvas" style="position: relative; height:10; width:7"></td>
+      </tr>
+    <% end %>
+  </table>
+  
+  <script>
+    var canvases = document.querySelectorAll("canvas.canvas");
+    console.log(canvases)
+    let i = 1
+    canvases.forEach((canvas) => {
+      new Chart(canvas, {
+        var pos = document.getElementById("pos_" + i);
+        console.log(pos)
+        type: 'radar',
+        data: {
+          labels: ["エネルギー", "タンパク質", "脂質", "糖質", "食物繊維", "カリウム", "カルシウム", "鉄", "亜鉛", "ビタミンA", "ビタミンB1", "ビタミンB2", "ビタミンC", "食塩相当量"],
+          datasets: [{
+            label: pos,
+            backgroundColor: "rgba(0,0,80,0.4)",
+            borderColor: "rgba(0,0,80,1)",
+            data: [80, 90, 60, 70, 100, 70, 70, 70, 70, 70, 70, 70, 70, 70]
+          }, {
+            label: 'B_kun',
+            backgroundColor: "rgba(0,255,0,0.4)",
+            borderColor: "rgba(0,255,0,1)",
+            data: [90, 75, 80, 65, 80, 70, 70, 70, 70, 70, 70, 70, 70, 70]
+          }]
+        }
+        i = ++i
+      });
+    })
+  </script>
+  
