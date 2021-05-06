@@ -37,7 +37,7 @@
     -->
     <% @posts.each_with_index do |post, i| %>
       <tr>
-      <td id="pos_<%= i %>"><%= post.rname %></td>
+      <td id="<%= i %>"_rname><%= post.rname %></td>
         <td><%=link_to(post.rname, "/posts/#{post.id}" )%></td>
         <td><%= image_tag post.rimage.to_s %></td>
         <td><canvas class="col-xs-12 col-sm-12 col-md-6 canvas" style="position: relative; height:10; width:7"></td>
@@ -51,7 +51,7 @@
     let i = 1
     canvases.forEach((canvas) => {
       new Chart(canvas, {
-        var pos = document.getElementById("pos_" + i);
+        var pos = document.getElementById(i + "_rnmae");
         console.log(pos)
         type: 'radar',
         data: {
