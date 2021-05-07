@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "csv"
 
-CSV.foreach('db/seed_stds.csv') do |row|
+CSV.foreach('db/seed_stds2.csv') do |row|
   Standard.create(Category: row[0], xEnergy: row[1], xProtein: row[2], xLipid: row[3], xCarbohydrate: row[4], xDietary_fiber: row[5], xPotassium: row[6], xCalcium: row[7], xiron: row[8], xZinc: row[9], xVitaminA: row[10], xVitaminB1: row[11], xVitaminB2: row[12], xVitaminC: row[13], xSalt_equivalent: row[14])
 end

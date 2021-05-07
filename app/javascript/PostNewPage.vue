@@ -77,6 +77,7 @@
         </tr>
       </tbody>
     </table>
+    <div v-show="show">
     <div>
 <p>利用する材料の栄養合算</p>
 <p>{{addNutrients}}</p>
@@ -94,6 +95,8 @@
         <li>{{ post.rname }}</li><button type="button" @click="add_ingredient(post)">材料に追加</button>
       </ul>
     </div>
+    </div>
+    <button type="button" @click="show=!show">既存のレシピを材料に加える</button>
     <button type="submit">Commit</button>
   </form>
 </template>
@@ -102,6 +105,7 @@ import axios from 'axios';
 export default {
   data: function () {
     return {
+      show: false ,
       post: {
         rname: '',
         rinformation: '',
@@ -146,7 +150,7 @@ export default {
       keyword: '',
       errors: '',
       uploadFile: null
-    }
+      }
   },
 
   computed: {

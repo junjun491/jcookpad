@@ -3,9 +3,10 @@ class PostsController < ApplicationController
     @posts = Post.all
     @user = current_user
     @stds = Standard.all
-    @std = Standard.find_by(Category: "m1～2")
+    @std = Standard.find_by(Category: "m1-2")
     gon.std = @std
     gon.user = @user.name
+    gon.posts = @posts
   end
 
   def new
