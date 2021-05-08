@@ -32,7 +32,7 @@ class RimageUploader < CarrierWave::Uploader::Base
   # version :thumb do
   #   process resize_to_fit: [50, 50]
   # end
-process resize_to_fit: [300, 300]
+process resize_to_fit: [100, 100]
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_whitelist
