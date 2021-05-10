@@ -12,6 +12,9 @@ import "channels"
 import 'bootstrap';
 import '../stylesheets/application';
 
+import $ from 'jquery';
+
+//= require jquery_ujs
 
 Rails.start()
 Turbolinks.start()

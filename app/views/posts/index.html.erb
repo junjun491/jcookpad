@@ -1,5 +1,8 @@
 
 <h2>"投稿一覧"</h2>
+<h1>Ajax#index</h1>
+<p id="hoge">赤色になるよ</p>
+
 <table>
   <p>検索</p>
  
@@ -10,7 +13,6 @@
   <tr>
   
     <th>title</th>
-
     <th>text</th>
   
 
@@ -36,24 +38,30 @@
     <% end %>
     -->
     <% @posts.each_with_index do |post, i| %>
-      <tr>
-      
-        <td id="<%= i %>">
+      <div>
+        <div id="<%= i %>">
         <%=link_to(post.rname, "/posts/#{post.id}" )%><br>
-        <%= image_tag post.rimage.to_s , :size => '100x100' %>
-        </td>
-        <td class: 'sized'>
+        <div class="col-xs-6 col-sm-6 col-md-6 "><%= image_tag post.rimage.to_s, class: "img-fluid" %></div>
+        </div>
+        <div>
         <%= post.rinformation %>
-        </td>
+        </div>
 
-      </tr>
-      <tr>
-        <td colspan="2"><canvas class="canvas chart-container" style="position: relative;  width:80vw; height:50vh"></td>
-      </tr>
+      </div>
+      <div>
+        <div><canvas class="canvas chart-container" style="position: relative;  width:60vw; height:60vh"></div>
+      </div>
     <% end %>
   </table>
   
   <script>
+
+  $("#hoge").css("color","red")
+
+ 
+
+
+
     var canvases = document.querySelectorAll("canvas.canvas");
     let posts = gon.posts
     console.log(posts)
@@ -115,7 +123,13 @@
         },
         options: {
           responsive: true,
-          maintainAspectRatio: false
+          maintainAspectRatio: false,
+          scale: {
+            
+                Min: 0,
+                Max: 120
+            
+          }
         }
       });
     })

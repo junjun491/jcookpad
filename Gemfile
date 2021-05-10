@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'gon', '~> 6.2.0'
-
+gem "jquery-rails"
 gem 'kaminari'
 
 #for debug

@@ -10,9 +10,15 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-info navbar-expand-lg">
+
+
+
+
+    <nav class="navbar navbar-dark bg-info navbar-expand-lg ">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item">
           <%= link_to image_tag("zatsu_meshi.png"), root_path %>
@@ -50,9 +56,16 @@
         <% end %>
       </ul>
     </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
 
     <%= yield %>
   </body>
 </html>
+
+
