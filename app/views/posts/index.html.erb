@@ -1,22 +1,18 @@
 
 <h2>"投稿一覧"</h2>
 <h1>Ajax#index</h1>
-<p id="hoge">赤色になるよ</p>
 
-<table>
+
   <p>検索</p>
  
   <%= form_tag(search_posts_path,:method => 'get') do %>
     <%= text_field_tag :search %>
     <%= submit_tag 'Search', :name => nil %>
   <% end %>
-  <tr>
-  
-    <th>title</th>
-    <th>text</th>
+
   
 
-  </tr>
+
 
   <!--
   <% @stds.each do |std| %>
@@ -37,26 +33,47 @@
     <p><%= std.xSalt_equivalent %>
     <% end %>
     -->
-    <% @posts.each_with_index do |post, i| %>
-      <div>
-        <div id="<%= i %>">
-        <%=link_to(post.rname, "/posts/#{post.id}" )%><br>
-        <div class="col-xs-6 col-sm-6 col-md-6 "><%= image_tag post.rimage.to_s, class: "img-fluid" %></div>
-        </div>
-        <div>
-        <%= post.rinformation %>
+<% @posts.each_with_index do |post, i| %>
+<div class="container">
+  <div class="row">
+
+
+    <div class="col-xs-12 col-sm-12 col-md-12 ">
+      <div class="row">
+
+      
+
+        <div class="col-xs-6 col-sm-6 col-md-6 " id="<%= i %>">
+          <%=link_to(post.rname, "/posts/#{post.id}" )%><br>
+          <%= image_tag post.rimage.to_s, class: "img-fluid" %>
+          
         </div>
 
+        <div class="col-xs-6 col-sm-6 col-md-6 ">
+           <%= post.rinformation %>
+        </div>   
+        
       </div>
-      <div>
+
+      
+
+    
+    
+
+     
         <div><canvas class="canvas chart-container" style="position: relative;  width:60vw; height:60vh"></div>
-      </div>
-    <% end %>
-  </table>
+      
+    </div>
+
+
+  </div>
+    
   
+</div>
+<% end %>
   <script>
 
-  $("#hoge").css("color","red")
+
 
  
 
