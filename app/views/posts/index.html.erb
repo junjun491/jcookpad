@@ -52,8 +52,12 @@
 <%= radio_button_tag("r2", "Salt_equivalent") %>
 <%= label_tag("rdio2", "食塩相当量") %>
 
+<button type="button" onclick="radioDeselection()">選択解除</button>
+
     <%= submit_tag 'Search', :name => nil %>
   <% end %>
+
+
 
   
 
@@ -120,9 +124,16 @@
 <% end %>
   <script>
 
+  function radioDeselection() {
+    for (const element of document.getElementsByName('r1')) {
+      element.checked = false;
+    }
+    for (const element of document.getElementsByName('r2')) {
+      element.checked = false;
+    }
+  }
 
 
- 
 
 
 

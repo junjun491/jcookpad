@@ -115,14 +115,69 @@
     <div v-show="show">
     <div>
 <p>利用する材料の栄養合算</p>
-<p>{{addNutrients}}</p>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">ｴﾈﾙｷﾞｰ</th>
+      <th scope="col">ﾀﾝﾊﾟｸ質</th>
+      <th scope="col">脂質</th>
+      <th scope="col">糖質</th>
+      <th scope="col">食物繊維</th>
+      <th scope="col">ｶﾘｳﾑ</th>
+      <th scope="col">ｶﾙｼｳﾑ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>{{addNutrients.Energy}}</td>
+      <td>{{addNutrients.Protein}}</td>
+      <td>{{addNutrients.Lipid}}</td>
+      <td>{{addNutrients.Carbohydrate}}</td>
+      <td>{{addNutrients.Dietary_fiber}}</td>
+      <td>{{addNutrients.Potassium}}</td>
+      <td>{{addNutrients.Calcium}}</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">鉄</th>
+      <th scope="col">亜鉛</th>
+      <th scope="col">ﾋﾞﾀﾐﾝa</th>
+      <th scope="col">ﾋﾞﾀﾐﾝb1</th>
+      <th scope="col">ﾋﾞﾀﾐﾝb2</th>
+      <th scope="col">ﾋﾞﾀﾐﾝc</th>
+      <th scope="col">塩分相当量</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>{{addNutrients.iron}}</td>
+      <td>{{addNutrients.Zinc}}</td>
+      <td>{{addNutrients.VitaminA}}</td>
+      <td>{{addNutrients.VitaminB1}}</td>
+      <td>{{addNutrients.VitaminB2}}</td>
+      <td>{{addNutrients.VitaminC}}</td>
+      <td>{{addNutrients.Salt_equivalent}}</td>
+    </tr>
+  </tbody>
+</table>
+
 <button type="button" @click="Reflect_Nutrients(post)">材料を反映</button>
     </div>
     <div>
 <p>利用する材料</p>
-<li v-for="item in ingrd_sum" :key="item.rname">
-  {{ item.rname }}
-</li>
+<ul v-for="(item, index) in ingrd_sum" v-bind:class="['q_' + index]" :key="item">
+  <li>{{ item.rname }}</li><input v-model="$data['q_' + index]">
+  <p>{{ index }}</p>
+
+
+<p>Message is: {{ $data['q_' + index]}}</p>
+  
+</ul>
     </div>
     <div>
       <input type="text" v-model="keyword">
@@ -141,6 +196,17 @@ export default {
   data: function () {
     return {
       show: false ,
+      q_0: '1',
+      q_1: '1',
+      q_2: '1',
+      q_3: '1',
+      q_4: '1',
+      q_5: '1',
+      q_6: '1',
+      q_7: '1',
+      q_8: '1',
+      q_9: '1',
+      q_10: '1',
       post: {
         rname: '',
         rinformation: '',
@@ -218,6 +284,17 @@ export default {
                 VitaminC: '0',
                 Salt_equivalent: '0'       
                };
+    let  q_0 = '1';
+    let  q_1 = '1';
+    let  q_2 = '1';
+    let  q_3 = '1';
+    let  q_4 = '1';
+    let  q_5 = '1';
+    let  q_6 = '1';
+    let  q_7 = '1';
+    let  q_8 = '1';
+    let  q_9 = '1';
+    let  q_10 = '1';
                 console.log(`sum_nutrients: ${sum_nutrients}`)
                 let sn_keys = Object.keys(sum_nutrients)
                 console.log(`sn_keys: ${sn_keys}`)
@@ -228,6 +305,11 @@ export default {
                   console.log(`ingrd: ${JSON.stringify(ingrd)}`)
                   console.log(`sum_nutrients: ${JSON.stringify(sum_nutrients)}`)
                   
+
+
+                  eval("let numX = this.q_" + i + ";");
+                  console.log(`numX: ${JSON.stringify(numX)}`)
+
                    for (let i = 0; i < 14; i++){
                      console.log(`sum_nutrients: ${JSON.stringify(sum_nutrients)}`)
                      console.log(`i: ${i}`)
@@ -235,6 +317,15 @@ export default {
                      console.log(`sn_key: ${sn_key}`)
                      let num1 = parseFloat(sum_nutrients[sn_key])
                      let num2 = parseFloat(ingrd[sn_key])
+                     let num3 = parseFloat(numX)
+
+        if (num3 < 0.01 || num3 < 1000 ) {
+          num3 = 1
+        }else{
+          num2 = num2 * num3
+                               console.log(`num2x: ${JSON.stringify(num2)}`)
+        }
+
                      console.log(`num1: ${JSON.stringify(num1)}`)
                      console.log(`num2: ${JSON.stringify(num2)}`)
                      sum_nutrients[sn_key] = num1 + num2;
