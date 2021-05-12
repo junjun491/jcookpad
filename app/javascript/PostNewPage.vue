@@ -6,77 +6,112 @@
       </ul>
     </div>
     <div>
-      <label>Name</label>
+      <label>レシピ名</label><br>
       <input v-model="post.rname" type="text">
     </div>
     <div>
-      <label>rinformation</label>
-      <input v-model="post.rinformation" type="text">
+      <label>レシピ情報</label><br>
+
+
+  <textarea v-model="post.rinformation"></textarea>
+
+
+
     </div>
     <div>
-      <label>rimage</label>
+      <label>レシピイメージ</label><br>
       <input type="file" name="rimage" @change="selectedFile">
     </div>
     <div>
-      <label>ingredient</label>
-      <input v-model="post.ingredient" type="text">
+      <label>材料</label><br>
+
+
+  <textarea v-model="post.ingredient"></textarea>
+
+
     </div>
     <div>
-      <label>procedure_1</label>
-      <input v-model="post.procedure_1" type="text">
+      <label>手順１</label><br>
+
+
+  <textarea v-model="post.procedure_1"></textarea>
+
+
     </div>
     <div>
-      <label>procedure_2</label>
-      <input v-model="post.procedure_2" type="text">
+      <label>手順２</label><br>
+
+
+  <textarea v-model="post.procedure_2"></textarea>
+
     </div>
     <div>
-      <label>procedure_3</label>
-      <input v-model="post.procedure_3" type="text">
+      <label>手順３</label><br>
+
+  <textarea v-model="post.procedure_3"></textarea>
+
+
     </div>
-    <table>
-      <tbody>
-        <tr>
-          <th>Energy</th>
-          <th>Protein</th>
-          <th>Lipid</th>
-          <th>Carbohydrate</th>
-          <th>Dietary_fiber</th>
-          <th>Potassium</th>
-          <th>Calcium</th>
-        </tr>
-        <tr>
-          <td><input v-model="post.Energy" type="number" step="0.01"></td>
-          <td><input v-model="post.Protein" type="number" step="0.01"></td>
-          <td><input v-model="post.Lipid" type="number" step="0.01"></td>
-          <td><input v-model="post.Carbohydrate" type="number" step="0.01"></td>
-          <td><input v-model="post.Dietary_fiber" type="number" step="0.01"></td>
-          <td><input v-model="post.Potassium" type="number" step="0.01"></td>
-          <td><input v-model="post.Calcium" type="number" step="0.01"></td>
-        </tr>
-      </tbody>
-    </table>
-    <table>
-      <tbody>
-        <tr>
-          <th>iron</th>
-          <th>Zinc</th>
-          <th>VitaminA</th>
-          <th>VitaminB1</th>
-          <th>VitaminB2</th>
-          <th>VitaminC</th>
-          <th>Salt_equivalent</th>
-        </tr>
-        <tr>
-          <td><input v-model="post.iron" type="number" step="0.01"></td>
-          <td><input v-model="post.Zinc" type="number" step="0.01"></td>
-          <td><input v-model="post.VitaminA" type="number" step="0.01"></td>
-          <td><input v-model="post.VitaminB1" type="number" step="0.01"></td>
-          <td><input v-model="post.VitaminB2" type="number" step="0.01"></td>
-          <td><input v-model="post.VitaminC" type="number" step="0.01"></td>
-          <td><input v-model="post.Salt_equivalent" type="number" step="0.01"></td>
-        </tr>
-      </tbody>
-    </table>
+ 
+        <div class="form-row">
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ｴﾈﾙｷﾞｰ</label><br>
+          <input v-model="post.Energy" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾀﾝﾊﾟｸ質</label><br>
+          <input v-model="post.Protein" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>脂質</label><br>
+          <input v-model="post.Lipid" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>糖質</label><br>
+          <input v-model="post.Carbohydrate" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>食物繊維</label><br>
+          <input v-model="post.Dietary_fiber" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ｶﾘｳﾑ</label><br>
+          <input v-model="post.Potassium" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ｶﾙｼｳﾑ</label><br>
+          <input v-model="post.Calcium" type="number" step="0.01">
+    </div>
+
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>鉄</label><br>
+          <input v-model="post.iron" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>亜鉛</label><br>
+          <input v-model="post.Zinc" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾋﾞﾀﾐﾝa</label><br>
+          <input v-model="post.VitaminA" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾋﾞﾀﾐﾝb1</label><br>
+          <input v-model="post.VitaminB1" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾋﾞﾀﾐﾝb2</label><br>
+          <input v-model="post.VitaminB2" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾋﾞﾀﾐﾝc</label><br>
+          <input v-model="post.VitaminC" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>塩分相当量</label><br>
+          <input v-model="post.Salt_equivalent" type="number" step="0.01">
+    </div>
+        </div>
     <div v-show="show">
     <div>
 <p>利用する材料の栄養合算</p>

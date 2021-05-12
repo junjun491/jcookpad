@@ -23,7 +23,10 @@ class PostsController < ApplicationController
 
   def search
     #Viewのformで取得したパラメータをモデルに渡す
-    @post = Post.search(params[:search])
+    @post = Post.search(params[:search],params[:r1],params[:r2])
+
+
+    
   end
 
   def show

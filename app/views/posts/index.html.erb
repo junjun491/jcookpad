@@ -7,6 +7,51 @@
  
   <%= form_tag(search_posts_path,:method => 'get') do %>
     <%= text_field_tag :search %>
+    
+<%= radio_button_tag("r1", "ascend") %>
+<%= label_tag("order", "昇順") %>
+
+<%= radio_button_tag("r1", "descend") %>
+<%= label_tag("order", "降順") %><br>
+
+<%= radio_button_tag("r2", "Energy") %>
+<%= label_tag("rdio2", "ｴﾈﾙｷﾞｰ") %>
+
+<%= radio_button_tag("r2", "Protein") %>
+<%= label_tag("rdio2", "ﾀﾝﾊﾟｸ質") %>
+
+<%= radio_button_tag("r2", "Lipid") %>
+<%= label_tag("rdio2", "脂質") %>
+
+<%= radio_button_tag("r2", "Carbohydrate") %>
+<%= label_tag("rdio2", "糖質") %>
+
+<%= radio_button_tag("r2", "Dietary_fiber") %>
+<%= label_tag("rdio2", "食物繊維") %>
+
+<%= radio_button_tag("r2", "Potassium") %>
+<%= label_tag("rdio2", "ｶﾘｳﾑ") %>
+<%= radio_button_tag("r2", "Calcium") %>
+<%= label_tag("rdio2", "ｶﾙｼｳﾑ") %>
+
+<%= radio_button_tag("r2", "iron") %>
+<%= label_tag("rdio2", "鉄") %>
+<%= radio_button_tag("r2", "Zinc") %>
+<%= label_tag("rdio2", "亜鉛") %>
+
+<%= radio_button_tag("r2", "VitaminA") %>
+<%= label_tag("rdio2", "ﾋﾞﾀﾐﾝa") %>
+<%= radio_button_tag("r2", "VitaminB1") %>
+<%= label_tag("rdio2", "ﾋﾞﾀﾐﾝb1") %>
+
+<%= radio_button_tag("r2", "VitaminB2") %>
+<%= label_tag("rdio2", "ﾋﾞﾀﾐﾝb2") %>
+<%= radio_button_tag("r2", "VitaminC") %>
+<%= label_tag("rdio2", "ﾋﾞﾀﾐﾝc") %>
+
+<%= radio_button_tag("r2", "Salt_equivalent") %>
+<%= label_tag("rdio2", "食塩相当量") %>
+
     <%= submit_tag 'Search', :name => nil %>
   <% end %>
 
@@ -59,7 +104,7 @@
 
      
 
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+      <div class="col-xs-11 col-sm-6 col-md-6 col-lg-4">
 
         <div><canvas class="canvas chart-container" style="position: relative;  width:60vw; height:60vh"></div>
       
@@ -122,6 +167,16 @@
         console.log(`num2: ${JSON.stringify(num2)}`)
         pn_ratio[pn_key] = num1 / num2 * 100;
          console.log(`pn_ratio[pn_key]: ${JSON.stringify(pn_ratio[pn_key])}`)
+
+
+        
+        if (pn_ratio[pn_key] === null || pn_ratio[pn_key] < 0) {
+          pn_ratio[pn_key] = 0
+        }else if(pn_ratio[pn_key] > 150){
+          pn_ratio[pn_key] = 150
+        }
+
+
       }
 
       new Chart(canvas, {
