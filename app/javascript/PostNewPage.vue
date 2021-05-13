@@ -114,6 +114,7 @@
         </div>
     <div v-show="show">
     <div>
+<button type="button" @click="Reflect_Nutrients(post)">材料を反映</button>
 <p>利用する材料の栄養合算</p>
 <table class="table table-sm">
   <thead>
@@ -166,17 +167,14 @@
   </tbody>
 </table>
 
-<button type="button" @click="Reflect_Nutrients(post)">材料を反映</button>
+
     </div>
     <div>
 <p>利用する材料</p>
-<ul v-for="(item, index) in ingrd_sum" v-bind:class="['q_' + index]" :key="item">
+<ul v-for="(item, index) in ingrd_sum" v-bind:class="['q_' + index]" :key="item.id">
   <li>{{ item.rname }}</li><input v-model="$data['q_' + index]">
   <p>{{ index }}</p>
-
-
 <p>Message is: {{ $data['q_' + index]}}</p>
-  
 </ul>
     </div>
     <div>
@@ -284,17 +282,7 @@ export default {
                 VitaminC: '0',
                 Salt_equivalent: '0'       
                };
-    let  q_0 = '1';
-    let  q_1 = '1';
-    let  q_2 = '1';
-    let  q_3 = '1';
-    let  q_4 = '1';
-    let  q_5 = '1';
-    let  q_6 = '1';
-    let  q_7 = '1';
-    let  q_8 = '1';
-    let  q_9 = '1';
-    let  q_10 = '1';
+
                 console.log(`sum_nutrients: ${sum_nutrients}`)
                 let sn_keys = Object.keys(sum_nutrients)
                 console.log(`sn_keys: ${sn_keys}`)
@@ -305,10 +293,20 @@ export default {
                   console.log(`ingrd: ${JSON.stringify(ingrd)}`)
                   console.log(`sum_nutrients: ${JSON.stringify(sum_nutrients)}`)
                   
+        if (i = 0) {var bfr_num3 = this.q_0}
+        else if (i = 1) {var bfr_num3 = this.q_1}
+        else if (i = 2) {var bfr_num3 = this.q_2}
+        else if (i = 3) {var bfr_num3 = this.q_3}
+        else if (i = 4) {var bfr_num3 = this.q_4}
+        else if (i = 5) {var bfr_num3 = this.q_5}
+        else if (i = 6) {var bfr_num3 = this.q_6}
+        else if (i = 7) {var bfr_num3 = this.q_7}
+        else if (i = 8) {var bfr_num3 = this.q_8}
+        else if (i = 9) {var bfr_num3 = this.q_9}
+        else if (i = 10) {var bfr_num3 = this.q_10}
+        else{var bfr_num3 = 1}                  
 
-
-                  eval("let numX = this.q_" + i + ";");
-                  console.log(`numX: ${JSON.stringify(numX)}`)
+                  console.log(`bfr_num3: ${JSON.stringify(bfr_num3)}`)
 
                    for (let i = 0; i < 14; i++){
                      console.log(`sum_nutrients: ${JSON.stringify(sum_nutrients)}`)
@@ -317,11 +315,12 @@ export default {
                      console.log(`sn_key: ${sn_key}`)
                      let num1 = parseFloat(sum_nutrients[sn_key])
                      let num2 = parseFloat(ingrd[sn_key])
-                     let num3 = parseFloat(numX)
+                     let num3 = parseFloat(bfr_num3)
 
-        if (num3 < 0.01 || num3 < 1000 ) {
-          num3 = 1
-        }else{
+        if (Number.isNaN(num2)) {num2 = 0}
+
+        if (num3 < 0.01 || num3 < 1000  ) {num3 = 1}
+        else{
           num2 = num2 * num3
                                console.log(`num2x: ${JSON.stringify(num2)}`)
         }
@@ -333,7 +332,7 @@ export default {
                    }
                 }
               return sum_nutrients;
-            },
+            }
             
   },
 
