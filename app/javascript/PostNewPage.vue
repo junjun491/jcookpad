@@ -319,7 +319,7 @@ export default {
 
         if (Number.isNaN(num2)) {num2 = 0}
 
-        if (num3 < 0.01 || num3 < 1000  ) {num3 = 1}
+        if (num3 < 0.01 || 1000 < num3  ) {num3 = 1}
         else{
           num2 = num2 * num3
                                console.log(`num2x: ${JSON.stringify(num2)}`)
