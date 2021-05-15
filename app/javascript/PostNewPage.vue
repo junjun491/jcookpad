@@ -293,17 +293,17 @@ export default {
                   console.log(`ingrd: ${JSON.stringify(ingrd)}`)
                   console.log(`sum_nutrients: ${JSON.stringify(sum_nutrients)}`)
                   
-        if (i = 0) {var bfr_num3 = this.q_0}
-        else if (i = 1) {var bfr_num3 = this.q_1}
-        else if (i = 2) {var bfr_num3 = this.q_2}
-        else if (i = 3) {var bfr_num3 = this.q_3}
-        else if (i = 4) {var bfr_num3 = this.q_4}
-        else if (i = 5) {var bfr_num3 = this.q_5}
-        else if (i = 6) {var bfr_num3 = this.q_6}
-        else if (i = 7) {var bfr_num3 = this.q_7}
-        else if (i = 8) {var bfr_num3 = this.q_8}
-        else if (i = 9) {var bfr_num3 = this.q_9}
-        else if (i = 10) {var bfr_num3 = this.q_10}
+        if (i == 0) {var bfr_num3 = this.q_0}
+        else if (i == 1) {var bfr_num3 = this.q_1}
+        else if (i == 2) {var bfr_num3 = this.q_2}
+        else if (i == 3) {var bfr_num3 = this.q_3}
+        else if (i == 4) {var bfr_num3 = this.q_4}
+        else if (i == 5) {var bfr_num3 = this.q_5}
+        else if (i == 6) {var bfr_num3 = this.q_6}
+        else if (i == 7) {var bfr_num3 = this.q_7}
+        else if (i == 8) {var bfr_num3 = this.q_8}
+        else if (i == 9) {var bfr_num3 = this.q_9}
+        else if (i == 10) {var bfr_num3 = this.q_10}
         else{var bfr_num3 = 1}                  
 
                   console.log(`bfr_num3: ${JSON.stringify(bfr_num3)}`)
