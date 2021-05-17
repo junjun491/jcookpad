@@ -1,6 +1,6 @@
 
-<h2>"投稿一覧"</h2>
-<h1>Ajax#index</h1>
+<h2>投稿一覧</h2>
+
 
 
   <p>検索</p>
@@ -86,7 +86,7 @@
 
   <div class="row">
 
-
+  
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       
     <div class="row">
@@ -94,19 +94,20 @@
         <div class="row">
         
           <div class="col-6 col-sm-12 col-md-12 col-lg-12" id="<%= i %>">
-            <%=link_to(post.rname, "/posts/#{post.id}" )%><br>
-            <%= image_tag post.rimage.to_s, class: "img-fluid" %>
+            <%=link_to(post.rname, "/posts/#{post.id}" )%></h5>
+            <%= image_tag post.rimage.to_s, class: "img-fluid rounded d-flex align-items-start" %>
           
           </div>
 
-          <div class="col-6 col-sm-12 col-md-12 col-lg-12">
-            <%= post.rinformation %>
+          <div class="col-6 col-sm-12 col-md-12 col-lg-12 d-flex align-items-start">
+          
+            <br><%= post.rinformation %>
           </div>   
         
         </div>
       </div>
 
-     
+     <br>
 
       <div class="col-xs-11 col-sm-6 col-md-6 col-lg-4">
 
@@ -138,9 +139,9 @@
 
 
     var canvases = document.querySelectorAll("canvas.canvas");
-    let posts = gon.posts
+    var posts = gon.posts
     console.log(posts)
-    let pn_ratio =  {
+    var pn_ratio =  {
       Energy: '0',
       Protein: '0',
       Lipid: '0',
@@ -156,24 +157,24 @@
       VitaminC: '0',
       Salt_equivalent: '0'       
      };
-     let pn_keys = Object.keys(pn_ratio)
+     var pn_keys = Object.keys(pn_ratio)
      console.log(`gon.std: ${gon.std}`)
-     let std = gon.std
+     var std = gon.std
      console.log(`std: ${std}`)
     canvases.forEach((canvas, idx) => {
-      let post = posts[idx]
+      var post = posts[idx]
       console.log(`post: ${JSON.stringify(post)}`)
       console.log(`post.Energy: ${post.Energy}`)
 
-      for (let i = 0; i < 14; i++){
+      for (var i = 0; i < 14; i++){
 
-        let pn_key = pn_keys[i]
-        let std_key = 'x' + pn_key
+        var pn_key = pn_keys[i]
+        var std_key = 'x' + pn_key
         console.log(`pn_key: ${pn_key}`)
         console.log(`std_key: ${std_key}`)
         console.log(`std: ${std}`)
-        let num1 = parseFloat(post[pn_key])
-        let num2 = parseFloat(std[std_key])
+        var num1 = parseFloat(post[pn_key])
+        var num2 = parseFloat(std[std_key])
         console.log(`num1: ${JSON.stringify(num1)}`)
         console.log(`num2: ${JSON.stringify(num2)}`)
         pn_ratio[pn_key] = num1 / num2 * 100;

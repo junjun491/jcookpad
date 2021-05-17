@@ -7,7 +7,6 @@ class PostsController < ApplicationController
 
     @std = user_std
     gon.std = @std
-    gon.user = @user.name
     gon.posts = @posts
   end
 
@@ -32,6 +31,14 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     @like = Like.new
+
+    @user = current_user
+    @stds = Standard.all
+
+
+    @std = user_std
+    gon.std = @std
+    gon.post = @post
   end
 
   def edit
@@ -62,63 +69,67 @@ class PostsController < ApplicationController
   end
 
   def user_std
-    if current_user.sex == "man"
-      p "man"
-      if (1..2)===current_user.age then
-        return Standard.find_by(Category: "m1-2")
-      elsif (3..5)===current_user.age then
-        return Standard.find_by(Category: "m3-5")
-      elsif (6..7)===current_user.age then
-        return Standard.find_by(Category: "m6-7")
-      elsif (8..9)===current_user.age then
-        return Standard.find_by(Category: "m8-9")
-      elsif (10..11)===current_user.age then
-        return Standard.find_by(Category: "m10-11")
-      elsif (12..14)===current_user.age then
-        return Standard.find_by(Category: "m12-14")
-      elsif (15..17)===current_user.age then
-        return Standard.find_by(Category: "m15-17")
-      elsif (18..29)===current_user.age then
-        return Standard.find_by(Category: "m18-29")
-      elsif (30..49)===current_user.age then
-        return Standard.find_by(Category: "m30-49")
-        p "30"
-      elsif (50..64)===current_user.age then
-        return Standard.find_by(Category: "m50-64")
-      elsif (65..74)===current_user.age then
-        return Standard.find_by(Category: "m3-2")
-      elsif 75===current_user.age then
-        return Standard.find_by(Category: "m75")
+    if user_signed_in?
+      if current_user.sex == "man"
+        p "man"
+        if (1..2)===current_user.age then
+          return Standard.find_by(Category: "m1-2")
+        elsif (3..5)===current_user.age then
+          return Standard.find_by(Category: "m3-5")
+        elsif (6..7)===current_user.age then
+          return Standard.find_by(Category: "m6-7")
+        elsif (8..9)===current_user.age then
+          return Standard.find_by(Category: "m8-9")
+        elsif (10..11)===current_user.age then
+          return Standard.find_by(Category: "m10-11")
+        elsif (12..14)===current_user.age then
+          return Standard.find_by(Category: "m12-14")
+        elsif (15..17)===current_user.age then
+          return Standard.find_by(Category: "m15-17")
+        elsif (18..29)===current_user.age then
+          return Standard.find_by(Category: "m18-29")
+        elsif (30..49)===current_user.age then
+          return Standard.find_by(Category: "m30-49")
+          p "30"
+        elsif (50..64)===current_user.age then
+          return Standard.find_by(Category: "m50-64")
+        elsif (65..74)===current_user.age then
+          return Standard.find_by(Category: "m3-2")
+        elsif 75===current_user.age then
+          return Standard.find_by(Category: "m75")
+        end
+      elsif current_user.sex == "woman"
+        p "woman"
+        if (1..2)===current_user.age then
+          return Standard.find_by(Category: "f1-2")
+        elsif (3..5)===current_user.age then
+          return Standard.find_by(Category: "f3-5")
+        elsif (6..7)===current_user.age then
+          return Standard.find_by(Category: "f6-7")
+        elsif (8..9)===current_user.age then
+          return Standard.find_by(Category: "f8-9")
+        elsif (10..11)===current_user.age then
+          return Standard.find_by(Category: "f10-11")
+        elsif (12..14)===current_user.age then
+          return Standard.find_by(Category: "f12-14")
+        elsif (15..17)===current_user.age then
+          return Standard.find_by(Category: "f15-17")
+        elsif (18..29)===current_user.age then
+          return Standard.find_by(Category: "f18-29")
+        elsif (30..49)===current_user.age then
+          return Standard.find_by(Category: "f30-49")
+        elsif (50..64)===current_user.age then
+          return Standard.find_by(Category: "f50-64")
+        elsif (65..74)===current_user.age then
+          return Standard.find_by(Category: "f3-2")
+        elsif 75===current_user.age then
+          return Standard.find_by(Category: "f75")
+        end
+      elsif
+        p "xx"
       end
-    elsif current_user.sex == "woman"
-      p "woman"
-      if (1..2)===current_user.age then
-        return Standard.find_by(Category: "f1-2")
-      elsif (3..5)===current_user.age then
-        return Standard.find_by(Category: "f3-5")
-      elsif (6..7)===current_user.age then
-        return Standard.find_by(Category: "f6-7")
-      elsif (8..9)===current_user.age then
-        return Standard.find_by(Category: "f8-9")
-      elsif (10..11)===current_user.age then
-        return Standard.find_by(Category: "f10-11")
-      elsif (12..14)===current_user.age then
-        return Standard.find_by(Category: "f12-14")
-      elsif (15..17)===current_user.age then
-        return Standard.find_by(Category: "f15-17")
-      elsif (18..29)===current_user.age then
-        return Standard.find_by(Category: "f18-29")
-      elsif (30..49)===current_user.age then
-        return Standard.find_by(Category: "f30-49")
-      elsif (50..64)===current_user.age then
-        return Standard.find_by(Category: "f50-64")
-      elsif (65..74)===current_user.age then
-        return Standard.find_by(Category: "f3-2")
-      elsif 75===current_user.age then
-        return Standard.find_by(Category: "f75")
-      end
-    elsif
-      p "xx"
+    else
+      return Standard.find_by(Category: "m30-49")
     end
   end
 

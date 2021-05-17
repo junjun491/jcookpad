@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   enum sex: { man: 0, woman: 1}
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
 
