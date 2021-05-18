@@ -1,5 +1,5 @@
 <template>
-  <employee-form-pane :show="show" :q_0="q_0" :q_1="q_1" :q_2="q_2" :q_3="q_3" :q_4="q_4" :q_5="q_5" :q_6="q_6" :q_7="q_7" :q_8="q_8" :q_9="q_9" :q_10="q_10" :post="post" :sum_nutrients="sum_nutrients" :posts="posts" :ingrd_sum="ingrd_sum" :keyword="keyword" :errors="errors" :uploadFile="uploadFile" @submit="updatePost"></employee-form-pane>
+  <post-form-pane :show="show" :q_0="q_0" :q_1="q_1" :q_2="q_2" :q_3="q_3" :q_4="q_4" :q_5="q_5" :q_6="q_6" :q_7="q_7" :q_8="q_8" :q_9="q_9" :q_10="q_10" :post="post" :sum_nutrients="sum_nutrients" :posts="posts" :ingrd_sum="ingrd_sum" :keyword="keyword" :errors="errors" :uploadFile="uploadFile" @submit="updatePost"></post-form-pane>
 </template>
 <script>
 import axios from 'axios';
