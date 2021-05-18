@@ -36,7 +36,7 @@ end
   # APIコントローラへのルーティング
   namespace :api, {format: 'json'} do
     namespace :v1 do
-      resources :posts, only: [:index, :show, :create]
+      resources :posts, only: [:index, :show, :create, :update]
     end
   end
 

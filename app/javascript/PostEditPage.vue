@@ -1,5 +1,5 @@
 <template>
-  <employee-form-pane :show="show" :q_0="q_0" :q_1="q_1" :q_2="q_2" :q_3="q_3" :q_4="q_4" :q_5="q_5" :q_6="q_6" :q_7="q_7" :q_8="q_8" :q_9="q_9" :q_10="q_10" :post="post" :sum_nutrients="sum_nutrients" :posts="posts" :ingrd_sum="ingrd_sum" :keyword="keyword" :errors="errors" :uploadFile="uploadFile" @submit="createPost"></employee-form-pane>
+  <employee-form-pane :show="show" :q_0="q_0" :q_1="q_1" :q_2="q_2" :q_3="q_3" :q_4="q_4" :q_5="q_5" :q_6="q_6" :q_7="q_7" :q_8="q_8" :q_9="q_9" :q_10="q_10" :post="post" :sum_nutrients="sum_nutrients" :posts="posts" :ingrd_sum="ingrd_sum" :keyword="keyword" :errors="errors" :uploadFile="uploadFile" @submit="updatePost"></employee-form-pane>
 </template>
 <script>
 import axios from 'axios';
@@ -198,7 +198,7 @@ export default {
     },
 
 
-    createPost: function() {
+    updatePost: function() {
       const data = new FormData();    // multipart/form-data形式のため、new FormData()を使う
       data.append('rname', this.post.rname);    // file形式以外も送信可能
       data.append('rinformation', this.post.rinformation);    // file形式以外も送信可能
@@ -222,9 +222,9 @@ export default {
       data.append('VitaminC', this.post.VitaminC);    // file形式以外も送信可能
       data.append('Salt_equivalent', this.post.VitaminC);    // file形式以外も送信可能
       axios
-        .post('/api/v1/posts', data)
+        .patch(`/api/v1/posts/${this.post.id}`, data)
         .then(response => {
-          let e = response.data;
+
           this.$router.push('/');
         })
         .catch(error => {
