@@ -1,15 +1,5 @@
-<h1>Post page</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
-    <div>
-      <%=@post.rname%><br>
-    </div>
+<h2>レシピ詳細</h2>
 
-    <h5>お気に入り件数: <%= @post.likes.count %></h5>
-    <% if current_user.already_liked?(@post) %>
-      <%= button_to 'お気に入りを取り消す', post_like_path(@post), method: :delete %>
-    <% else %>
-      <%= button_to 'お気に入り', post_likes_path(@post) %>
-    <% end %>
 
     <div>
 
@@ -24,7 +14,12 @@
             <div class="row">
             
               <div class="col-6 col-sm-12 col-md-12 col-lg-12">
+              
                 <%= @post.rname%>
+
+
+
+
                 <%= image_tag @post.rimage.to_s, class: "img-fluid rounded d-flex align-items-start" %>
               
               </div>
@@ -32,12 +27,23 @@
               <div class="col-6 col-sm-12 col-md-12 col-lg-12 d-flex align-items-start">
               
                 <br><%= @post.rinformation %>
+
+
+                <div class="row">
+
+                <% if current_user.already_liked?(@post) %>
+                  <%= button_to 'お気に入りを取り消す', post_like_path(@post), method: :delete %>
+                <% else %>
+                  <%= button_to 'お気に入り', post_likes_path(@post) %>
+                <% end %>
+                お気に入り件数: <%= @post.likes.count %>
+                </div>
               </div>   
             
             </div>
           </div>
     
-         
+
     
           <div class="col-xs-11 col-sm-6 col-md-6 col-lg-4">
     
@@ -50,8 +56,9 @@
       </div>
       </div>
         
-      <p>利用する材料の栄養合算</p>
-      <table class="table table-sm">
+      <h5>レシピの栄養価</h5>
+      <table class="table table-sm col-lg-9">
+
         <thead>
           <tr>
             <th scope="col">ｴﾈﾙｷﾞｰ</th>
@@ -61,6 +68,7 @@
             <th scope="col">食物繊維</th>
             <th scope="col">ｶﾘｳﾑ</th>
             <th scope="col">ｶﾙｼｳﾑ</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -76,7 +84,7 @@
           </tr>
         </tbody>
       </table>
-      <table class="table table-sm">
+      <table class="table table-sm col-lg-9">
         <thead>
           <tr>
             <th scope="col">鉄</th>
@@ -101,22 +109,25 @@
           </tr>
         </tbody>
       </table>
-
+  <h5>材料</h5>
       <div>
       <%=@post.ingredient%><br>
 
     </div>
 
-
+<h5>作り方</h5>
+  <h6>手順1</h6>
     <div>
       <%=@post.procedure_1%><br>
 
     </div>
+    <h6>手順2</h6>
 
     <div>
       <%=@post.procedure_2%><br>
 
     </div>
+    <h6>手順3</h6>
 
     <div>
       <%=@post.procedure_3%><br>
