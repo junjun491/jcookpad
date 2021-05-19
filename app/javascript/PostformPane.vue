@@ -14,9 +14,6 @@
 
 
   <textarea v-model="post.rinformation"></textarea>
-
-
-
     </div>
     <div>
       <label>レシピイメージ</label><br>
@@ -130,7 +127,6 @@
   </thead>
   <tbody>
     <tr>
-      
       <td>{{addNutrients.Energy}}</td>
       <td>{{addNutrients.Protein}}</td>
       <td>{{addNutrients.Lipid}}</td>
