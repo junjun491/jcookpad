@@ -1,5 +1,5 @@
 class Api::V1::PostsController < ApiController
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :update]
   # 拾えなかったExceptionが発生したら500 Internal server errorを応答する
   rescue_from Exception, with: :render_status_500
   # ActiveRecordのレコードが見つからなければ404 not foundを応答する
@@ -17,11 +17,16 @@ class Api::V1::PostsController < ApiController
       render json: { errors: post.errors.full_messages }, status: :unprocessable_entity
     end
   end
-  def show
-    @post = Post.find_by(id: params[:id])
-    @like = Like.new
-    render json: @post
+  def update
+    if @post.update_attributes(post_params)
+      head :no_content
+    else
+      render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
+    end
   end
+
+
+
   private
     def post_params
       params.permit(:rname, :rinformation, :rimage, :rimage_cache, :ingredient, :procedure_1, :procedure_2, :procedure_3, :Energy, :Protein, :Lipid, :Carbohydrate, :Dietary_fiber, :Potassium, :Calcium, :iron, :Zinc, :VitaminA, :VitaminB1, :VitaminB2, :VitaminC, :Salt_equivalent)
