@@ -1,14 +1,196 @@
 <template>
-  <post-form-pane :show="show" :q_0="q_0" :q_1="q_1" :q_2="q_2" :q_3="q_3" :q_4="q_4" :q_5="q_5" :q_6="q_6" :q_7="q_7" :q_8="q_8" :q_9="q_9" :q_10="q_10" :post="post" :sum_nutrients="sum_nutrients" :posts="posts" :ingrd_sum="ingrd_sum" :keyword="keyword" :errors="errors" :uploadFile="uploadFile" @submit="createPost"></post-form-pane>
+  <form @submit.prevent="createPost">
+    <div v-if="errors.length != 0">
+      <ul v-for="e in errors" :key="e">
+        <li><font color="red">{{ e }}</font></li>
+      </ul>
+    </div>
+    <div>
+      <label>レシピ名</label><br>
+      <input v-model="post.rname" type="text">
+    </div>
+    <div>
+      <label>レシピ情報</label><br>
+
+
+  <textarea v-model="post.rinformation"></textarea>
+
+
+
+    </div>
+    <div>
+      <label>レシピイメージ</label><br>
+      <input type="file" name="rimage" @change="selectedFile">
+    </div>
+    <div>
+      <label>材料</label><br>
+
+
+  <textarea v-model="post.ingredient"></textarea>
+
+
+    </div>
+    <div>
+      <label>手順１</label><br>
+
+
+  <textarea v-model="post.procedure_1"></textarea>
+
+
+    </div>
+    <div>
+      <label>手順２</label><br>
+
+
+  <textarea v-model="post.procedure_2"></textarea>
+
+    </div>
+    <div>
+      <label>手順３</label><br>
+
+  <textarea v-model="post.procedure_3"></textarea>
+
+
+    </div>
+ 
+        <div class="form-row">
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ｴﾈﾙｷﾞｰ</label><br>
+          <input v-model="post.Energy" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾀﾝﾊﾟｸ質</label><br>
+          <input v-model="post.Protein" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>脂質</label><br>
+          <input v-model="post.Lipid" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>糖質</label><br>
+          <input v-model="post.Carbohydrate" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>食物繊維</label><br>
+          <input v-model="post.Dietary_fiber" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ｶﾘｳﾑ</label><br>
+          <input v-model="post.Potassium" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ｶﾙｼｳﾑ</label><br>
+          <input v-model="post.Calcium" type="number" step="0.01">
+    </div>
+
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>鉄</label><br>
+          <input v-model="post.iron" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>亜鉛</label><br>
+          <input v-model="post.Zinc" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾋﾞﾀﾐﾝa</label><br>
+          <input v-model="post.VitaminA" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾋﾞﾀﾐﾝb1</label><br>
+          <input v-model="post.VitaminB1" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾋﾞﾀﾐﾝb2</label><br>
+          <input v-model="post.VitaminB2" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>ﾋﾞﾀﾐﾝc</label><br>
+          <input v-model="post.VitaminC" type="number" step="0.01">
+    </div>
+    <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
+          <label>塩分相当量</label><br>
+          <input v-model="post.Salt_equivalent" type="number" step="0.01">
+    </div>
+        </div>
+    <div v-show="show">
+    <div>
+<button type="button" @click="Reflect_Nutrients(post)">材料を反映</button>
+<p>利用する材料の栄養合算</p>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">ｴﾈﾙｷﾞｰ</th>
+      <th scope="col">ﾀﾝﾊﾟｸ質</th>
+      <th scope="col">脂質</th>
+      <th scope="col">糖質</th>
+      <th scope="col">食物繊維</th>
+      <th scope="col">ｶﾘｳﾑ</th>
+      <th scope="col">ｶﾙｼｳﾑ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>{{addNutrients.Energy}}</td>
+      <td>{{addNutrients.Protein}}</td>
+      <td>{{addNutrients.Lipid}}</td>
+      <td>{{addNutrients.Carbohydrate}}</td>
+      <td>{{addNutrients.Dietary_fiber}}</td>
+      <td>{{addNutrients.Potassium}}</td>
+      <td>{{addNutrients.Calcium}}</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">鉄</th>
+      <th scope="col">亜鉛</th>
+      <th scope="col">ﾋﾞﾀﾐﾝa</th>
+      <th scope="col">ﾋﾞﾀﾐﾝb1</th>
+      <th scope="col">ﾋﾞﾀﾐﾝb2</th>
+      <th scope="col">ﾋﾞﾀﾐﾝc</th>
+      <th scope="col">塩分相当量</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>{{addNutrients.iron}}</td>
+      <td>{{addNutrients.Zinc}}</td>
+      <td>{{addNutrients.VitaminA}}</td>
+      <td>{{addNutrients.VitaminB1}}</td>
+      <td>{{addNutrients.VitaminB2}}</td>
+      <td>{{addNutrients.VitaminC}}</td>
+      <td>{{addNutrients.Salt_equivalent}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </div>
+    <div>
+<p>利用する材料</p>
+<ul v-for="(item, index) in ingrd_sum" v-bind:class="['q_' + index]" :key="item.id">
+  <li>{{ item.rname }}</li><input v-model="$data['q_' + index]">
+  <p>{{ index }}</p>
+<p>Message is: {{ $data['q_' + index]}}</p>
+</ul>
+    </div>
+    <div>
+      <input type="text" v-model="keyword">
+      <ul v-for="post in filteredPosts" :key="post.id">
+        <li>{{ post.rname }}</li><button type="button" @click="add_ingredient(post)">材料に追加</button>
+      </ul>
+    </div>
+    </div>
+    <button type="button" @click="show=!show">既存のレシピを材料に加える</button>
+    <button type="submit">Commit</button>
+  </form>
 </template>
 <script>
 import axios from 'axios';
-
-import PostFormPane from 'PostFormPane.vue';
 export default {
-  components: {
-    PostFormPane
-  },
   data: function () {
     return {
       show: false ,
@@ -69,7 +251,6 @@ export default {
       uploadFile: null
       }
   },
-
   computed: {
             filteredPosts: function() {
                 if(this.keyword === "")
@@ -77,9 +258,16 @@ export default {
                 else
                 var posts = [];
                 for(let i in this.posts) {
+                                console.log(`i: ${i}`)
+
                     let post = this.posts[i];
-                    if(post.rname.indexOf(this.keyword) !== -1)
-                     {posts.push(post);}
+                    console.log(`post: ${JSON.stringify(post)}`)
+                    if(post.rname === null)
+                      {}
+                    else{
+                      if(post.rname.indexOf(this.keyword) !== -1)
+                        {posts.push(post);}
+                    }
                 }
               return posts;
             },
@@ -100,7 +288,6 @@ export default {
                 VitaminC: '0',
                 Salt_equivalent: '0'       
                };
-
                 console.log(`sum_nutrients: ${sum_nutrients}`)
                 let sn_keys = Object.keys(sum_nutrients)
                 console.log(`sn_keys: ${sn_keys}`)
@@ -123,9 +310,7 @@ export default {
         else if (i == 9) {var bfr_num3 = this.q_9}
         else if (i == 10) {var bfr_num3 = this.q_10}
         else{var bfr_num3 = 1}                  
-
                   console.log(`bfr_num3: ${JSON.stringify(bfr_num3)}`)
-
                    for (let i = 0; i < 14; i++){
                      console.log(`sum_nutrients: ${JSON.stringify(sum_nutrients)}`)
                      console.log(`i: ${i}`)
@@ -134,15 +319,12 @@ export default {
                      let num1 = parseFloat(sum_nutrients[sn_key])
                      let num2 = parseFloat(ingrd[sn_key])
                      let num3 = parseFloat(bfr_num3)
-
         if (Number.isNaN(num2)) {num2 = 0}
-
         if (num3 < 0.01 || 1000 < num3  ) {num3 = 1}
         else{
           num2 = num2 * num3
                                console.log(`num2x: ${JSON.stringify(num2)}`)
         }
-
                      console.log(`num1: ${JSON.stringify(num1)}`)
                      console.log(`num2: ${JSON.stringify(num2)}`)
                      sum_nutrients[sn_key] = num1 + num2;
@@ -153,21 +335,11 @@ export default {
             }
             
   },
-
-
-
-
-
-
-
-
  mounted () {
     axios
       .get('/api/v1/posts.json')
       .then(response => (this.posts= response.data))
   },
-
-
   methods: {
     selectedFile(e) {
       console.log(e.target.files[0])
@@ -195,8 +367,6 @@ export default {
       this.post.VitaminC = this.addNutrients.VitaminC
       this.post.Salt_equivalent = this.addNutrients.Salt_equivalent
     },
-
-
     createPost: function() {
       const data = new FormData();    // multipart/form-data形式のため、new FormData()を使う
       data.append('rname', this.post.rname);    // file形式以外も送信可能
