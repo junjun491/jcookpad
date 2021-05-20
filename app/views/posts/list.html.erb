@@ -1,7 +1,7 @@
 
 <% @post.each do |post| %>
 <tr>
-  <td><%=link_to(post.rname,"/posts/#{post.id}/edit")%></td>
+  <td><%=link_to(post.rname,api_v1_post_path, method: :patch)%></td>
   <td><%= link_to "削除", post_path(post) , method: :delete , class:"btn btn-outline-dark"%></td>
 <br>
   <td><%= image_tag post.rimage.to_s %></td>
