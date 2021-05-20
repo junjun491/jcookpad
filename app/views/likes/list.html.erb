@@ -1,11 +1,56 @@
 <h3>お気に入りしている投稿</h3>
-<% @user.liked_posts.each do |post| %>
+<form name="formtop" id="quantity">
+<% @user.liked_posts.each_with_index do |post, i| %>
 <tr>
   <td><%=link_to(post.rname,"/posts/#{post.id}")%></td>
 <br>
   <td><%= image_tag post.rimage.to_s %></td>
+  
+    <input type="number" step="0.01"  name="contents" value= 1 >
+  
+    <span id="<%= i %>" ></span>
 </tr>
 <br>
 
 <br>
 <% end %>
+</form>
+<script>
+
+
+window.onload = function () {
+  
+
+
+    var formObject = document.getElementById( "quantity" );
+    for( var i = 0; i < formObject.length; i++ ) {
+        formObject.elements[i].onkeyup = function(){
+          var formObject = document.getElementById( "quantity" );
+          console.log(`formObject: ${JSON.stringify(formObject)}`)
+
+          document.getElementById( "$i" ).innerHTML = formObject.contents.value;
+        };
+        formObject.elements[i].onchange = function(){
+          var formObject = document.getElementById( "quantity" );
+          document.getElementById( "$i" ).innerHTML = formObject.contents.value;
+        };
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
