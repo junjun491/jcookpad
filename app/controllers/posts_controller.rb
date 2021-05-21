@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    @user = current_user
     @stds = Standard.all
 
 

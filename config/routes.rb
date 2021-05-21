@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
   }
-root to: 'home#top'
+root to: 'posts#index'
 
   get "user/:id/list", :to => "posts#list", as: 'user_list'
 
