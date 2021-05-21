@@ -48,9 +48,7 @@ class PostsController < ApplicationController
     @post = Post.where(user_id: current_user.id )
   end
 
-  def edit
-    @post = Post.find_by(id: params[:id])
-  end
+
 
   def update
     @post = Post.find(params[:id])
@@ -124,7 +122,7 @@ class PostsController < ApplicationController
         elsif 75===current_user.age then
           return Standard.find_by(Category: "f75")
         end
-      elsif
+      else
         p "xx"
       end
     else
