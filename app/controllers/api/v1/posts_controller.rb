@@ -13,11 +13,9 @@ class Api::V1::PostsController < ApiController
     post = current_user.posts.build(post_params)
     if post.save
       render json: post, status: :created
-      
     else
       render json: { errors: post.errors.full_messages }, status: :unprocessable_entity
     end
-    
   end
   def update
     if @post.update_attributes(post_params)

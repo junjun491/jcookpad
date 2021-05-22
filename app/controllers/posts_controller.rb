@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @stds = Standard.all
-
+    @user = current_user
 
     @std = user_std
     gon.std = @std

@@ -1,10 +1,13 @@
 <template>
+
+
   <form @submit.prevent="createPost">
     <div v-if="errors.length != 0">
       <ul v-for="e in errors" :key="e">
         <li><font color="red">{{ e }}</font></li>
       </ul>
     </div>
+    <h2>レシピ作成</h2>
     <div>
       <label>レシピ名</label><br>
       <input v-model="post.rname" type="text">
@@ -394,6 +397,7 @@ export default {
         .post('/api/v1/posts', data)
         .then(response => {
           let e = response.data;
+          window.location = "/"
         })
         .catch(error => {
           console.error(error);
