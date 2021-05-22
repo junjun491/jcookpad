@@ -70,15 +70,7 @@ export default {
       }
 
 
-
-
-
     }
-
-
-
-
-
 
   },
   mounted () {

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   }
   root to: 'posts#index'
 
+  resources :home
+
   get 'user/:id/list', to: 'posts#list', as: 'user_list'
 
   get 'user/:id/favorite', to: 'likes#list', as: 'like_list'

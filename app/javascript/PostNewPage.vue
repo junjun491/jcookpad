@@ -394,7 +394,6 @@ export default {
         .post('/api/v1/posts', data)
         .then(response => {
           let e = response.data;
-          this.$router.push('/');
         })
         .catch(error => {
           console.error(error);

@@ -14,9 +14,6 @@ import PostEditPage from 'PostEditPage.vue'
 const router = new VueRouter({
   routes: [
     { path: '/',
-      component: PostIndexPage  },
-    { path: '/posts/new',
-      name: 'PostNewPage',
       component: PostNewPage    },
     { path: '/posts/:id(\\d+)/edit',
       name: 'PostEditPage',
