@@ -12,10 +12,28 @@ import "channels"
 import 'bootstrap';
 import '../stylesheets/application';
 
-import $ from 'jquery';
+
+import Vue from 'vue'
+import Vuex from 'vuex'
+import App from '../app.vue'
+import store from './store1.js'
 
 //= require jquery_ujs
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+
+Vue.use(Vuex)
+
+Vue.config.productionTip = false
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Vue({
+    el: '#app',
+    store: store,
+    render: (h) => h(App)
+  })
+})

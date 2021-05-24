@@ -1,5 +1,5 @@
 <template>
-
+<div class="PostNewPage">
 
   <form @submit.prevent="createPost">
     <div v-if="errors.length != 0">
@@ -190,10 +190,12 @@
     <button type="button" @click="show=!show">既存のレシピを材料に加える</button>
     <button type="submit">Commit</button>
   </form>
+</div>
 </template>
 <script>
-import axios from 'axios';
+
 export default {
+
   data: function () {
     return {
       show: false ,
