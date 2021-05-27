@@ -12,7 +12,6 @@ import '../stylesheets/application';
 import Vue from 'vue'
 // import Vuex from 'vuex'
 import App from './home/PostNewPage.vue'
-import App2 from './home/PostEditPage.vue'
 // import store from './store1.js'
 //= require jquery_ujs
 Rails.start()
@@ -24,12 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#app',
     render: (h) => h(App)
-  })
-})
-Vue.config.productionTip = false
-document.addEventListener('DOMContentLoaded', () => {
-  new Vue({
-    el: '#app',
-    render: (h) => h(App2)
   })
 })

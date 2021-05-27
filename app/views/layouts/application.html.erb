@@ -37,7 +37,7 @@
       </li>
 
       <li class="nav-item" >
-      <a href="/home#/">レシピ作成</a>
+      <%= link_to "レシピ作成", home_index_path, data: {"turbolinks" => false} %>
       </li>
       <li class="nav-item" >
         <%= link_to "作成したレシピ", user_list_path(current_user.id) %>
