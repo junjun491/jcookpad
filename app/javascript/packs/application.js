@@ -10,14 +10,14 @@ import "channels"
 import 'bootstrap';
 import '../stylesheets/application';
 import Vue from 'vue'
-// import Vuex from 'vuex'
-import App from './home/PostNewPage.vue'
-// import store from './store1.js'
-//= require jquery_ujs
+
+import App from '../app.vue'
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-// Vue.use(Vuex)
+
 Vue.config.productionTip = false
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
@@ -25,3 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
     render: (h) => h(App)
   })
 })
+
