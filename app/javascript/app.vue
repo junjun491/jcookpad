@@ -13,7 +13,7 @@ const router = new VueRouter({
   routes: [
     { path: '/',
       component: PostNewPage  },
-    { path: '/edit', 
+    { path: '/:id(\\d+)/edit', 
       component: PostEditPage   }
   ]
 })

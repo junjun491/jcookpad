@@ -1,7 +1,7 @@
 
 <template>
 <div class="PostEditPage">
-  <form @submit.prevent="createPost">
+  <form @submit.prevent="updatePost">
     <div v-if="errors.length != 0">
       <ul v-for="e in errors" :key="e">
         <li><font color="red">{{ e }}</font></li>
@@ -371,7 +371,7 @@ export default {
       this.post.VitaminC = this.addNutrients.VitaminC
       this.post.Salt_equivalent = this.addNutrients.Salt_equivalent
     },
-    createPost: function() {
+    updatePost: function() {
       const data = new FormData();    // multipart/form-data形式のため、new FormData()を使う
       data.append('rname', this.post.rname);    // file形式以外も送信可能
       data.append('rinformation', this.post.rinformation);    // file形式以外も送信可能
@@ -395,10 +395,10 @@ export default {
       data.append('VitaminC', this.post.VitaminC);    // file形式以外も送信可能
       data.append('Salt_equivalent', this.post.VitaminC);    // file形式以外も送信可能
       axios
-        .post('/api/v1/posts', data)
+        .patch(`/api/v1/employees/${this.employee.id}`, data)
         .then(response => {
           let e = response.data;
-          this.$router.push('/');
+          window.location = "/"
         })
         .catch(error => {
           console.error(error);
