@@ -87,9 +87,11 @@ export default {
       }
   },
   mounted () {
+    const url = location.pathname
+    const id = url.replace(/[^0-9]/g, '');
     axios
-      .get(`/api/v1/likes/${this.$route.params.id}.json`)
-      .then(response => (this.post = response.data))
+      .get(`/api/v1/likes/${id}.json`)
+      .then(response => (this.posts = response.data))
   }
  
 }

@@ -1,5 +1,10 @@
 class Api::V1::LikesController < ApiController
 
+  def show
+    # raise StandardError if current_user == User.find(params[:id])
+    
+    render json: current_user.liked_posts
+  end
 
         def create
           @like = current_user.likes.create(post_id: params[:post_id])
