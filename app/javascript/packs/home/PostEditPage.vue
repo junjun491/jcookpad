@@ -7,7 +7,7 @@
         <li><font color="red">{{ e }}</font></li>
       </ul>
     </div>
-  <h2>レシピ編集</h2>
+    <h2>レシピ編集</h2>
     <div>
       <label>レシピ名</label><br>
       <input v-model="post.rname" type="text">
@@ -256,8 +256,10 @@ export default {
       }
   },
   mounted () {
+    const url = location.pathname
+    const id = url.replace(/[^0-9]/g, '');
     axios
-      .get(`/api/v1/posts/${this.$route.params.id}.json`)
+      .get(`/api/v1/posts/${id}.json`)
       .then(response => (this.post = response.data))
   },
   computed: {
@@ -297,9 +299,7 @@ export default {
                 VitaminC: '0',
                 Salt_equivalent: '0'       
                };
-                console.log(`sum_nutrients: ${sum_nutrients}`)
                 let sn_keys = Object.keys(sum_nutrients)
-                console.log(`sn_keys: ${sn_keys}`)
                for(let i in this.ingrd_sum) {
                   console.log(`i: ${i}`)
                   console.log(`this.ingrd_sum[i]: ${JSON.stringify(this.ingrd_sum[i])}`)
@@ -343,11 +343,6 @@ export default {
               return sum_nutrients;
             }
             
-  },
- mounted () {
-    axios
-      .get('/api/v1/posts.json')
-      .then(response => (this.posts= response.data))
   },
   methods: {
     selectedFile(e) {
@@ -415,5 +410,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-</style>
