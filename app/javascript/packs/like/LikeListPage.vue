@@ -9,17 +9,17 @@
     </div>
   <h2>お気に入り</h2>
 
-      <div v-for="post in posts" :key="post">
+      <ul v-for="post in posts" :key="post">
 
-          <p>rname</p>
-
-
-
-          <p>{{ post.rname }}</p>
+          <li>rname</li>
 
 
-      </div>
 
+          <li>{{ post.rname }}</li>
+
+
+      </ul>
+<div>test</div>
  
 </div>
 </template>
