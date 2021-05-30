@@ -15,7 +15,7 @@
 
 
 
-          <td>{{ post.rname }}</td>
+          <p>{{ post.rname }}</p>
 
 
       </div>
