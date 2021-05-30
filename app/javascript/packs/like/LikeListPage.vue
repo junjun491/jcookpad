@@ -91,7 +91,7 @@ export default {
     const id = url.replace(/[^0-9]/g, '');
     axios
       .get(`/api/v1/likes/${id}.json`)
-      .then(response => (this.post = response.data))
+      .then(response => (this.posts = response.data))
   }
  
 }
