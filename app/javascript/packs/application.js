@@ -10,19 +10,28 @@ import "channels"
 import 'bootstrap';
 import '../stylesheets/application';
 import Vue from 'vue'
-
-import App from '../app.vue'
-
-
+// import Vuex from 'vuex'
+import App1 from './home/PostNewPage.vue'
+import App2 from './home/PostEditPage.vue'
+import App3 from './like/LikeListPage.vue'
+// import store from './store1.js'
+//= require jquery_ujs
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
+// Vue.use(Vuex)
 Vue.config.productionTip = false
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
-    el: '#app',
-    render: (h) => h(App)
+    el: '#app1',
+    render: (h) => h(App1)
+  }),
+  new Vue({
+    el: '#app2',
+    render: (h) => h(App2)
+  }),
+  new Vue({
+    el: '#app3',
+    render: (h) => h(App3)
   })
 })
-

@@ -25,6 +25,11 @@ class Api::V1::PostsController < ApiController
     end
   end
 
+  def show
+    p "xxxxxxxxxx"
+    p @post
+    render json: @post
+  end
 
 
   private

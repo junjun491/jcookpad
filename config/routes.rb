@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   namespace :api, { format: 'json' } do
     namespace :v1 do
       resources :posts, only: %i[index show create update]
+      resources :likes, only: %i[index show create update]
     end
   end
 

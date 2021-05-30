@@ -1,8 +1,9 @@
 
 <% @post.each do |post| %>
 <tr>
-  <td><%= link_to post.rname, edit_home_path, data: {"turbolinks" => false} %></td>
+  <td><%= link_to post.rname, edit_home_path(post.id), data: {"turbolinks" => false} %></td>
   <td><%= link_to "削除", post_path(post) , method: :delete , class:"btn btn-outline-dark"%></td>
+  <p><%= post.id%></p>
 <br>
   <td><%= image_tag post.rimage.to_s %></td>
 </tr>
