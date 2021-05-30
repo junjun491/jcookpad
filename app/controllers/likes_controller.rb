@@ -14,12 +14,12 @@ class LikesController < ApplicationController
 
   def list
     @user = User.find(params[:id])
-    @posts = @user.liked_posts
+    posts = @user.liked_posts
     @std = user_std
     gon.std = @std
     gon.posts = @posts
     
-
+    render json: posts
 
   end
 
