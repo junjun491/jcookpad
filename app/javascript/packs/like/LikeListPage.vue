@@ -9,17 +9,17 @@
     </div>
   <h2>お気に入り</h2>
 
-      <div v-for="post in posts" :key="post">
+      <ul v-for="post in posts" :key="post">
 
-          <p>rname</p>
-
-
-
-          <p>{{ post.rname }}</p>
+          <li>rname</li>
 
 
-      </div>
 
+          <li>{{ post.rname }}</li>
+
+
+      </ul>
+<div>test</div>
  
 </div>
 </template>
@@ -87,8 +87,10 @@ export default {
       }
   },
   mounted () {
+    const url = location.pathname
+    const id = url.replace(/[^0-9]/g, '');
     axios
-      .get(`/api/v1/likes/${this.$route.params.id}.json`)
+      .get(`/api/v1/likes/${id}.json`)
       .then(response => (this.post = response.data))
   }
  
