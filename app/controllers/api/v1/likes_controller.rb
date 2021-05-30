@@ -19,7 +19,7 @@ class Api::V1::LikesController < ApiController
           gon.std = @std
           gon.posts = @posts
           
-      
+          render json: posts
       
         end
       

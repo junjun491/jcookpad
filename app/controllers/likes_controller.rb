@@ -19,7 +19,7 @@ class LikesController < ApplicationController
     gon.std = @std
     gon.posts = @posts
     
-    render json: posts
+
 
   end
 

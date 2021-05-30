@@ -8,20 +8,17 @@
       </ul>
     </div>
   <h2>お気に入り</h2>
-    <table>
-      <tbody>
-        <tr>
-          <th>ID</th>
-          <th>rname</th>
 
-        </tr>
-        <tr v-for="e in posts" :key="e.id">
-          <td>{{ e.id }}</td>
-          <td>{{ e.rname }}</td>
+      <div v-for="post in posts" :key="post">
 
-        </tr>
-      </tbody>
-    </table>
+          <p>rname</p>
+
+
+
+          <td>{{ post.rname }}</td>
+
+
+      </div>
 
  
 </div>
