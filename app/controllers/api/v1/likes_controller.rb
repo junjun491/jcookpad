@@ -28,6 +28,16 @@ class Api::V1::LikesController < ApiController
       
         end
       
+        def index
+          render json: user_std
+
+          p "stdaaaaaaaaaaaaaaaa"
+          p "stdaaaaaaaaaaaaaaaa"
+          p "stdaaaaaaaaaaaaaaaa"
+          p user_std
+        end
+
+
       
         def user_std
           if user_signed_in?

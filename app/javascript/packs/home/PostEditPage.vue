@@ -176,7 +176,6 @@
 <p>利用する材料</p>
 <ul v-for="(item, index) in ingrd_sum" v-bind:class="['q_' + index]" :key="item.id">
   <li>{{ item.rname }}</li><input v-model="$data['q_' + index]">
-  <p>{{ index }}</p>
 <p>Message is: {{ $data['q_' + index]}}</p>
 </ul>
     </div>
@@ -329,7 +328,7 @@ export default {
                      let num2 = parseFloat(ingrd[sn_key])
                      let num3 = parseFloat(bfr_num3)
         if (Number.isNaN(num2)) {num2 = 0}
-        if (num3 < 0.01 || 1000 < num3  ) {num3 = 1}
+        if (num3 < 0 || 1000 < num3  ) {num3 = 1}
         else{
           num2 = num2 * num3
                                console.log(`num2x: ${JSON.stringify(num2)}`)
