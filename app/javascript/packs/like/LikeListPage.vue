@@ -195,6 +195,7 @@ export default {
           VitaminC: '0',
           Salt_equivalent: '0'       
       },
+
       posts: [],
       selectedPosts: [],
       keyword: '',
@@ -210,7 +211,7 @@ export default {
                     purple: 'rgb(153, 102, 255,0.6)',
                     grey: 'rgb(201, 203, 207,0.6)',
                 },
-                                datacollection: null,
+                                datacollection: { labels:[], datasets: [] },
                                             options: {
               responsive: true,
               maintainAspectRatio: false,
@@ -226,6 +227,11 @@ export default {
   },
   created () {
             this.RadarChart()
+  },
+  watch: {
+    chartData () {
+        this.$data._chart.update()
+    }
   },
   computed: {
     addNutrients: function() {
@@ -320,8 +326,8 @@ RadarChart () {
                 label: 'レシピの栄養比率',
                 backgroundColor: "rgba(0,255,0,0.4)",
                 borderColor: "rgba(0,255,0,1)",
-                data: [this.pn_ratio.Energy, this.pn_ratio.Protein, this.pn_ratio.Lipid, this.pn_ratio.Carbohydrate, this.pn_ratio.Dietary_fiber, this.pn_ratio.Potassium, this.pn_ratio.Calcium, this.pn_ratio.iron, this.pn_ratio.Zinc, this.pn_ratio.VitaminA, this.pn_ratio.VitaminB1, this.pn_ratio.VitaminB2, this.pn_ratio.VitaminC, this.pn_ratio.Salt_equivalent]
-              }],
+                data: [this.finalratio.Energy, this.finalratio.Protein, this.finalratio.Lipid, this.finalratio.Carbohydrate, this.finalratio.Dietary_fiber, this.finalratio.Potassium, this.finalratio.Calcium, this.finalratio.iron, this.finalratio.Zinc, this.finalratio.VitaminA, this.finalratio.VitaminB1, this.finalratio.VitaminB2, this.finalratio.VitaminC, this.finalratio.Salt_equivalent]
+              }]
                 }
             },
 calcurate_ratio: function() {
@@ -376,7 +382,8 @@ calcurate_ratio: function() {
     },
 
 
-  }
+  },
+  
  
 }
 </script>
