@@ -93,7 +93,7 @@
     :value="post"
     v-model="selectedPosts"
   >
-<img src="posts_p"></div>
+<img src="posts_p[i]"></div>
 
 
 
