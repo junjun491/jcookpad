@@ -1,11 +1,21 @@
 class Api::V1::LikesController < ApiController
 
+  has_one_attached :rimage
+
   def show
     # raise StandardError if current_user == User.find(params[:id])
     
     render json: current_user.liked_posts
   end
 
+  def show_p
+
+    p "post_image"
+
+    @post = current_user.liked_posts
+    @posts_p = @post.all.with_attached_rimage
+    render json: @posts_p.to_json(include: { image_attachment: { include: :blob } })
+  end
         def create
           @like = current_user.likes.create(post_id: params[:post_id])
           redirect_back(fallback_location: root_path)

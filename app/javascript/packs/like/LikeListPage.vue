@@ -8,6 +8,7 @@
       </ul>
     </div>
   <h2>お気に入り</h2>
+  
   <p>計算結果</p>
 <p>{{finalratio}}</p>
 
@@ -92,7 +93,7 @@
     :value="post"
     v-model="selectedPosts"
   >
-</div>
+<img src="posts_p"></div>
 
 
 
@@ -229,9 +230,12 @@ export default {
             this.RadarChart()
   },
   watch: {
-    chartData () {
-        this.$data._chart.update()
-    }
+      chartData: {
+        handler: function () {
+          this.$data._chart.update()
+        },
+        deep: true
+      }
   },
   computed: {
     addNutrients: function() {
@@ -311,6 +315,10 @@ export default {
     axios
       .get(`/api/v1/likes.json`)
       .then(response => (this.std = response.data))
+      console.log(`this.std: ${JSON.stringify(this.std)}`)
+    axios
+      .get(`/api/v1/likes/image/${id}.json`)
+      .then(response => (this.posts_p = response.data))
       console.log(`this.std: ${JSON.stringify(this.std)}`)
   },
   methods: {
