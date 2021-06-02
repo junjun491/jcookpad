@@ -1,6 +1,6 @@
 class Api::V1::LikesController < ApiController
 
-  has_one_attached :rimage
+
 
   def show
     # raise StandardError if current_user == User.find(params[:id])

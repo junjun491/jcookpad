@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true
   mount_uploader :rimage, ImageUploader #追記
 
+  has_one_attached :rimage
+
   def self.search(search,ord,categ)
     return Post.all unless search
 
