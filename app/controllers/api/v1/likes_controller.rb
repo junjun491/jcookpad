@@ -11,10 +11,12 @@ class Api::V1::LikesController < ApiController
   def show_p
 
     p "post_image"
-
+    
     @post = current_user.liked_posts
     @posts_p = @post.all.with_attached_rimage
     render json: @posts_p.to_json(include: { image_attachment: { include: :blob } })
+    p @posts_p
+    p "post_image_end"
   end
         def create
           @like = current_user.likes.create(post_id: params[:post_id])
