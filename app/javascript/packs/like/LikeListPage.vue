@@ -93,7 +93,7 @@
     :value="post"
     v-model="selectedPosts"
   >
-
+<img src="{{post.rimage}}"></div>
 
 
 

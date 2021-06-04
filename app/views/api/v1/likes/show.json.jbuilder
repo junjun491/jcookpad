@@ -1,4 +1,4 @@
-json.set! :posts do
+
   json.array! @liked_lists do |post|
     json.id post.id
     json.user_id post.user_id
@@ -26,4 +26,3 @@ json.set! :posts do
     json.VitaminC post.VitaminC
     json.Salt_equivalent post.Salt_equivalent
   end
-end
