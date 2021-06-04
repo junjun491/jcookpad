@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :posts, only: %i[index show create update]
       resources :likes, only: %i[index show create update]
-      get  "likes/image/:id"  => "likes#show_p"
+      
     end
   end
 

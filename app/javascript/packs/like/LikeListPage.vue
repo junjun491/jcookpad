@@ -93,7 +93,7 @@
     :value="post"
     v-model="selectedPosts"
   >
-<img src="posts_p[i]"></div>
+<img src="{{post.rimage}}"></div>
 
 
 
@@ -315,10 +315,6 @@ export default {
     axios
       .get(`/api/v1/likes.json`)
       .then(response => (this.std = response.data))
-      console.log(`this.std: ${JSON.stringify(this.std)}`)
-    axios
-      .get(`/api/v1/likes/image/${id}.json`)
-      .then(response => (this.posts_p = response.data))
       console.log(`this.std: ${JSON.stringify(this.std)}`)
   },
   methods: {
