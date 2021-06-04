@@ -1,9 +1,10 @@
 json.set! :posts do
   json.array! @liked_lists do |post|
     json.id post.id
+    json.user_id post.user_id
     json.name post.rname
     json.rinformation post.rinformation
-    json.rimage url_for(post.rimage)
+    json.rimage post.rimage.url
     json.ingredient post.ingredient
     json.procedure_1 post.procedure_1
     json.procedure_2 post.procedure_2
