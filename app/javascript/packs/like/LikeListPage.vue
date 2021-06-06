@@ -24,7 +24,6 @@
           </div>
 
 
-
 <p>選択したレシピの栄養合算</p>
 <table class="table table-sm">
   <thead>
@@ -105,7 +104,6 @@
 </template>
 <script>
 import RadarChart from "../RadarChart.js"; 
-
 
 import axios from 'axios';
 export default {
@@ -204,7 +202,7 @@ export default {
       num1: '',
       errors: '',
       uploadFile: null,
-                      fontColor: {
+      fontColor: {
                     red: 'rgb(255, 99, 132,0.6)',
                     orange: 'rgb(255, 159, 64,0.6)',
                     yellow: 'rgb(255, 205, 86,0.6)',
@@ -212,8 +210,8 @@ export default {
                     blue: 'rgb(54, 162, 235,0.6)',
                     purple: 'rgb(153, 102, 255,0.6)',
                     grey: 'rgb(201, 203, 207,0.6)',
-                },
-                                datacollection: { labels:[], datasets: [] },
+      },
+      datacollection: { labels:[], datasets: [] },
                                             options: {
               responsive: true,
               maintainAspectRatio: false,
@@ -332,11 +330,13 @@ RadarChart () {
                 label: 'レシピの栄養比率',
                 backgroundColor: "rgba(0,255,0,0.4)",
                 borderColor: "rgba(0,255,0,1)",
-                data: [this.finalratio.Energy, this.finalratio.Protein, this.finalratio.Lipid, this.finalratio.Carbohydrate, this.finalratio.Dietary_fiber, this.finalratio.Potassium, this.finalratio.Calcium, this.finalratio.iron, this.finalratio.Zinc, this.finalratio.VitaminA, this.finalratio.VitaminB1, this.finalratio.VitaminB2, this.finalratio.VitaminC, this.finalratio.Salt_equivalent]
+                data: [70, this.finalratio.Protein, this.finalratio.Lipid, this.finalratio.Carbohydrate, this.finalratio.Dietary_fiber, this.finalratio.Potassium, this.finalratio.Calcium, this.finalratio.iron, this.finalratio.Zinc, this.finalratio.VitaminA, this.finalratio.VitaminB1, this.finalratio.VitaminB2, this.finalratio.VitaminC, this.finalratio.Salt_equivalent]
               }]
                 }
             },
+/* ユーザの選択したお気に入りの栄養価の合算（addNutrients）を食事摂取基準(std)で割る関数。この計算結果をcomputed関数のfinalratioにわたして計算結果を即時反映させようとしている  */
 calcurate_ratio: function() {
+        /* pn_ratioはお気に入りの栄養価の合算（addNutrients）を食事摂取基準(std)で割った数値を入れる変数 */
         var pn_ratio =  {
           Energy: '0',
           Protein: '0',
@@ -353,28 +353,36 @@ calcurate_ratio: function() {
           VitaminC: '0',
           Salt_equivalent: '0'       
          };
+         /* pn_keysはpn_ratioの各キーを抽出した変数 */
          var pn_keys = Object.keys(pn_ratio)
 
          console.log(`pn_ratio: ${JSON.stringify(pn_ratio)}`)
          console.log(`pn_keys: ${JSON.stringify(pn_keys)}`)
          console.log(`std: ${JSON.stringify(this.std)}`)
 
+          /* 14個ある各栄養価をfor文で一つずつとりだして合算している */
           for (var i = 0; i < 14; i++){
     
             var pn_key = pn_keys[i]
+            /* std_keysはstdの各キーを抽出した変数 */
             var std_key = 'x' + pn_key
             console.log(`pn_key: ${pn_key}`)
             console.log(`std_key: ${std_key}`)
             console.log(`std: ${this.std}`)
+
+            
+            /* num1はお気に入りの栄養価の合算から１つ栄養価をとりだした変数 */
+            /* num2は食事摂取基準から１つ栄養価をとりだした変数 */
             var num1 = parseFloat(this.addNutrients[pn_key])
             var num2 = parseFloat(this.std[std_key])
             console.log(`cnum1: ${JSON.stringify(num1)}`)
             console.log(`cnum2: ${JSON.stringify(num2)}`)
+            /* お気に入りの栄養価の合算を食事摂取基準で割って100でかけることでチャートにわたす為の数値に整形している */
             pn_ratio[pn_key] = num1 / num2 * 100;
              console.log(`pn_ratio[pn_key]: ${JSON.stringify(pn_ratio[pn_key])}`)
     
     
-            
+            /* お気に入りの数値がマイナスだったり、nullだったり大きすぎたりする場合、以下のif文で0か150にする */
             if (pn_ratio[pn_key] === null || pn_ratio[pn_key] < 0) {
               pn_ratio[pn_key] = 0
             }else if(pn_ratio[pn_key] > 150){
@@ -383,6 +391,7 @@ calcurate_ratio: function() {
     
     
           }
+          
           return pn_ratio
 
     },
