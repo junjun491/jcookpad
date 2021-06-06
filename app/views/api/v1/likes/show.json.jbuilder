@@ -2,7 +2,7 @@
   json.array! @liked_lists do |post|
     json.id post.id
     json.user_id post.user_id
-    json.name post.rname
+    json.rname post.rname
     json.rinformation post.rinformation
     json.rimage post.rimage.url
     json.ingredient post.ingredient
@@ -13,7 +13,7 @@
     json.updated_at post.updated_at
     json.Energy post.Energy
     json.Protein post.Protein
-    json.Protein post.Lipid
+    json.Lipid post.Lipid
     json.Carbohydrate post.Carbohydrate
     json.Dietary_fiber post.Dietary_fiber
     json.Potassium post.Potassium

@@ -93,7 +93,8 @@
     :value="post"
     v-model="selectedPosts"
   >
-<img src="{{post.rimage}}"></div>
+
+<img :src="post.rimage"></div>
 
 
 
@@ -311,11 +312,12 @@ export default {
     axios
       .get(`/api/v1/likes/${id}.json`)
       .then(response => (this.posts = response.data))
-      console.log(`this.posts: ${JSON.stringify(this.posts)}`)
+   
+
     axios
       .get(`/api/v1/likes.json`)
       .then(response => (this.std = response.data))
-      console.log(`this.std: ${JSON.stringify(this.std)}`)
+
   },
   methods: {
 RadarChart () {
