@@ -7,7 +7,8 @@
  
   <%= form_tag(search_posts_path,:method => 'get') do %>
     <%= text_field_tag :search %>
-    
+
+
 <%= radio_button_tag("r1", "ascend") %>
 <%= label_tag("order", "昇順") %>
 
@@ -49,12 +50,14 @@
 <%= radio_button_tag("r2", "VitaminC") %>
 <%= label_tag("rdio2", "ﾋﾞﾀﾐﾝc") %>
 
+
 <%= radio_button_tag("r2", "Salt_equivalent") %>
 <%= label_tag("rdio2", "食塩相当量") %>
-
+<div>
 <button type="button" onclick="radioDeselection()">選択解除</button>
 
     <%= submit_tag 'Search', :name => nil %>
+</div>
   <% end %>
 
 
@@ -85,16 +88,17 @@
 <% @posts.each_with_index do |post, i| %>
 
 <div class="card col-12 col-lg-10">
-<div class="card-header">
-<%=link_to(post.rname, "/posts/#{post.id}" )%></h5>
-</div>
+
+
+
   <div class="row">
 
+  <div class="card-header  col-12"><%=link_to(post.rname, "/posts/#{post.id}" )%></div>
   
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+      <div class="col-xs-12 col-sm-5 col-md-6 col-lg-4">
         <div class="row">
         
           <div class="col-6 col-sm-12 col-md-12 col-lg-12" id="<%= i %>">
@@ -113,9 +117,9 @@
 
      <br>
 
-      <div class="col-xs-11 col-sm-6 col-md-6 col-lg-4">
+      <div class="col-xs-11 col-sm-7 col-md-6 col-lg-7">
 
-        <div><canvas class="canvas chart-container" style="position: relative;  width:60vw; height:60vh"></div>
+        <canvas class="canvas chart-container" style="position: relative;  width:60vw; height:60vh">
       
       </div>
 
