@@ -10,10 +10,12 @@
   <h2>お気に入り</h2>
   
   <p>計算結果</p>
-  <p>{{finalratio}}</p>
+  <p>{{chartData.datasets[1].data}}</p>
 
   <div class="col-xs-11 col-sm-6 col-md-6 col-lg-4">
-    <!-- <radar-chart :chart-data="datacollection" :options="options"></radar-chart> -->
+    <radar-chart
+      :chartData = chartData
+    />
   </div>
 
 
@@ -199,27 +201,7 @@ export default {
         blue: 'rgb(54, 162, 235,0.6)',
         purple: 'rgb(153, 102, 255,0.6)',
         grey: 'rgb(201, 203, 207,0.6)',
-      },
-      datacollection: { labels:[], datasets: [] },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scale: {
-          Min: 0,
-          Max: 120
-        }
       }
-    }
-  },
-  created () {
-    this.RadarChart()
-  },
-  watch: {
-    chartData: {
-      handler: function () {
-        this.$data._chart.update()
-      },
-      deep: true
     }
   },
   computed: {
@@ -270,8 +252,25 @@ export default {
       }
       return sum_nutrients;
     },
-    finalratio: function () {
-      return this.calcurate_ratio();
+    chartData: function () {
+
+      return {
+        labels: ["エネルギー", "タンパク質", "脂質", "糖質", "食物繊維", "カリウム", "カルシウム", "鉄", "亜鉛", "ビタミンA", "ビタミンB1", "ビタミンB2", "ビタミンC", "食塩相当量"],
+          datasets: [
+              {
+                  label: '摂取基準',
+                  backgroundColor: "rgba(0,0,80,0.4)",
+                  borderColor: "rgba(0,0,80,1)",
+                  data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+              },
+              {
+                  label: 'レシピの栄養比率',
+                  backgroundColor: "rgba(0,255,0,0.4)",
+                  borderColor: "rgba(0,255,0,1)",
+                  data: this.calcurate_ratio()
+              }
+          ],
+      }
     }
   },
   mounted () {
@@ -285,18 +284,6 @@ export default {
       .then(response => (this.std = response.data))
   },
   methods: {
-    RadarChart () {
-      this.datacollection = {
-        labels: ["エネルギー", "タンパク質", "脂質", "糖質", "食物繊維", "カリウム", "カルシウム", "鉄", "亜鉛", "ビタミンA", "ビタミンB1", "ビタミンB2", "ビタミンC", "食塩相当量"],
-        datasets: [{
-          label: 'レシピの栄養比率',
-          backgroundColor: "rgba(0,255,0,0.4)",
-          borderColor: "rgba(0,255,0,1)",
-          data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
-          // data: [this.finalratio.Energy, this.finalratio.Protein, this.finalratio.Lipid, this.finalratio.Carbohydrate, this.finalratio.Dietary_fiber, this.finalratio.Potassium, this.finalratio.Calcium, this.finalratio.iron, this.finalratio.Zinc, this.finalratio.VitaminA, this.finalratio.VitaminB1, this.finalratio.VitaminB2, this.finalratio.VitaminC, this.finalratio.Salt_equivalent]
-        }]
-      }
-    },
     calcurate_ratio: function() {
       var pn_ratio =  {
         Energy: 0,
@@ -330,8 +317,7 @@ export default {
           pn_ratio[pn_key] = 150
         }
       }
-      console.log(pn_ratio)
-      return pn_ratio
+      return Object.values(pn_ratio)
     },
   },
 }
