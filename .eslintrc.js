@@ -1,9 +1,9 @@
 module.exports = {
-    env: {
-      es6: true,
-    },
-    extends: [
-      
-      "prettier",
-    ],
-  };
+  env: {
+    es6: true,
+  },
+  extends: [
+
+    "prettier",
+  ],
+};
