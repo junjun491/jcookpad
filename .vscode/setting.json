@@ -1,13 +1,5 @@
 {
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-      },
-      "eslint.validate": [
-        {
-          "language": "vue",
-          "autoFix": true
-        }
-      ],
-
-      "vetur.format.defaultFormatter.js": "none"
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

@@ -19,7 +19,6 @@
   </div>
 
 
-
 <p>選択したレシピの栄養合算</p>
 <table class="table table-sm">
   <thead>
@@ -95,7 +94,6 @@
 </template>
 <script>
 import RadarChart from "../RadarChart.js"; 
-
 
 import axios from 'axios';
 export default {
@@ -194,6 +192,7 @@ export default {
       errors: '',
       uploadFile: null,
       fontColor: {
+
         red: 'rgb(255, 99, 132,0.6)',
         orange: 'rgb(255, 159, 64,0.6)',
         yellow: 'rgb(255, 205, 86,0.6)',
@@ -201,6 +200,7 @@ export default {
         blue: 'rgb(54, 162, 235,0.6)',
         purple: 'rgb(153, 102, 255,0.6)',
         grey: 'rgb(201, 203, 207,0.6)',
+
       }
     }
   },
@@ -303,13 +303,16 @@ export default {
       };
       var pn_keys = Object.keys(pn_ratio)
 
+
       for (var i = 0; i < 14; i++){
+
 
         var pn_key = pn_keys[i]
         var std_key = 'x' + pn_key
         var num1 = parseFloat(this.addNutrients[pn_key])
         var num2 = parseFloat(this.std[std_key])
         pn_ratio[pn_key] = num1 / num2 * 100;
+
 
         if (pn_ratio[pn_key] === null || pn_ratio[pn_key] < 0) {
           pn_ratio[pn_key] = 0
