@@ -9,8 +9,7 @@
     </div>
   <h2>お気に入り</h2>
   
-  <p>計算結果</p>
-  <p>{{chartData.datasets[1].data}}</p>
+
 
   <div class="col-xs-11 col-sm-6 col-md-6 col-lg-4">
     <radar-chart

@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all.page(params[:page]).per(10)
-    @stds = Standard.all
-    @user = current_user
+
 
     @std = user_std
     gon.std = @std
@@ -21,9 +20,16 @@ class PostsController < ApplicationController
 
   def search
     #Viewのformで取得したパラメータをモデルに渡す
-    @post = Post.search(params[:search],params[:r1],params[:r2])
 
+    if params[:r1] === nil then
+      params[:r1] = "ascend"
+    else
+    end
+    @posts = Post.search(params[:search],params[:r1],params[:r2]).page(params[:page]).per(10)
 
+    @std = user_std
+    gon.std = @std
+    gon.posts = @posts
     
   end
 
@@ -45,7 +51,12 @@ class PostsController < ApplicationController
   end
 
   def list
-    @post = Post.where(user_id: current_user.id )
+    @posts = Post.where(user_id: current_user.id ).page(params[:page]).per(10)
+
+    @std = user_std
+    gon.std = @std
+    gon.posts = @posts
+
   end
 
 
