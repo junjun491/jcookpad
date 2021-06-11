@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.page(params[:page]).per(10)
+    @posts = Kaminari.paginate_array(Post.all.reverse).page(params[:page]).per(10)
 
 
     @std = user_std
@@ -21,10 +21,7 @@ class PostsController < ApplicationController
   def search
     #Viewのformで取得したパラメータをモデルに渡す
 
-    if params[:r1] === nil then
-      params[:r1] = "ascend"
-    else
-    end
+
     @posts = Kaminari.paginate_array(Post.search(params[:search],params[:r1],params[:r2])).page(params[:page]).per(10)
 
     @std = user_std
