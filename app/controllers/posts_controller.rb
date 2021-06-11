@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       params[:r1] = "ascend"
     else
     end
-    @posts = Post.search(params[:search],params[:r1],params[:r2]).page(params[:page]).per(10)
+    @posts = Kaminari.paginate_array(Post.search(params[:search],params[:r1],params[:r2])).page(params[:page]).per(10)
 
     @std = user_std
     gon.std = @std

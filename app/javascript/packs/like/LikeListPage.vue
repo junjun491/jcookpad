@@ -9,8 +9,6 @@
     </div>
   <h2>お気に入り</h2>
   
-
-
   <div class="col-xs-11 col-sm-6 col-md-6 col-lg-4">
     <radar-chart
       :chartData = chartData

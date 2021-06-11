@@ -5,9 +5,12 @@ class Post < ApplicationRecord
   has_one_attached :rimage
 
   def self.search(search,ord,categ)
-    return Post.all unless search
 
+    if search == ""
 
+      before_result = Post.all
+
+    else
 
     # 各ワードのORクエリを作る
     words = search.to_s.gsub(/(?:[[:space:]%_])+/, " ").split(" ")
@@ -16,23 +19,55 @@ class Post < ApplicationRecord
     end
 
     # それらをAND条件で繋げる
-    result = word_queries.inject(Post) do |scope, query|
+    before_result = word_queries.inject(Post) do |scope, query|
       scope.merge(query)
     end
+    
 
 
-   
-    if ord == "null" && categ == "null" then
-      return result
+
+    end
+p "start"
+    @categ = categ
+@ord = ord
+p @categ
+p @ord
+
+
+
+
+    if categ == nil then
+
+      @categ = "id"
+
+      result = before_result.sort{|a, b|
+      a.send(@categ).to_i <=> b.send(@categ).to_i
+    }
+      if ord == "ascend" then
+        return result
+      else ord == "descend"
+        return result.reverse
+      end
+
+
     elsif ord == "ascend" then
       p "ascend"
 
-        result.order(categ)
+      result = before_result.sort{|a, b|
+      a.send(@categ).to_f <=> b.send(@categ).to_f
+    }
+  
+  
     else
       p "descend"
 
 
-        result.order("#{categ} DESC")
+
+      result = before_result.sort{|a, b|
+      a.send(@categ).to_f <=> b.send(@categ).to_f
+    }
+
+    return result.reverse
 
     end
 
