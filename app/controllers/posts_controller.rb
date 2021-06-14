@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   end
 
   def list
-    @posts = Post.where(user_id: current_user.id ).page(params[:page]).per(10)
+    @posts = Kaminari.paginate_array(Post.where(user_id: current_user.id ).reverse).page(params[:page]).per(10)
 
     @std = user_std
     gon.std = @std

@@ -393,11 +393,14 @@ export default {
       data.append('VitaminB2', this.post.VitaminB2);    // file形式以外も送信可能
       data.append('VitaminC', this.post.VitaminC);    // file形式以外も送信可能
       data.append('Salt_equivalent', this.post.VitaminC);    // file形式以外も送信可能
+        
+        const url = location.pathname
+        const id = url.replace(/[^0-9]/g, '');
       axios
-        .patch(`/api/v1/employees/${this.employee.id}`, data)
+        .patch(`/api/v1/posts/${id}`, data)
         .then(response => {
           let e = response.data;
-          window.location = "/"
+          window.location = `/posts/${id}`
         })
         .catch(error => {
           console.error(error);

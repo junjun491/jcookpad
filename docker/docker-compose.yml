@@ -1,0 +1,25 @@
+version: '3'
+services:
+  app:
+    build: rails
+    environment:
+      APP_DATABASE_HOST: db
+      APP_DATABASE: app_development
+      APP_DATABASE_USER: root
+      APP_DATABASE_PASSWORD: root
+    depends_on:
+      - db
+  db:
+    build: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  web:
+    build: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/log:/var/log/nginx
+    volumes_from:
+      - app
+    depends_on:
+      - app

@@ -18,7 +18,7 @@ class Api::V1::PostsController < ApiController
     end
   end
   def update
-    if @post.update_attributes(post_params)
+    if @post.update(post_params)
       head :no_content
     else
       render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
@@ -34,7 +34,7 @@ class Api::V1::PostsController < ApiController
 
   private
     def post_params
-      params.permit(:rname, :rinformation, :rimage, :rimage_cache, :ingredient, :procedure_1, :procedure_2, :procedure_3, :Energy, :Protein, :Lipid, :Carbohydrate, :Dietary_fiber, :Potassium, :Calcium, :iron, :Zinc, :VitaminA, :VitaminB1, :VitaminB2, :VitaminC, :Salt_equivalent)
+      params.permit(:id, :rname, :rinformation, :rimage, :rimage_cache, :ingredient, :procedure_1, :procedure_2, :procedure_3, :Energy, :Protein, :Lipid, :Carbohydrate, :Dietary_fiber, :Potassium, :Calcium, :iron, :Zinc, :VitaminA, :VitaminB1, :VitaminB2, :VitaminC, :Salt_equivalent)
     end
     def set_post
       @post= Post.find(params[:id])
