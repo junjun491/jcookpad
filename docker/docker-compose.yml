@@ -9,8 +9,10 @@ services:
       APP_DATABASE_PASSWORD: root
     depends_on:
       - db
+    tty: true
     volumes:
-        - ./rails/src:/app
+      - ./rails/src:/app
+
   db:
     build: mysql
     environment:
@@ -27,3 +29,4 @@ services:
       - app
     depends_on:
       - app
+

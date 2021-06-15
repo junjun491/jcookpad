@@ -27,21 +27,21 @@ COPY Gemfile.lock $APP_HOME/Gemfile.lock
 RUN bundle install
 
 # Railsアプリを作成（既存のアプリをマウントする場合は不要）
-#RUN rails new . -d mysql --skip-bundle || bundle update
+RUN rails new . -d mysql --skip-bundle || bundle update
 
 RUN bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"
 
 RUN bundle install --path=vendor/bundle
 
 # Webpackerをインストール
-RUN rails webpacker:install
+# RUN rails webpacker:install
 
 # 設定ファイル書き換え（既存のアプリをマウントする場合は不要）
-#COPY config $APP_HOME/config
+COPY config $APP_HOME/config
 
 # マウントできるように公開
-#VOLUME $APP_HOME/public
-#VOLUME $APP_HOME/tmp
+VOLUME $APP_HOME/public
+VOLUME $APP_HOME/tmp
 
 # コンテナ起動時にRailsサーバを起動
 CMD ["rails", "server"]
