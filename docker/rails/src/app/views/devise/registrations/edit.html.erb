@@ -1,0 +1,69 @@
+<h2>ユーザ情報を編集</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+  <%= f.label :ユーザ名%><br>
+  <%= f.text_field :name, autofocus: true  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ユーザイメージ %><br/>
+    <img src=<%= @user.image %> class = "icon_image"><br>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+  <div class="field">
+    <%= f.label :年齢 %><br>
+    <%= f.number_field :age %>
+  </div>
+
+
+  <div class="sex-field">
+    <%= f.label :性別 %><br>
+    <%= f.label :男  %>
+    <%= f.radio_button :sex, :man %>
+    <%= f.label :女  %>
+    <%= f.radio_button :sex, :woman %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :パスワードを変更%> <i>(変更したいパスワードを入力してください)</i><br>
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br>
+      <em><%= "最低#{@minimum_password_length}文字以上入力してください" %></em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :変更するパスワードを確認 %><br>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :現在のパスワードを入力 %> <i>(ユーザ情報を編集する場合、パスワードの入力が必須になります。)</i><br>
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新" %>
+  </div>
+<% end %>
+
+
+
+<p>このユーザを削除する<%= button_to "削除", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete %></p>
+

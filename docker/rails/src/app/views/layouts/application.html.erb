@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= Gon::Base.render_data %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+  </head>
+  <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+  <%= link_to image_tag("zatsu_meshi.png"), root_path %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <%= link_to "HOME", root_path %>
+      </li>
+
+      <% if user_signed_in? %>
+      <li class="nav-item" >
+        <%= link_to "ユーザ情報を編集", edit_user_registration_path %>
+      </li>
+      <li class="nav-item" >
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete  %>
+      </li>
+
+      <li class="nav-item" >
+      <%= link_to "レシピ作成", home_index_path, data: {"turbolinks" => false} %>
+      </li>
+      <li class="nav-item" >
+        <%= link_to "作成したレシピ", user_list_path(current_user.id) %>
+      </li>
+      <li class="nav-item" >
+        <%= link_to "お気に入り", like_list_path(current_user.id), data: {"turbolinks" => false} %>
+      </li>
+
+      <% else %>
+      <li class="nav-item" >
+        <%= link_to "登録", new_user_registration_path %>
+
+        <%= link_to 'ゲストログイン', posts_guest_sign_in_path, method: :post %>
+
+      </li>
+      <li class="nav-item" >
+        <%= link_to "ログイン", new_user_session_path %>
+
+
+
+      <% end %>
+      <!-- ドロップダウンタイプ -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          食事摂取基準
+        </a>
+        
+
+      </li>
+
+    </ul>
+    <div class="collapse" id="collapseExample">
+    <div class="card card-body co-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="row">
+  
+
+    <% if false %>
+
+          
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="ｴﾈﾙｷﾞｰ:#{@std.xEnergy}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="ﾀﾝﾊﾟｸ質:#{@std.xProtein}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="脂質:#{@std.xLipid}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="糖質:#{@std.xCarbohydrate}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="食物繊維:#{@std.xDietary_fiber}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="ｶﾘｳﾑ:#{@std.xPotassium}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="ｶﾙｼｳﾑ:#{@std.xCalcium}"%></div>
+
+
+
+          
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="鉄:#{@std.xiron}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="亜鉛:#{@std.xZinc}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="ﾋﾞﾀﾐﾝa:#{@std.xVitaminA}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="ﾋﾞﾀﾐﾝb1:#{@std.xVitaminB1}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="ﾋﾞﾀﾐﾝb2:#{@std.xVitaminB2}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="ﾋﾞﾀﾐﾝc:#{@std.xVitaminC}"%></div>
+          <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2"><%="塩分相当量:#{@std.xSalt_equivalent}"%></div>
+
+
+          <% end %>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+    <div class="container-fluid">
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+
+    <%= yield %>
+    </div>
+  </body>
+</html>
+
+

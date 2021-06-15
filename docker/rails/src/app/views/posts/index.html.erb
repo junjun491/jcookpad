@@ -1,0 +1,214 @@
+
+<h2>投稿一覧</h2>
+
+
+
+  <p>検索</p>
+ 
+  <%= form_tag(search_posts_path,:method => 'get') do %>
+    <%= text_field_tag :search %>
+
+
+<%= radio_button_tag("r1", "ascend") %>
+<%= label_tag("order", "昇順") %>
+
+<%= radio_button_tag("r1", "descend") %>
+<%= label_tag("order", "降順") %><br>
+
+<%= radio_button_tag("r2", "Energy") %>
+<%= label_tag("rdio2", "ｴﾈﾙｷﾞｰ") %>
+
+<%= radio_button_tag("r2", "Protein") %>
+<%= label_tag("rdio2", "ﾀﾝﾊﾟｸ質") %>
+
+<%= radio_button_tag("r2", "Lipid") %>
+<%= label_tag("rdio2", "脂質") %>
+
+<%= radio_button_tag("r2", "Carbohydrate") %>
+<%= label_tag("rdio2", "糖質") %>
+
+<%= radio_button_tag("r2", "Dietary_fiber") %>
+<%= label_tag("rdio2", "食物繊維") %>
+
+<%= radio_button_tag("r2", "Potassium") %>
+<%= label_tag("rdio2", "ｶﾘｳﾑ") %>
+<%= radio_button_tag("r2", "Calcium") %>
+<%= label_tag("rdio2", "ｶﾙｼｳﾑ") %>
+
+<%= radio_button_tag("r2", "iron") %>
+<%= label_tag("rdio2", "鉄") %>
+<%= radio_button_tag("r2", "Zinc") %>
+<%= label_tag("rdio2", "亜鉛") %>
+
+<%= radio_button_tag("r2", "VitaminA") %>
+<%= label_tag("rdio2", "ﾋﾞﾀﾐﾝa") %>
+<%= radio_button_tag("r2", "VitaminB1") %>
+<%= label_tag("rdio2", "ﾋﾞﾀﾐﾝb1") %>
+
+<%= radio_button_tag("r2", "VitaminB2") %>
+<%= label_tag("rdio2", "ﾋﾞﾀﾐﾝb2") %>
+<%= radio_button_tag("r2", "VitaminC") %>
+<%= label_tag("rdio2", "ﾋﾞﾀﾐﾝc") %>
+
+
+<%= radio_button_tag("r2", "Salt_equivalent") %>
+<%= label_tag("rdio2", "食塩相当量") %>
+<div>
+<button type="button" onclick="radioDeselection()">選択解除</button>
+
+    <%= submit_tag 'Search', :name => nil %>
+</div>
+  <% end %>
+
+
+
+  
+
+
+
+
+<% @posts.each_with_index do |post, i| %>
+
+<div class="card col-12 col-lg-10">
+
+
+
+  <div class="row">
+
+  <div class="card-header  col-12"><%=link_to(post.rname, "/posts/#{post.id}" )%></div>
+  
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+    <div class="row">
+      <div class="col-xs-12 col-sm-5 col-md-6 col-lg-4">
+        <div class="row">
+        
+          <div class="col-6 col-sm-12 col-md-12 col-lg-12" id="<%= i %>">
+            
+            <%= image_tag post.rimage.to_s, class: "img-fluid rounded d-flex align-items-start" %>
+          
+          </div>
+
+          <div class="col-6 col-sm-12 col-md-12 col-lg-12 d-flex align-items-start">
+          
+            <br><%= post.rinformation %>
+          </div>   
+        
+        </div>
+      </div>
+
+     <br>
+
+      <div class="col-xs-11 col-sm-7 col-md-6 col-lg-7">
+
+        <canvas class="canvas chart-container" style="position: relative;  width:60vw; height:60vh">
+      
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+    
+</div>
+<br>
+<% end %>
+<div class="float-left"><%= paginate @posts %></div>
+
+  <script>
+
+  function radioDeselection() {
+    for (const element of document.getElementsByName('r1')) {
+      element.checked = false;
+    }
+    for (const element of document.getElementsByName('r2')) {
+      element.checked = false;
+    }
+  }
+
+
+
+
+
+    var canvases = document.querySelectorAll("canvas.canvas");
+    var posts = gon.posts
+    console.log(posts)
+    var pn_ratio =  {
+      Energy: '0',
+      Protein: '0',
+      Lipid: '0',
+      Carbohydrate: '0',
+      Dietary_fiber: '0',
+      Potassium: '0',
+      Calcium: '0',
+      iron: '0',
+      Zinc: '0',
+      VitaminA: '0',
+      VitaminB1: '0',
+      VitaminB2: '0',
+      VitaminC: '0',
+      Salt_equivalent: '0'       
+     };
+     var pn_keys = Object.keys(pn_ratio)
+     console.log(`gon.std: ${gon.std}`)
+     var std = gon.std
+     console.log(`std: ${std}`)
+    canvases.forEach((canvas, idx) => {
+      var post = posts[idx]
+      console.log(`post: ${JSON.stringify(post)}`)
+      console.log(`post.Energy: ${post.Energy}`)
+
+      for (var i = 0; i < 14; i++){
+
+        var pn_key = pn_keys[i]
+        var std_key = 'x' + pn_key
+        console.log(`pn_key: ${pn_key}`)
+        console.log(`std_key: ${std_key}`)
+        console.log(`std: ${std}`)
+        var num1 = parseFloat(post[pn_key])
+        var num2 = parseFloat(std[std_key])
+        console.log(`num1: ${JSON.stringify(num1)}`)
+        console.log(`num2: ${JSON.stringify(num2)}`)
+        pn_ratio[pn_key] = num1 / num2 * 100;
+         console.log(`pn_ratio[pn_key]: ${JSON.stringify(pn_ratio[pn_key])}`)
+
+
+        
+        if (pn_ratio[pn_key] === null || pn_ratio[pn_key] < 0) {
+          pn_ratio[pn_key] = 0
+        }else if(pn_ratio[pn_key] > 150){
+          pn_ratio[pn_key] = 150
+        }
+
+
+      }
+
+      new Chart(canvas, {
+        type: 'radar',
+        data: {
+          labels: ["エネルギー", "タンパク質", "脂質", "糖質", "食物繊維", "カリウム", "カルシウム", "鉄", "亜鉛", "ビタミンA", "ビタミンB1", "ビタミンB2", "ビタミンC", "食塩相当量"],
+          datasets: [{
+            label: '摂取基準',
+            backgroundColor: "rgba(0,0,80,0.4)",
+            borderColor: "rgba(0,0,80,1)",
+            data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+          }, {
+            label: 'レシピの栄養比率',
+            backgroundColor: "rgba(0,255,0,0.4)",
+            borderColor: "rgba(0,255,0,1)",
+            data: [pn_ratio.Energy, pn_ratio.Protein, pn_ratio.Lipid, pn_ratio.Carbohydrate, pn_ratio.Dietary_fiber, pn_ratio.Potassium, pn_ratio.Calcium, pn_ratio.iron, pn_ratio.Zinc, pn_ratio.VitaminA, pn_ratio.VitaminB1, pn_ratio.VitaminB2, pn_ratio.VitaminC, pn_ratio.Salt_equivalent]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scale: {
+            
+                Min: 0,
+                Max: 120
+            
+          }
+        }
+      });
+    })
+  </script>

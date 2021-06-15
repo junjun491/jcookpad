@@ -1,0 +1,49 @@
+<h1>Post page</h1>
+<p>Find me in app/views/posts/new.html.erb</p>
+  <%= form_with model: @post, local: true do |form| %>
+    <div class="field">
+      <%= form.label :rname%><br>
+      <%= form.text_field :rname%>
+    </div>
+
+    <div class="field">
+    <%= form.label :rimage %><br/>
+      <%= form.file_field :rimage %>
+    </div>
+
+
+    <div class="field">
+      <%= form.label :rinformation%><br>
+      <%= form.text_area :rinformation%>
+
+    </div>
+
+    <div class="field">
+      <%= form.label :ingredient%><br>
+      <%= form.text_area :ingredient%>
+
+    </div>
+
+
+    <div class="field">
+      <%= form.label :procedure_1%><br>
+      <%= form.text_area :procedure_1%>
+
+    </div>
+
+    <div class="field">
+      <%= form.label :procedure_2%><br>
+      <%= form.text_area :procedure_2%>
+
+    </div>
+
+    <div class="field">
+      <%= form.label :procedure_3%><br>
+      <%= form.text_area :procedure_3%>
+
+    </div>
+  <div class="actions">
+      <%= form.submit %>
+
+    </div>
+  <% end %>
