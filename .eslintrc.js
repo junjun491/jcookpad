@@ -1,13 +1,9 @@
-
 module.exports = {
-      "parserOptions": {
-    "sourceType": "module"
+  parserOptions: {
+    sourceType: "module",
   },
   env: {
     es6: true,
   },
-  extends: [
-
-    "prettier",
-  ],
+  extends: ["prettier"],
 };

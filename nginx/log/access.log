@@ -4,3 +4,5 @@
 192.168.176.1 - - [19/Jun/2021:08:41:52 +0000] "GET /favicon.ico HTTP/1.1" 502 559 "http://localhost/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" "-"
 192.168.176.1 - - [19/Jun/2021:08:41:57 +0000] "GET / HTTP/1.1" 502 559 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" "-"
 192.168.176.1 - - [19/Jun/2021:08:41:57 +0000] "GET /favicon.ico HTTP/1.1" 502 559 "http://localhost/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" "-"
+172.23.0.1 - - [20/Jun/2021:10:35:27 +0000] "GET / HTTP/1.1" 502 559 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" "-"
+172.23.0.1 - - [20/Jun/2021:10:35:27 +0000] "GET /favicon.ico HTTP/1.1" 502 559 "http://localhost/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" "-"

@@ -29,7 +29,6 @@ RUN gem install racc
 
 RUN bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"
 
-RUN bundle install --path=vendor/bundle
 
 # Webpackerをインストール
 RUN rails webpacker:install
@@ -46,3 +45,4 @@ VOLUME $APP_HOME/tmp
 
 # コンテナ起動時にRailsサーバを起動
 CMD ["rails", "server"]
+
