@@ -36,8 +36,7 @@ ADD . /eiyorecipe
 
 # BundlerでGemをインストール
 RUN bundle install
-# 設定ファイル書き換え（既存のアプリをマウントする場合は不要とのことだがpuma.rbは必要な気がするので修正）
-COPY config/puma.rb $APP_HOME/config/puma.rb
+
 
 # マウントできるように公開
 VOLUME $APP_HOME/public
