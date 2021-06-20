@@ -1,0 +1,172 @@
+2021/06/19 08:32:23 [warn] 1#1: conflicting server name "localhost" on 0.0.0.0:80, ignored
+2021/06/19 08:32:23 [notice] 1#1: using the "epoll" event method
+2021/06/19 08:32:23 [notice] 1#1: nginx/1.21.0
+2021/06/19 08:32:23 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/19 08:32:23 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/19 08:32:23 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/19 08:32:23 [notice] 1#1: start worker processes
+2021/06/19 08:32:23 [notice] 1#1: start worker process 32
+2021/06/19 08:32:23 [notice] 1#1: start worker process 33
+2021/06/19 08:32:23 [notice] 1#1: start worker process 34
+2021/06/19 08:32:23 [notice] 1#1: start worker process 35
+2021/06/19 08:32:33 [crit] 33#33: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (2: No such file or directory) while connecting to upstream, client: 192.168.160.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost"
+2021/06/19 08:32:34 [crit] 33#33: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (2: No such file or directory) while connecting to upstream, client: 192.168.160.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost", referrer: "http://localhost/"
+2021/06/19 08:39:25 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/19 08:39:25 [notice] 32#32: gracefully shutting down
+2021/06/19 08:39:25 [notice] 33#33: gracefully shutting down
+2021/06/19 08:39:25 [notice] 33#33: exiting
+2021/06/19 08:39:25 [notice] 34#34: gracefully shutting down
+2021/06/19 08:39:25 [notice] 35#35: gracefully shutting down
+2021/06/19 08:39:25 [notice] 32#32: exiting
+2021/06/19 08:39:25 [notice] 33#33: exit
+2021/06/19 08:39:25 [notice] 34#34: exiting
+2021/06/19 08:39:25 [notice] 35#35: exiting
+2021/06/19 08:39:25 [notice] 32#32: exit
+2021/06/19 08:39:25 [notice] 34#34: exit
+2021/06/19 08:39:25 [notice] 35#35: exit
+2021/06/19 08:39:25 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/06/19 08:39:25 [notice] 1#1: worker process 33 exited with code 0
+2021/06/19 08:39:25 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/19 08:39:25 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/06/19 08:39:25 [notice] 1#1: worker process 32 exited with code 0
+2021/06/19 08:39:25 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/19 08:39:25 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/19 08:39:25 [notice] 1#1: worker process 34 exited with code 0
+2021/06/19 08:39:25 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/19 08:39:25 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/06/19 08:39:25 [notice] 1#1: worker process 35 exited with code 0
+2021/06/19 08:39:25 [notice] 1#1: exit
+2021/06/19 08:41:44 [warn] 1#1: conflicting server name "localhost" on 0.0.0.0:80, ignored
+2021/06/19 08:41:44 [notice] 1#1: using the "epoll" event method
+2021/06/19 08:41:44 [notice] 1#1: nginx/1.21.0
+2021/06/19 08:41:44 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/19 08:41:44 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/19 08:41:44 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/19 08:41:44 [notice] 1#1: start worker processes
+2021/06/19 08:41:44 [notice] 1#1: start worker process 31
+2021/06/19 08:41:44 [notice] 1#1: start worker process 32
+2021/06/19 08:41:44 [notice] 1#1: start worker process 33
+2021/06/19 08:41:44 [notice] 1#1: start worker process 34
+2021/06/19 08:41:52 [crit] 31#31: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (2: No such file or directory) while connecting to upstream, client: 192.168.176.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost"
+2021/06/19 08:41:52 [crit] 31#31: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (2: No such file or directory) while connecting to upstream, client: 192.168.176.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost", referrer: "http://localhost/"
+2021/06/19 08:41:57 [crit] 31#31: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (2: No such file or directory) while connecting to upstream, client: 192.168.176.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost"
+2021/06/19 08:41:57 [crit] 31#31: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (2: No such file or directory) while connecting to upstream, client: 192.168.176.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost", referrer: "http://localhost/"
+2021/06/19 08:47:50 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/19 08:47:50 [notice] 31#31: gracefully shutting down
+2021/06/19 08:47:50 [notice] 31#31: exiting
+2021/06/19 08:47:50 [notice] 33#33: gracefully shutting down
+2021/06/19 08:47:50 [notice] 32#32: gracefully shutting down
+2021/06/19 08:47:50 [notice] 32#32: exiting
+2021/06/19 08:47:50 [notice] 34#34: gracefully shutting down
+2021/06/19 08:47:50 [notice] 31#31: exit
+2021/06/19 08:47:50 [notice] 33#33: exiting
+2021/06/19 08:47:50 [notice] 32#32: exit
+2021/06/19 08:47:50 [notice] 34#34: exiting
+2021/06/19 08:47:50 [notice] 33#33: exit
+2021/06/19 08:47:50 [notice] 34#34: exit
+2021/06/19 08:47:50 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/06/19 08:47:50 [notice] 1#1: worker process 31 exited with code 0
+2021/06/19 08:47:50 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/19 08:47:50 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/06/19 08:47:50 [notice] 1#1: worker process 32 exited with code 0
+2021/06/19 08:47:50 [notice] 1#1: worker process 33 exited with code 0
+2021/06/19 08:47:50 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/19 08:47:50 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/19 08:47:50 [notice] 1#1: worker process 34 exited with code 0
+2021/06/19 08:47:50 [notice] 1#1: exit
+2021/06/19 09:07:05 [warn] 1#1: conflicting server name "localhost" on 0.0.0.0:80, ignored
+2021/06/19 09:07:05 [notice] 1#1: using the "epoll" event method
+2021/06/19 09:07:05 [notice] 1#1: nginx/1.21.0
+2021/06/19 09:07:05 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/19 09:07:05 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/19 09:07:05 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/19 09:07:05 [notice] 1#1: start worker processes
+2021/06/19 09:07:05 [notice] 1#1: start worker process 31
+2021/06/19 09:07:05 [notice] 1#1: start worker process 32
+2021/06/19 09:07:05 [notice] 1#1: start worker process 33
+2021/06/19 09:07:05 [notice] 1#1: start worker process 34
+2021/06/19 09:07:29 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/19 09:07:29 [notice] 31#31: gracefully shutting down
+2021/06/19 09:07:29 [notice] 32#32: gracefully shutting down
+2021/06/19 09:07:29 [notice] 33#33: gracefully shutting down
+2021/06/19 09:07:29 [notice] 34#34: gracefully shutting down
+2021/06/19 09:07:29 [notice] 31#31: exiting
+2021/06/19 09:07:29 [notice] 32#32: exiting
+2021/06/19 09:07:29 [notice] 33#33: exiting
+2021/06/19 09:07:29 [notice] 34#34: exiting
+2021/06/19 09:07:29 [notice] 31#31: exit
+2021/06/19 09:07:29 [notice] 32#32: exit
+2021/06/19 09:07:29 [notice] 33#33: exit
+2021/06/19 09:07:29 [notice] 34#34: exit
+2021/06/19 09:07:29 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/06/19 09:07:29 [notice] 1#1: worker process 31 exited with code 0
+2021/06/19 09:07:29 [notice] 1#1: worker process 32 exited with code 0
+2021/06/19 09:07:29 [notice] 1#1: worker process 33 exited with code 0
+2021/06/19 09:07:29 [notice] 1#1: worker process 34 exited with code 0
+2021/06/19 09:07:29 [notice] 1#1: exit
+2021/06/19 09:16:52 [warn] 1#1: conflicting server name "localhost" on 0.0.0.0:80, ignored
+2021/06/19 09:16:52 [notice] 1#1: using the "epoll" event method
+2021/06/19 09:16:52 [notice] 1#1: nginx/1.21.0
+2021/06/19 09:16:52 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/19 09:16:52 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/19 09:16:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/19 09:16:52 [notice] 1#1: start worker processes
+2021/06/19 09:16:52 [notice] 1#1: start worker process 31
+2021/06/19 09:16:52 [notice] 1#1: start worker process 32
+2021/06/19 09:16:52 [notice] 1#1: start worker process 33
+2021/06/19 09:16:52 [notice] 1#1: start worker process 34
+2021/06/19 09:25:27 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/19 09:25:27 [notice] 33#33: gracefully shutting down
+2021/06/19 09:25:27 [notice] 31#31: gracefully shutting down
+2021/06/19 09:25:27 [notice] 31#31: exiting
+2021/06/19 09:25:27 [notice] 34#34: gracefully shutting down
+2021/06/19 09:25:27 [notice] 32#32: gracefully shutting down
+2021/06/19 09:25:27 [notice] 33#33: exiting
+2021/06/19 09:25:27 [notice] 31#31: exit
+2021/06/19 09:25:27 [notice] 34#34: exiting
+2021/06/19 09:25:27 [notice] 32#32: exiting
+2021/06/19 09:25:27 [notice] 33#33: exit
+2021/06/19 09:25:27 [notice] 34#34: exit
+2021/06/19 09:25:27 [notice] 32#32: exit
+2021/06/19 09:25:27 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/06/19 09:25:27 [notice] 1#1: worker process 31 exited with code 0
+2021/06/19 09:25:27 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/19 09:25:27 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/19 09:25:27 [notice] 1#1: worker process 32 exited with code 0
+2021/06/19 09:25:27 [notice] 1#1: worker process 33 exited with code 0
+2021/06/19 09:25:27 [notice] 1#1: worker process 34 exited with code 0
+2021/06/19 09:25:27 [notice] 1#1: exit
+2021/06/19 09:27:47 [warn] 1#1: conflicting server name "localhost" on 0.0.0.0:80, ignored
+2021/06/19 09:27:47 [notice] 1#1: using the "epoll" event method
+2021/06/19 09:27:47 [notice] 1#1: nginx/1.21.0
+2021/06/19 09:27:47 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/19 09:27:47 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/19 09:27:47 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/19 09:27:47 [notice] 1#1: start worker processes
+2021/06/19 09:27:47 [notice] 1#1: start worker process 32
+2021/06/19 09:27:47 [notice] 1#1: start worker process 33
+2021/06/19 09:27:47 [notice] 1#1: start worker process 34
+2021/06/19 09:27:47 [notice] 1#1: start worker process 35
+2021/06/20 02:07:42 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/20 02:07:42 [notice] 34#34: gracefully shutting down
+2021/06/20 02:07:42 [notice] 33#33: gracefully shutting down
+2021/06/20 02:07:42 [notice] 33#33: exiting
+2021/06/20 02:07:42 [notice] 32#32: gracefully shutting down
+2021/06/20 02:07:42 [notice] 32#32: exiting
+2021/06/20 02:07:42 [notice] 35#35: gracefully shutting down
+2021/06/20 02:07:42 [notice] 34#34: exiting
+2021/06/20 02:07:42 [notice] 33#33: exit
+2021/06/20 02:07:42 [notice] 32#32: exit
+2021/06/20 02:07:42 [notice] 35#35: exiting
+2021/06/20 02:07:42 [notice] 34#34: exit
+2021/06/20 02:07:42 [notice] 35#35: exit
+2021/06/20 02:07:42 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/06/20 02:07:42 [notice] 1#1: worker process 33 exited with code 0
+2021/06/20 02:07:42 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/20 02:07:42 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/20 02:07:42 [notice] 1#1: worker process 32 exited with code 0
+2021/06/20 02:07:42 [notice] 1#1: worker process 34 exited with code 0
+2021/06/20 02:07:42 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/20 02:07:42 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/06/20 02:07:42 [notice] 1#1: worker process 35 exited with code 0
+2021/06/20 02:07:42 [notice] 1#1: exit
