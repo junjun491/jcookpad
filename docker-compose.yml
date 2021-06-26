@@ -9,12 +9,13 @@ services:
       APP_DATABASE: app_development
       APP_DATABASE_USER: root
       APP_DATABASE_PASSWORD: root
+    ports:
+      - 3000
     depends_on:
       - db
     tty: true
     volumes:
       - .:/eiyorecipe # ソースコード変更したらDocker側も即反映されるように
-
   db:
     build:
       context: ./docker/mysql
@@ -25,18 +26,15 @@ services:
       - "3306:3306" # ホストからゲストへポートフォワード
     volumes:
       - ./mysql_data:/var/lib/mysql
-
-
   web:
     build:
       context: ./docker/nginx
       dockerfile: Dockerfile
     ports:
-      - 80:80
+      - 8080:8080
     volumes:
       - ./nginx/log:/var/log/nginx
     volumes_from:
       - app
     depends_on:
       - app
-
