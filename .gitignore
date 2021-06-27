@@ -40,3 +40,10 @@ yarn-debug.log*
 .yarn-integrity
 
 /public/uploads/*
+
+# vendor/bundleをリポジトリにcommitしない
+vendor/bundle
+# mysql_dataをリポジトリにcommitしない
+mysql_data
+# nginx/logをリポジトリにコミットしない
+nginx/log
