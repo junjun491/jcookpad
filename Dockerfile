@@ -43,5 +43,4 @@ VOLUME $APP_HOME/public
 VOLUME $APP_HOME/tmp
 
 # コンテナ起動時にRailsサーバを起動
-CMD ["bundle", "exec", "rails", "server", "-p", "3000", "-b", "0.0.0.0"]
-
+CMD ["bundle", "exec", "rails", "server"]
