@@ -9,12 +9,14 @@ services:
       APP_DATABASE: app_development
       APP_DATABASE_USER: root
       APP_DATABASE_PASSWORD: root
+
     depends_on:
       - db
     tty: true
     volumes:
       - .:/eiyorecipe # ソースコード変更したらDocker側も即反映されるように
       - websocket:/eiyorecipe/tmp/sockets/ # webのソケットを名前付きボリュームで同期必要なんじゃないかと思い作成
+
   db:
     build:
       context: ./docker/mysql
@@ -25,6 +27,7 @@ services:
       - "3306:3306" # ホストからゲストへポートフォワード
     volumes:
       - ./mysql_data:/var/lib/mysql
+
   web:
     build:
       context: ./docker/nginx
@@ -38,3 +41,4 @@ services:
       - app
 volumes:
   websocket: # 共通ボリュームを作成
+

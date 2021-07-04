@@ -1,5 +1,5 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
-# 
+#
 # Install the MYSQL driver
 #   gem install mysql2
 #
@@ -15,7 +15,7 @@ development:
   pool: 5
   username: msql_nakase
   password: mysqlpass_83
-  host: localhost
+  host: db
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,7 +27,7 @@ test:
   pool: 5
   username: msql_nakase
   password: mysqlpass_83
-  host: localhost
+  host: db
 
 production:
   adapter: mysql2
@@ -36,4 +36,4 @@ production:
   pool: 5
   username: msql_nakase
   password: mysqlpass_83
-  host: localhost
+  host: db

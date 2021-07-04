@@ -891,3 +891,317 @@
 2021/06/27 06:30:31 [notice] 1#1: start worker process 32
 2021/06/27 06:30:31 [notice] 1#1: start worker process 33
 2021/06/27 06:30:31 [notice] 1#1: start worker process 34
+2021/06/27 08:03:04 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/27 08:03:04 [notice] 31#31: gracefully shutting down
+2021/06/27 08:03:04 [notice] 33#33: gracefully shutting down
+2021/06/27 08:03:04 [notice] 32#32: gracefully shutting down
+2021/06/27 08:03:04 [notice] 32#32: exiting
+2021/06/27 08:03:04 [notice] 34#34: gracefully shutting down
+2021/06/27 08:03:04 [notice] 34#34: exiting
+2021/06/27 08:03:04 [notice] 31#31: exiting
+2021/06/27 08:03:04 [notice] 33#33: exiting
+2021/06/27 08:03:04 [notice] 32#32: exit
+2021/06/27 08:03:04 [notice] 34#34: exit
+2021/06/27 08:03:04 [notice] 31#31: exit
+2021/06/27 08:03:04 [notice] 33#33: exit
+2021/06/27 08:03:04 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/06/27 08:03:04 [notice] 1#1: worker process 32 exited with code 0
+2021/06/27 08:03:04 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/27 08:03:04 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/27 08:03:04 [notice] 1#1: worker process 31 exited with code 0
+2021/06/27 08:03:04 [notice] 1#1: worker process 34 exited with code 0
+2021/06/27 08:03:04 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/27 08:03:04 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/06/27 08:03:04 [notice] 1#1: worker process 33 exited with code 0
+2021/06/27 08:03:04 [notice] 1#1: exit
+2021/06/27 08:03:43 [notice] 1#1: using the "epoll" event method
+2021/06/27 08:03:43 [notice] 1#1: nginx/1.21.0
+2021/06/27 08:03:43 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/27 08:03:43 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/27 08:03:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/27 08:03:43 [notice] 1#1: start worker processes
+2021/06/27 08:03:43 [notice] 1#1: start worker process 32
+2021/06/27 08:03:43 [notice] 1#1: start worker process 33
+2021/06/27 08:03:43 [notice] 1#1: start worker process 34
+2021/06/27 08:03:43 [notice] 1#1: start worker process 35
+2021/06/27 08:04:04 [error] 32#32: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.26.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/27 08:04:05 [error] 32#32: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/27 08:04:18 [error] 32#32: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.26.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/27 08:04:18 [error] 32#32: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.26.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/27 08:08:11 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/27 08:08:11 [notice] 33#33: gracefully shutting down
+2021/06/27 08:08:11 [notice] 33#33: exiting
+2021/06/27 08:08:11 [notice] 34#34: gracefully shutting down
+2021/06/27 08:08:11 [notice] 34#34: exiting
+2021/06/27 08:08:11 [notice] 32#32: gracefully shutting down
+2021/06/27 08:08:11 [notice] 32#32: exiting
+2021/06/27 08:08:11 [notice] 35#35: gracefully shutting down
+2021/06/27 08:08:11 [notice] 33#33: exit
+2021/06/27 08:08:11 [notice] 34#34: exit
+2021/06/27 08:08:11 [notice] 32#32: exit
+2021/06/27 08:08:11 [notice] 35#35: exiting
+2021/06/27 08:08:11 [notice] 35#35: exit
+2021/06/27 08:08:11 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/06/27 08:08:11 [notice] 1#1: worker process 32 exited with code 0
+2021/06/27 08:08:11 [notice] 1#1: worker process 33 exited with code 0
+2021/06/27 08:08:11 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/27 08:08:11 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/27 08:08:11 [notice] 1#1: worker process 34 exited with code 0
+2021/06/27 08:08:11 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/27 08:08:11 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/06/27 08:08:11 [notice] 1#1: worker process 35 exited with code 0
+2021/06/27 08:08:11 [notice] 1#1: exit
+2021/06/27 08:08:50 [notice] 1#1: using the "epoll" event method
+2021/06/27 08:08:50 [notice] 1#1: nginx/1.21.0
+2021/06/27 08:08:50 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/27 08:08:50 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/27 08:08:50 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/27 08:08:50 [notice] 1#1: start worker processes
+2021/06/27 08:08:50 [notice] 1#1: start worker process 33
+2021/06/27 08:08:50 [notice] 1#1: start worker process 34
+2021/06/27 08:08:50 [notice] 1#1: start worker process 35
+2021/06/27 08:08:50 [notice] 1#1: start worker process 36
+2021/06/27 08:09:09 [error] 33#33: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.27.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/27 08:09:09 [error] 33#33: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.27.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/27 08:09:25 [error] 33#33: *5 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.27.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/27 08:09:25 [error] 33#33: *5 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.27.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/27 08:27:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/27 08:27:47 [notice] 34#34: gracefully shutting down
+2021/06/27 08:27:47 [notice] 33#33: gracefully shutting down
+2021/06/27 08:27:47 [notice] 36#36: gracefully shutting down
+2021/06/27 08:27:47 [notice] 36#36: exiting
+2021/06/27 08:27:47 [notice] 35#35: gracefully shutting down
+2021/06/27 08:27:47 [notice] 35#35: exiting
+2021/06/27 08:27:47 [notice] 34#34: exiting
+2021/06/27 08:27:47 [notice] 33#33: exiting
+2021/06/27 08:27:47 [notice] 36#36: exit
+2021/06/27 08:27:47 [notice] 35#35: exit
+2021/06/27 08:27:47 [notice] 34#34: exit
+2021/06/27 08:27:47 [notice] 33#33: exit
+2021/06/27 08:27:47 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/06/27 08:27:47 [notice] 1#1: worker process 33 exited with code 0
+2021/06/27 08:27:47 [notice] 1#1: worker process 35 exited with code 0
+2021/06/27 08:27:47 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/27 08:27:47 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/27 08:27:47 [notice] 1#1: worker process 34 exited with code 0
+2021/06/27 08:27:47 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/27 08:27:47 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2021/06/27 08:27:47 [notice] 1#1: worker process 36 exited with code 0
+2021/06/27 08:27:47 [notice] 1#1: exit
+2021/06/27 08:28:24 [notice] 1#1: using the "epoll" event method
+2021/06/27 08:28:24 [notice] 1#1: nginx/1.21.0
+2021/06/27 08:28:24 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/27 08:28:24 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/27 08:28:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/27 08:28:24 [notice] 1#1: start worker processes
+2021/06/27 08:28:24 [notice] 1#1: start worker process 32
+2021/06/27 08:28:24 [notice] 1#1: start worker process 33
+2021/06/27 08:28:24 [notice] 1#1: start worker process 34
+2021/06/27 08:28:24 [notice] 1#1: start worker process 35
+2021/06/27 08:28:29 [error] 32#32: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/27 08:28:29 [error] 32#32: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/27 08:28:38 [error] 32#32: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/27 08:28:38 [error] 32#32: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/27 08:29:07 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/27 08:29:07 [notice] 32#32: gracefully shutting down
+2021/06/27 08:29:07 [notice] 33#33: gracefully shutting down
+2021/06/27 08:29:07 [notice] 34#34: gracefully shutting down
+2021/06/27 08:29:07 [notice] 34#34: exiting
+2021/06/27 08:29:07 [notice] 35#35: gracefully shutting down
+2021/06/27 08:29:07 [notice] 33#33: exiting
+2021/06/27 08:29:07 [notice] 34#34: exit
+2021/06/27 08:29:07 [notice] 35#35: exiting
+2021/06/27 08:29:07 [notice] 33#33: exit
+2021/06/27 08:29:07 [notice] 35#35: exit
+2021/06/27 08:29:08 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/27 08:29:08 [notice] 1#1: worker process 33 exited with code 0
+2021/06/27 08:29:08 [notice] 1#1: worker process 34 exited with code 0
+2021/06/27 08:29:08 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/27 08:29:08 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/06/27 08:29:08 [notice] 1#1: worker process 35 exited with code 0
+2021/06/27 08:29:08 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/27 08:30:18 [notice] 1#1: using the "epoll" event method
+2021/06/27 08:30:18 [notice] 1#1: nginx/1.21.0
+2021/06/27 08:30:18 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/27 08:30:18 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/27 08:30:18 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/27 08:30:18 [notice] 1#1: start worker processes
+2021/06/27 08:30:18 [notice] 1#1: start worker process 33
+2021/06/27 08:30:18 [notice] 1#1: start worker process 34
+2021/06/27 08:30:18 [notice] 1#1: start worker process 35
+2021/06/27 08:30:18 [notice] 1#1: start worker process 36
+2021/06/27 08:30:32 [error] 33#33: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.29.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/27 08:30:32 [error] 33#33: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.29.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/27 08:39:49 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/27 08:39:49 [notice] 33#33: gracefully shutting down
+2021/06/27 08:39:49 [notice] 34#34: gracefully shutting down
+2021/06/27 08:39:49 [notice] 36#36: gracefully shutting down
+2021/06/27 08:39:49 [notice] 36#36: exiting
+2021/06/27 08:39:49 [notice] 35#35: gracefully shutting down
+2021/06/27 08:39:49 [notice] 33#33: exiting
+2021/06/27 08:39:49 [notice] 34#34: exiting
+2021/06/27 08:39:49 [notice] 36#36: exit
+2021/06/27 08:39:49 [notice] 35#35: exiting
+2021/06/27 08:39:49 [notice] 33#33: exit
+2021/06/27 08:39:49 [notice] 34#34: exit
+2021/06/27 08:39:49 [notice] 35#35: exit
+2021/06/27 08:39:49 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/06/27 08:39:49 [notice] 1#1: worker process 33 exited with code 0
+2021/06/27 08:39:49 [notice] 1#1: worker process 34 exited with code 0
+2021/06/27 08:39:49 [notice] 1#1: worker process 36 exited with code 0
+2021/06/27 08:39:49 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/27 08:39:49 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/06/27 08:39:49 [notice] 1#1: worker process 35 exited with code 0
+2021/06/27 08:39:49 [notice] 1#1: exit
+2021/06/27 08:40:24 [notice] 1#1: using the "epoll" event method
+2021/06/27 08:40:24 [notice] 1#1: nginx/1.21.0
+2021/06/27 08:40:24 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/27 08:40:24 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/27 08:40:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/27 08:40:24 [notice] 1#1: start worker processes
+2021/06/27 08:40:24 [notice] 1#1: start worker process 33
+2021/06/27 08:40:24 [notice] 1#1: start worker process 34
+2021/06/27 08:40:24 [notice] 1#1: start worker process 35
+2021/06/27 08:40:24 [notice] 1#1: start worker process 36
+2021/06/27 08:40:35 [error] 33#33: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.30.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/27 08:40:36 [error] 33#33: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.30.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/27 08:40:51 [error] 33#33: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.30.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/27 08:40:51 [error] 33#33: *1 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.30.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/29 13:02:28 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/29 13:02:28 [notice] 34#34: gracefully shutting down
+2021/06/29 13:02:28 [notice] 36#36: gracefully shutting down
+2021/06/29 13:02:28 [notice] 36#36: exiting
+2021/06/29 13:02:28 [notice] 35#35: gracefully shutting down
+2021/06/29 13:02:28 [notice] 35#35: exiting
+2021/06/29 13:02:28 [notice] 33#33: gracefully shutting down
+2021/06/29 13:02:28 [notice] 33#33: exiting
+2021/06/29 13:02:28 [notice] 34#34: exiting
+2021/06/29 13:02:28 [notice] 36#36: exit
+2021/06/29 13:02:28 [notice] 35#35: exit
+2021/06/29 13:02:28 [notice] 33#33: exit
+2021/06/29 13:02:28 [notice] 34#34: exit
+2021/06/29 13:02:28 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/06/29 13:02:28 [notice] 1#1: worker process 35 exited with code 0
+2021/06/29 13:02:28 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/29 13:02:28 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/06/29 13:02:28 [notice] 1#1: worker process 33 exited with code 0
+2021/06/29 13:02:28 [notice] 1#1: worker process 34 exited with code 0
+2021/06/29 13:02:28 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/29 13:02:28 [notice] 1#1: worker process 36 exited with code 0
+2021/06/29 13:02:28 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2021/06/29 13:02:28 [notice] 1#1: exit
+2021/06/29 13:03:10 [notice] 1#1: using the "epoll" event method
+2021/06/29 13:03:10 [notice] 1#1: nginx/1.21.0
+2021/06/29 13:03:10 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/29 13:03:10 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/29 13:03:10 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/29 13:03:10 [notice] 1#1: start worker processes
+2021/06/29 13:03:10 [notice] 1#1: start worker process 32
+2021/06/29 13:03:10 [notice] 1#1: start worker process 33
+2021/06/29 13:03:10 [notice] 1#1: start worker process 34
+2021/06/29 13:03:10 [notice] 1#1: start worker process 35
+2021/06/29 13:03:23 [error] 32#32: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.31.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/29 13:03:23 [error] 32#32: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 172.31.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/29 13:06:37 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/29 13:06:37 [notice] 32#32: gracefully shutting down
+2021/06/29 13:06:37 [notice] 34#34: gracefully shutting down
+2021/06/29 13:06:37 [notice] 33#33: gracefully shutting down
+2021/06/29 13:06:37 [notice] 35#35: gracefully shutting down
+2021/06/29 13:06:37 [notice] 32#32: exiting
+2021/06/29 13:06:37 [notice] 34#34: exiting
+2021/06/29 13:06:37 [notice] 33#33: exiting
+2021/06/29 13:06:37 [notice] 35#35: exiting
+2021/06/29 13:06:37 [notice] 32#32: exit
+2021/06/29 13:06:37 [notice] 34#34: exit
+2021/06/29 13:06:37 [notice] 33#33: exit
+2021/06/29 13:06:37 [notice] 35#35: exit
+2021/06/29 13:06:38 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/06/29 13:06:38 [notice] 1#1: worker process 32 exited with code 0
+2021/06/29 13:06:38 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/29 13:06:38 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/29 13:06:38 [notice] 1#1: worker process 33 exited with code 0
+2021/06/29 13:06:38 [notice] 1#1: worker process 34 exited with code 0
+2021/06/29 13:06:38 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/29 13:06:38 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/06/29 13:06:38 [notice] 1#1: worker process 35 exited with code 0
+2021/06/29 13:06:38 [notice] 1#1: exit
+2021/06/29 13:08:06 [notice] 1#1: using the "epoll" event method
+2021/06/29 13:08:06 [notice] 1#1: nginx/1.21.0
+2021/06/29 13:08:06 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/29 13:08:06 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/29 13:08:06 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/29 13:08:06 [notice] 1#1: start worker processes
+2021/06/29 13:08:06 [notice] 1#1: start worker process 32
+2021/06/29 13:08:06 [notice] 1#1: start worker process 33
+2021/06/29 13:08:06 [notice] 1#1: start worker process 34
+2021/06/29 13:08:06 [notice] 1#1: start worker process 35
+2021/06/29 13:08:25 [error] 34#34: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 192.168.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/06/29 13:08:25 [error] 34#34: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 192.168.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/06/30 15:10:47 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/06/30 15:10:47 [notice] 32#32: gracefully shutting down
+2021/06/30 15:10:47 [notice] 34#34: gracefully shutting down
+2021/06/30 15:10:47 [notice] 33#33: gracefully shutting down
+2021/06/30 15:10:47 [notice] 34#34: exiting
+2021/06/30 15:10:47 [notice] 35#35: gracefully shutting down
+2021/06/30 15:10:47 [notice] 32#32: exiting
+2021/06/30 15:10:47 [notice] 33#33: exiting
+2021/06/30 15:10:47 [notice] 34#34: exit
+2021/06/30 15:10:47 [notice] 32#32: exit
+2021/06/30 15:10:47 [notice] 35#35: exiting
+2021/06/30 15:10:47 [notice] 33#33: exit
+2021/06/30 15:10:47 [notice] 35#35: exit
+2021/06/30 15:10:47 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/06/30 15:10:47 [notice] 1#1: worker process 32 exited with code 0
+2021/06/30 15:10:47 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/30 15:10:47 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/06/30 15:10:47 [notice] 1#1: worker process 35 exited with code 0
+2021/06/30 15:10:47 [notice] 1#1: signal 29 (SIGIO) received
+2021/06/30 15:10:47 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/06/30 15:10:47 [notice] 1#1: worker process 33 exited with code 0
+2021/06/30 15:10:47 [notice] 1#1: worker process 34 exited with code 0
+2021/06/30 15:10:47 [notice] 1#1: exit
+2021/06/30 15:11:36 [notice] 1#1: using the "epoll" event method
+2021/06/30 15:11:36 [notice] 1#1: nginx/1.21.0
+2021/06/30 15:11:36 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/06/30 15:11:36 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/06/30 15:11:36 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/06/30 15:11:36 [notice] 1#1: start worker processes
+2021/06/30 15:11:36 [notice] 1#1: start worker process 33
+2021/06/30 15:11:36 [notice] 1#1: start worker process 34
+2021/06/30 15:11:36 [notice] 1#1: start worker process 35
+2021/06/30 15:11:36 [notice] 1#1: start worker process 36
+2021/07/04 01:55:00 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/07/04 01:55:00 [notice] 35#35: gracefully shutting down
+2021/07/04 01:55:00 [notice] 35#35: exiting
+2021/07/04 01:55:00 [notice] 33#33: gracefully shutting down
+2021/07/04 01:55:00 [notice] 33#33: exiting
+2021/07/04 01:55:00 [notice] 34#34: gracefully shutting down
+2021/07/04 01:55:00 [notice] 34#34: exiting
+2021/07/04 01:55:00 [notice] 36#36: gracefully shutting down
+2021/07/04 01:55:00 [notice] 35#35: exit
+2021/07/04 01:55:00 [notice] 33#33: exit
+2021/07/04 01:55:00 [notice] 34#34: exit
+2021/07/04 01:55:00 [notice] 36#36: exiting
+2021/07/04 01:55:00 [notice] 36#36: exit
+2021/07/04 01:55:00 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/07/04 01:55:00 [notice] 1#1: worker process 35 exited with code 0
+2021/07/04 01:55:00 [notice] 1#1: signal 29 (SIGIO) received
+2021/07/04 01:55:00 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/07/04 01:55:00 [notice] 1#1: worker process 33 exited with code 0
+2021/07/04 01:55:00 [notice] 1#1: signal 29 (SIGIO) received
+2021/07/04 01:55:00 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/07/04 01:55:00 [notice] 1#1: worker process 34 exited with code 0
+2021/07/04 01:55:00 [notice] 1#1: signal 29 (SIGIO) received
+2021/07/04 01:55:00 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2021/07/04 01:55:00 [notice] 1#1: worker process 36 exited with code 0
+2021/07/04 01:55:00 [notice] 1#1: exit
+2021/07/04 02:00:51 [notice] 1#1: using the "epoll" event method
+2021/07/04 02:00:51 [notice] 1#1: nginx/1.21.0
+2021/07/04 02:00:51 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/07/04 02:00:51 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/07/04 02:00:51 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/07/04 02:00:51 [notice] 1#1: start worker processes
+2021/07/04 02:00:51 [notice] 1#1: start worker process 32
+2021/07/04 02:00:51 [notice] 1#1: start worker process 33
+2021/07/04 02:00:51 [notice] 1#1: start worker process 34
+2021/07/04 02:00:51 [notice] 1#1: start worker process 35
