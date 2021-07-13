@@ -1400,3 +1400,78 @@
 2021/07/11 07:48:14 [warn] 33#33: *48 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/7/00/0000000007 while reading upstream, client: 192.168.144.1, server: localhost, request: "GET /packs/js/application-434d9ab9afda80fae72d.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-434d9ab9afda80fae72d.js.map", host: "localhost:8080"
 2021/07/11 07:48:20 [warn] 32#32: *39 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/8/00/0000000008 while reading upstream, client: 192.168.144.1, server: localhost, request: "GET /packs/js/application-434d9ab9afda80fae72d.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-434d9ab9afda80fae72d.js.map", host: "localhost:8080"
 2021/07/11 07:49:00 [warn] 32#32: *39 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/9/00/0000000009 while reading upstream, client: 192.168.144.1, server: localhost, request: "GET /packs/js/application-434d9ab9afda80fae72d.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-434d9ab9afda80fae72d.js.map", host: "localhost:8080"
+2021/07/12 11:05:45 [warn] 32#32: *107 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/0/01/0000000010 while reading upstream, client: 192.168.144.1, server: localhost, request: "GET /packs/js/application-434d9ab9afda80fae72d.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-434d9ab9afda80fae72d.js", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/07/12 12:41:06 [warn] 32#32: *130 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/01/0000000011 while reading upstream, client: 192.168.144.1, server: localhost, request: "GET /packs/js/like_list-f852b6485107cac92b7e.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/like_list-f852b6485107cac92b7e.js", host: "localhost:8080", referrer: "http://localhost:8080/user/1/favorite"
+2021/07/12 17:20:05 [warn] 32#32: *248 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/2/01/0000000012 while reading upstream, client: 192.168.144.1, server: localhost, request: "GET /packs/js/application-434d9ab9afda80fae72d.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-434d9ab9afda80fae72d.js.map", host: "localhost:8080"
+2021/07/12 17:23:33 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/07/12 17:23:33 [notice] 32#32: gracefully shutting down
+2021/07/12 17:23:33 [notice] 33#33: gracefully shutting down
+2021/07/12 17:23:33 [notice] 34#34: gracefully shutting down
+2021/07/12 17:23:33 [notice] 35#35: gracefully shutting down
+2021/07/12 17:23:33 [notice] 32#32: exiting
+2021/07/12 17:23:33 [notice] 33#33: exiting
+2021/07/12 17:23:33 [notice] 34#34: exiting
+2021/07/12 17:23:33 [notice] 35#35: exiting
+2021/07/12 17:23:33 [notice] 32#32: exit
+2021/07/12 17:23:33 [notice] 33#33: exit
+2021/07/12 17:23:33 [notice] 34#34: exit
+2021/07/12 17:23:33 [notice] 35#35: exit
+2021/07/12 17:23:33 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/07/12 17:23:33 [notice] 1#1: worker process 32 exited with code 0
+2021/07/12 17:23:33 [notice] 1#1: worker process 33 exited with code 0
+2021/07/12 17:23:33 [notice] 1#1: worker process 34 exited with code 0
+2021/07/12 17:23:33 [notice] 1#1: worker process 35 exited with code 0
+2021/07/12 17:23:33 [notice] 1#1: exit
+2021/07/12 17:30:20 [notice] 1#1: using the "epoll" event method
+2021/07/12 17:30:20 [notice] 1#1: nginx/1.21.0
+2021/07/12 17:30:20 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/07/12 17:30:20 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/07/12 17:30:20 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/07/12 17:30:20 [notice] 1#1: start worker processes
+2021/07/12 17:30:20 [notice] 1#1: start worker process 32
+2021/07/12 17:30:20 [notice] 1#1: start worker process 33
+2021/07/12 17:30:20 [notice] 1#1: start worker process 34
+2021/07/12 17:30:20 [notice] 1#1: start worker process 35
+2021/07/12 17:30:29 [crit] 32#32: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (2: No such file or directory) while connecting to upstream, client: 192.168.160.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "localhost:8080"
+2021/07/12 17:30:30 [crit] 32#32: *2 connect() to unix:///app/tmp/sockets/puma.sock failed (2: No such file or directory) while connecting to upstream, client: 192.168.160.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/07/12 17:34:12 [warn] 32#32: *10 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 192.168.160.1, server: localhost, request: "POST /api/v1/posts HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/home"
+2021/07/12 17:37:47 [warn] 32#32: *39 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/2/00/0000000002 while reading upstream, client: 192.168.160.1, server: localhost, request: "GET /packs/js/like_list-f852b6485107cac92b7e.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/like_list-f852b6485107cac92b7e.js", host: "localhost:8080", referrer: "http://localhost:8080/user/1/favorite"
+2021/07/12 17:47:28 [warn] 32#32: *89 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/00/0000000003 while reading upstream, client: 192.168.160.1, server: localhost, request: "GET /packs/js/application-434d9ab9afda80fae72d.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-434d9ab9afda80fae72d.js.map", host: "localhost:8080"
+2021/07/12 18:08:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/07/12 18:08:56 [notice] 33#33: gracefully shutting down
+2021/07/12 18:08:56 [notice] 33#33: exiting
+2021/07/12 18:08:56 [notice] 32#32: gracefully shutting down
+2021/07/12 18:08:56 [notice] 34#34: gracefully shutting down
+2021/07/12 18:08:56 [notice] 35#35: gracefully shutting down
+2021/07/12 18:08:56 [notice] 35#35: exiting
+2021/07/12 18:08:56 [notice] 33#33: exit
+2021/07/12 18:08:56 [notice] 32#32: exiting
+2021/07/12 18:08:56 [notice] 34#34: exiting
+2021/07/12 18:08:56 [notice] 35#35: exit
+2021/07/12 18:08:56 [notice] 32#32: exit
+2021/07/12 18:08:56 [notice] 34#34: exit
+2021/07/12 18:08:56 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/07/12 18:08:56 [notice] 1#1: worker process 32 exited with code 0
+2021/07/12 18:08:56 [notice] 1#1: signal 29 (SIGIO) received
+2021/07/12 18:08:56 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2021/07/12 18:08:56 [notice] 1#1: worker process 33 exited with code 0
+2021/07/12 18:08:56 [notice] 1#1: worker process 35 exited with code 0
+2021/07/12 18:08:56 [notice] 1#1: signal 29 (SIGIO) received
+2021/07/12 18:08:56 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/07/12 18:08:56 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/07/12 18:08:56 [notice] 1#1: worker process 34 exited with code 0
+2021/07/12 18:08:56 [notice] 1#1: exit
+2021/07/12 18:09:33 [notice] 1#1: using the "epoll" event method
+2021/07/12 18:09:33 [notice] 1#1: nginx/1.21.0
+2021/07/12 18:09:33 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/07/12 18:09:33 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/07/12 18:09:33 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/07/12 18:09:33 [notice] 1#1: start worker processes
+2021/07/12 18:09:33 [notice] 1#1: start worker process 31
+2021/07/12 18:09:33 [notice] 1#1: start worker process 32
+2021/07/12 18:09:33 [notice] 1#1: start worker process 33
+2021/07/12 18:09:33 [notice] 1#1: start worker process 34
+2021/07/12 18:12:52 [warn] 31#31: *1 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 192.168.176.1, server: localhost, request: "GET /packs/js/application-4fc01889517779ab9b92.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-4fc01889517779ab9b92.js", host: "localhost:8080", referrer: "http://localhost:8080/"
+2021/07/12 18:19:39 [warn] 31#31: *11 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/2/00/0000000002 while reading upstream, client: 192.168.176.1, server: localhost, request: "GET /packs/js/application-4fc01889517779ab9b92.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-4fc01889517779ab9b92.js.map", host: "localhost:8080"
+2021/07/13 09:55:00 [warn] 31#31: *29 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/00/0000000003 while reading upstream, client: 192.168.176.1, server: localhost, request: "GET /packs/js/application-4fc01889517779ab9b92.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-4fc01889517779ab9b92.js", host: "localhost:8080", referrer: "http://localhost:8080/posts/search?search=&r1=descend&r2=Protein"
+2021/07/13 10:07:08 [warn] 31#31: *49 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/4/00/0000000004 while reading upstream, client: 192.168.176.1, server: localhost, request: "GET /packs/js/application-4fc01889517779ab9b92.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-4fc01889517779ab9b92.js.map", host: "localhost:8080"
