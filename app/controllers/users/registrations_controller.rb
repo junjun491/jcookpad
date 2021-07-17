@@ -16,9 +16,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
    def edit
+    @std = user_std
      super
 
-     @std = user_std
+
 
    end
 
