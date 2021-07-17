@@ -5,14 +5,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @std = user_std
+
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  end
 
 
    def edit
@@ -24,9 +26,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
    end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    @std = user_std
+    
+
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -64,6 +69,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   def detail
+    @std = user_std
   @user = User.find_by(id: params[:id])
   end
   def after_sign_up_path_for(_resource)
