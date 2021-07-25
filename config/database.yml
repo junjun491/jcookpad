@@ -30,10 +30,11 @@ test:
   host: db
 
 production:
+  database: <%= ENV['DB_DATABASE'] %>
   adapter: mysql2
-  encoding: utf8
-  database: eiyorecipe_production
+  encoding: utf8mb4
+  charset: utf8mb4
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   pool: 5
-  username: msql_nakase
-  password: mysqlpass_83
-  host: db
