@@ -5,10 +5,10 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      APP_DATABASE_HOST: db
-      APP_DATABASE: app_development
-      APP_DATABASE_USER: root
-      APP_DATABASE_PASSWORD: root
+      APP_DATABASE_HOST: ${DB_HOST}
+      APP_DATABASE: ${DB_PRODUCT}
+      APP_DATABASE_USER: ${DB_USERNAME}
+      APP_DATABASE_PASSWORD: ${DB_PASSWORD}
 
     #    depends_on:
     #      - db
