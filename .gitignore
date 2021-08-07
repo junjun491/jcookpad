@@ -48,4 +48,5 @@ mysql_data
 # nginx/logをリポジトリにコミットしない
 nginx/log
 
+
 .env
