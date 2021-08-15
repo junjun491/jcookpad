@@ -42,5 +42,10 @@ RUN bundle install
 VOLUME $APP_HOME/public
 VOLUME $APP_HOME/tmp
 
+# Railsサーバを準備
+CMD ["bundle", "exec", "webpacker:install:vue"]
+CMD ["bundle", "exec", "webpacker:install"]
+CMD ["bundle", "exec", "webpacker:compile"]
+
 # コンテナ起動時にRailsサーバを起動
 CMD ["bundle", "exec", "rails", "server", "--environment", "production"]
