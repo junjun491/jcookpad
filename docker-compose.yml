@@ -10,12 +10,14 @@ services:
       APP_DATABASE_USER: ${DB_USERNAME}
       APP_DATABASE_PASSWORD: ${DB_PASSWORD}
 
+
     #    depends_on:
     #      - db
     tty: true
     volumes:
       - .:/eiyorecipe # ソースコード変更したらDocker側も即反映されるように
       - websocket:/eiyorecipe/tmp/sockets/ # webのソケットを名前付きボリュームで同期必要なんじゃないかと思い作成
+
 
   #  db:
   #    build:
@@ -32,8 +34,9 @@ services:
     build:
       context: ./docker/nginx
       dockerfile: Dockerfile
+
     ports:
-      #    - 8080:8080
+
       - 80:80
     volumes:
       - ./nginx/log:/var/log/nginx
