@@ -43,8 +43,8 @@ VOLUME $APP_HOME/public
 VOLUME $APP_HOME/tmp
 
 # Railsサーバを準備
-RUN ["bundle", "exec", "webpacker:install:vue"]
-RUN ["bundle", "exec", "webpacker:compile"]
+RUN ["bundle", "exec", "rails", "webpacker:install:vue"]
+RUN ["bundle", "exec", "rails", "webpacker:compile"]
 RUN ["apt-get", "install", "vim"]
 
 # コンテナ起動時にRailsサーバを起動
