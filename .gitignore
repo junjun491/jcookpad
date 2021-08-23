@@ -47,6 +47,8 @@ vendor/bundle
 mysql_data
 # nginx/logをリポジトリにコミットしない
 nginx/log
-
+/mysql_data/
+nginx/log
+/public/uploads/
 
 .env
