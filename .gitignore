@@ -52,3 +52,6 @@ nginx/log
 /public/uploads/
 
 .env
+#branch切り替え時用
+/docker/nginx/nginx.conf
+docker-compose.yml

@@ -1,6 +1,6 @@
 <template>
   <div class="PostEditPage">
-    <form @submit.prevent="updatePost">
+    <form>
       <div v-if="errors.length != 0">
         <ul v-for="e in errors" :key="e">
           <li>
@@ -182,8 +182,8 @@
       <button type="button" @click="show = !show">
         既存のレシピを材料に加える
       </button>
-      <button type="submit">Commit</button>
     </form>
+    <button v-on:click.preventDefault="updatePost">Commit</button>
   </div>
 </template>
 <script>

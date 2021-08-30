@@ -1519,3 +1519,13 @@
 2021/07/18 12:36:52 [warn] 32#32: *1 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 192.168.192.1, server: localhost, request: "GET /packs/js/application-4fc01889517779ab9b92.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-4fc01889517779ab9b92.js", host: "localhost:8080", referrer: "http://localhost:8080/"
 2021/07/22 04:27:27 [warn] 32#32: *17 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/2/00/0000000002 while reading upstream, client: 192.168.192.1, server: localhost, request: "GET /api/v1/posts.json HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/api/v1/posts.json", host: "localhost:8080", referrer: "http://localhost:8080/home"
 2021/07/22 04:28:50 [warn] 32#32: *29 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/00/0000000003 while reading upstream, client: 192.168.192.1, server: localhost, request: "GET /packs/js/application-4fc01889517779ab9b92.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-4fc01889517779ab9b92.js.map", host: "localhost:8080"
+2021/08/23 21:57:37 [notice] 1#1: using the "epoll" event method
+2021/08/23 21:57:37 [notice] 1#1: nginx/1.21.0
+2021/08/23 21:57:37 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/23 21:57:37 [notice] 1#1: OS: Linux 5.10.25-linuxkit
+2021/08/23 21:57:37 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/08/23 21:57:37 [notice] 1#1: start worker processes
+2021/08/23 21:57:37 [notice] 1#1: start worker process 31
+2021/08/23 21:57:37 [notice] 1#1: start worker process 32
+2021/08/23 21:57:37 [notice] 1#1: start worker process 33
+2021/08/23 21:57:37 [notice] 1#1: start worker process 34
