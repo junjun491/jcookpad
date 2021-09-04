@@ -37,7 +37,7 @@ production:
   #  database: eiyorecipe_production
   encoding: utf8mb4
   charset: utf8mb4
-  database: <%= ENV['DB_PRODUCT'] %>
+  database: <%= ENV['DB_DATABASE'] %>
 
 
 
@@ -45,7 +45,3 @@ production:
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   pool: 5
-
-#  username: msql_nakase
-#  password: mysqlpass_83
-#  host: db
