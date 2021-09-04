@@ -1519,3 +1519,347 @@
 2021/07/18 12:36:52 [warn] 32#32: *1 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 192.168.192.1, server: localhost, request: "GET /packs/js/application-4fc01889517779ab9b92.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-4fc01889517779ab9b92.js", host: "localhost:8080", referrer: "http://localhost:8080/"
 2021/07/22 04:27:27 [warn] 32#32: *17 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/2/00/0000000002 while reading upstream, client: 192.168.192.1, server: localhost, request: "GET /api/v1/posts.json HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/api/v1/posts.json", host: "localhost:8080", referrer: "http://localhost:8080/home"
 2021/07/22 04:28:50 [warn] 32#32: *29 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/00/0000000003 while reading upstream, client: 192.168.192.1, server: localhost, request: "GET /packs/js/application-4fc01889517779ab9b92.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-4fc01889517779ab9b92.js.map", host: "localhost:8080"
+2021/08/08 06:35:43 [notice] 1#1: using the "epoll" event method
+2021/08/08 06:35:43 [notice] 1#1: nginx/1.21.0
+2021/08/08 06:35:43 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/08 06:35:43 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/08 06:35:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/08 06:35:43 [notice] 1#1: start worker processes
+2021/08/08 06:35:43 [notice] 1#1: start worker process 32
+2021/08/08 06:35:43 [notice] 1#1: start worker process 33
+2021/08/08 06:58:33 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/08 06:58:33 [notice] 32#32: gracefully shutting down
+2021/08/08 06:58:33 [notice] 32#32: exiting
+2021/08/08 06:58:33 [notice] 32#32: exit
+2021/08/08 06:58:33 [notice] 33#33: gracefully shutting down
+2021/08/08 06:58:33 [notice] 33#33: exiting
+2021/08/08 06:58:33 [notice] 33#33: exit
+2021/08/08 06:58:33 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/08/08 06:58:33 [notice] 1#1: worker process 32 exited with code 0
+2021/08/08 06:58:33 [notice] 1#1: worker process 33 exited with code 0
+2021/08/08 06:58:33 [notice] 1#1: exit
+2021/08/08 07:12:05 [notice] 1#1: using the "epoll" event method
+2021/08/08 07:12:05 [notice] 1#1: nginx/1.21.0
+2021/08/08 07:12:05 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/08 07:12:05 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/08 07:12:05 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/08 07:12:05 [notice] 1#1: start worker processes
+2021/08/08 07:12:05 [notice] 1#1: start worker process 31
+2021/08/08 07:12:05 [notice] 1#1: start worker process 32
+2021/08/08 07:44:59 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/08 07:44:59 [notice] 32#32: gracefully shutting down
+2021/08/08 07:44:59 [notice] 31#31: gracefully shutting down
+2021/08/08 07:44:59 [notice] 31#31: exiting
+2021/08/08 07:44:59 [notice] 31#31: exit
+2021/08/08 07:44:59 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/08/08 07:44:59 [notice] 1#1: worker process 31 exited with code 0
+2021/08/08 07:44:59 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/08 07:45:38 [notice] 1#1: using the "epoll" event method
+2021/08/08 07:45:38 [notice] 1#1: nginx/1.21.0
+2021/08/08 07:45:38 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/08 07:45:38 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/08 07:45:38 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/08 07:45:38 [notice] 1#1: start worker processes
+2021/08/08 07:45:38 [notice] 1#1: start worker process 31
+2021/08/08 07:45:38 [notice] 1#1: start worker process 32
+2021/08/09 02:48:48 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/09 02:48:48 [notice] 31#31: gracefully shutting down
+2021/08/09 02:48:48 [notice] 31#31: exiting
+2021/08/09 02:48:48 [notice] 31#31: exit
+2021/08/09 02:48:48 [notice] 32#32: gracefully shutting down
+2021/08/09 02:48:48 [notice] 32#32: exiting
+2021/08/09 02:48:48 [notice] 32#32: exit
+2021/08/09 02:48:48 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/08/09 02:48:48 [notice] 1#1: worker process 31 exited with code 0
+2021/08/09 02:48:48 [notice] 1#1: worker process 32 exited with code 0
+2021/08/09 02:48:48 [notice] 1#1: exit
+2021/08/09 02:49:00 [notice] 1#1: using the "epoll" event method
+2021/08/09 02:49:00 [notice] 1#1: nginx/1.21.0
+2021/08/09 02:49:00 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/09 02:49:00 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/09 02:49:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/09 02:49:00 [notice] 1#1: start worker processes
+2021/08/09 02:49:00 [notice] 1#1: start worker process 31
+2021/08/09 02:49:00 [notice] 1#1: start worker process 32
+2021/08/10 11:24:35 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/10 11:24:35 [notice] 31#31: gracefully shutting down
+2021/08/10 11:24:35 [notice] 31#31: exiting
+2021/08/10 11:24:35 [notice] 31#31: exit
+2021/08/10 11:24:35 [notice] 32#32: gracefully shutting down
+2021/08/10 11:24:35 [notice] 32#32: exiting
+2021/08/10 11:24:35 [notice] 32#32: exit
+2021/08/10 11:24:35 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/08/10 11:24:35 [notice] 1#1: worker process 31 exited with code 0
+2021/08/10 11:24:35 [notice] 1#1: worker process 32 exited with code 0
+2021/08/10 11:24:35 [notice] 1#1: exit
+2021/08/10 11:24:48 [notice] 1#1: using the "epoll" event method
+2021/08/10 11:24:48 [notice] 1#1: nginx/1.21.0
+2021/08/10 11:24:48 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/10 11:24:48 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/10 11:24:48 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/10 11:24:48 [notice] 1#1: start worker processes
+2021/08/10 11:24:48 [notice] 1#1: start worker process 33
+2021/08/10 11:24:48 [notice] 1#1: start worker process 34
+2021/08/10 11:38:26 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/10 11:38:26 [notice] 34#34: gracefully shutting down
+2021/08/10 11:38:26 [notice] 33#33: gracefully shutting down
+2021/08/10 11:38:26 [notice] 34#34: exiting
+2021/08/10 11:38:26 [notice] 33#33: exiting
+2021/08/10 11:38:26 [notice] 34#34: exit
+2021/08/10 11:38:26 [notice] 33#33: exit
+2021/08/10 11:38:26 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/08/10 11:38:26 [notice] 1#1: worker process 33 exited with code 0
+2021/08/10 11:38:26 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/10 11:38:26 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/08/10 11:38:26 [notice] 1#1: worker process 34 exited with code 0
+2021/08/10 11:38:26 [notice] 1#1: exit
+2021/08/10 11:45:12 [notice] 1#1: using the "epoll" event method
+2021/08/10 11:45:12 [notice] 1#1: nginx/1.21.0
+2021/08/10 11:45:12 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/10 11:45:12 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/10 11:45:12 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/10 11:45:12 [notice] 1#1: start worker processes
+2021/08/10 11:45:12 [notice] 1#1: start worker process 33
+2021/08/10 11:45:12 [notice] 1#1: start worker process 34
+2021/08/10 11:54:11 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/10 11:54:11 [notice] 34#34: gracefully shutting down
+2021/08/10 11:54:11 [notice] 33#33: gracefully shutting down
+2021/08/10 11:54:11 [notice] 34#34: exiting
+2021/08/10 11:54:11 [notice] 33#33: exiting
+2021/08/10 11:54:11 [notice] 34#34: exit
+2021/08/10 11:54:11 [notice] 33#33: exit
+2021/08/10 11:54:11 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/08/10 11:54:11 [notice] 1#1: worker process 34 exited with code 0
+2021/08/10 11:54:11 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/10 11:54:11 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/08/10 11:54:11 [notice] 1#1: worker process 33 exited with code 0
+2021/08/10 11:54:11 [notice] 1#1: exit
+2021/08/10 11:54:24 [notice] 1#1: using the "epoll" event method
+2021/08/10 11:54:24 [notice] 1#1: nginx/1.21.0
+2021/08/10 11:54:24 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/10 11:54:24 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/10 11:54:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/10 11:54:24 [notice] 1#1: start worker processes
+2021/08/10 11:54:24 [notice] 1#1: start worker process 33
+2021/08/10 11:54:24 [notice] 1#1: start worker process 34
+2021/08/14 05:17:32 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/14 05:17:32 [notice] 34#34: gracefully shutting down
+2021/08/14 05:17:32 [notice] 33#33: gracefully shutting down
+2021/08/14 05:17:32 [notice] 34#34: exiting
+2021/08/14 05:17:32 [notice] 33#33: exiting
+2021/08/14 05:17:32 [notice] 34#34: exit
+2021/08/14 05:17:32 [notice] 33#33: exit
+2021/08/14 05:17:32 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/08/14 05:17:32 [notice] 1#1: worker process 33 exited with code 0
+2021/08/14 05:17:32 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/14 05:17:32 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/08/14 05:17:32 [notice] 1#1: worker process 34 exited with code 0
+2021/08/14 05:17:32 [notice] 1#1: exit
+2021/08/14 06:36:41 [notice] 1#1: using the "epoll" event method
+2021/08/14 06:36:41 [notice] 1#1: nginx/1.21.0
+2021/08/14 06:36:41 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/14 06:36:41 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/14 06:36:41 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/14 06:36:41 [notice] 1#1: start worker processes
+2021/08/14 06:36:41 [notice] 1#1: start worker process 31
+2021/08/14 06:36:41 [notice] 1#1: start worker process 32
+2021/08/14 06:41:50 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/14 06:41:50 [notice] 31#31: gracefully shutting down
+2021/08/14 06:41:50 [notice] 32#32: gracefully shutting down
+2021/08/14 06:41:50 [notice] 32#32: exiting
+2021/08/14 06:41:50 [notice] 32#32: exit
+2021/08/14 06:41:50 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/08/14 06:41:50 [notice] 1#1: worker process 32 exited with code 0
+2021/08/14 06:41:50 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/14 06:47:28 [notice] 1#1: using the "epoll" event method
+2021/08/14 06:47:28 [notice] 1#1: nginx/1.21.0
+2021/08/14 06:47:28 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/14 06:47:28 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/14 06:47:28 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/14 06:47:28 [notice] 1#1: start worker processes
+2021/08/14 06:47:28 [notice] 1#1: start worker process 32
+2021/08/14 06:47:28 [notice] 1#1: start worker process 33
+2021/08/14 06:59:58 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/14 06:59:58 [notice] 33#33: gracefully shutting down
+2021/08/14 06:59:58 [notice] 32#32: gracefully shutting down
+2021/08/14 06:59:58 [notice] 32#32: exiting
+2021/08/14 06:59:58 [notice] 32#32: exit
+2021/08/14 06:59:58 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/08/14 06:59:58 [notice] 1#1: worker process 32 exited with code 0
+2021/08/14 06:59:58 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/14 07:01:42 [notice] 1#1: using the "epoll" event method
+2021/08/14 07:01:42 [notice] 1#1: nginx/1.21.0
+2021/08/14 07:01:42 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/14 07:01:42 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/14 07:01:42 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/14 07:01:42 [notice] 1#1: start worker processes
+2021/08/14 07:01:42 [notice] 1#1: start worker process 31
+2021/08/14 07:01:42 [notice] 1#1: start worker process 32
+2021/08/14 11:13:43 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/14 11:13:43 [notice] 32#32: gracefully shutting down
+2021/08/14 11:13:43 [notice] 32#32: exiting
+2021/08/14 11:13:43 [notice] 32#32: exit
+2021/08/14 11:13:43 [notice] 31#31: gracefully shutting down
+2021/08/14 11:13:43 [notice] 31#31: exiting
+2021/08/14 11:13:43 [notice] 31#31: exit
+2021/08/14 11:13:43 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/08/14 11:13:43 [notice] 1#1: worker process 31 exited with code 0
+2021/08/14 11:13:43 [notice] 1#1: worker process 32 exited with code 0
+2021/08/14 11:13:43 [notice] 1#1: exit
+2021/08/14 11:15:32 [notice] 1#1: using the "epoll" event method
+2021/08/14 11:15:32 [notice] 1#1: nginx/1.21.0
+2021/08/14 11:15:32 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/14 11:15:32 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/14 11:15:32 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/14 11:15:32 [notice] 1#1: start worker processes
+2021/08/14 11:15:32 [notice] 1#1: start worker process 31
+2021/08/14 11:15:32 [notice] 1#1: start worker process 32
+2021/08/15 03:49:15 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/15 03:49:15 [notice] 31#31: gracefully shutting down
+2021/08/15 03:49:15 [notice] 31#31: exiting
+2021/08/15 03:49:15 [notice] 31#31: exit
+2021/08/15 03:49:15 [notice] 32#32: gracefully shutting down
+2021/08/15 03:49:15 [notice] 32#32: exiting
+2021/08/15 03:49:15 [notice] 32#32: exit
+2021/08/15 03:49:15 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/08/15 03:49:15 [notice] 1#1: worker process 31 exited with code 0
+2021/08/15 03:49:15 [notice] 1#1: worker process 32 exited with code 0
+2021/08/15 03:49:15 [notice] 1#1: exit
+2021/08/15 03:49:54 [notice] 1#1: using the "epoll" event method
+2021/08/15 03:49:54 [notice] 1#1: nginx/1.21.0
+2021/08/15 03:49:54 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/15 03:49:54 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/15 03:49:54 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/15 03:49:54 [notice] 1#1: start worker processes
+2021/08/15 03:49:54 [notice] 1#1: start worker process 34
+2021/08/15 03:49:54 [notice] 1#1: start worker process 35
+2021/08/15 05:09:43 [error] 35#35: *25 connect() to unix:///app/tmp/sockets/puma.sock failed (111: Connection refused) while connecting to upstream, client: 111.239.252.172, server: 35.75.82.0, request: "GET / HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/", host: "35.75.82.0"
+2021/08/15 05:09:54 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/15 05:09:54 [notice] 35#35: gracefully shutting down
+2021/08/15 05:09:54 [notice] 34#34: gracefully shutting down
+2021/08/15 05:09:54 [notice] 34#34: exiting
+2021/08/15 05:09:54 [notice] 34#34: exit
+2021/08/15 05:09:54 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/08/15 05:09:54 [notice] 1#1: worker process 34 exited with code 0
+2021/08/15 05:09:54 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/15 07:36:44 [notice] 1#1: using the "epoll" event method
+2021/08/15 07:36:44 [notice] 1#1: nginx/1.21.0
+2021/08/15 07:36:44 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/15 07:36:44 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/15 07:36:44 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/15 07:36:44 [notice] 1#1: start worker processes
+2021/08/15 07:36:44 [notice] 1#1: start worker process 31
+2021/08/15 07:36:44 [notice] 1#1: start worker process 32
+2021/08/15 07:37:57 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/15 07:37:57 [notice] 31#31: gracefully shutting down
+2021/08/15 07:37:57 [notice] 32#32: gracefully shutting down
+2021/08/15 07:37:57 [notice] 32#32: exiting
+2021/08/15 07:37:57 [notice] 32#32: exit
+2021/08/15 07:37:57 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/08/15 07:37:57 [notice] 1#1: worker process 32 exited with code 0
+2021/08/15 07:37:57 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/15 07:38:04 [notice] 31#31: exiting
+2021/08/15 07:38:04 [notice] 31#31: exit
+2021/08/15 07:38:04 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/08/15 07:38:04 [notice] 1#1: worker process 31 exited with code 0
+2021/08/15 07:38:04 [notice] 1#1: exit
+2021/08/15 07:42:38 [notice] 1#1: using the "epoll" event method
+2021/08/15 07:42:38 [notice] 1#1: nginx/1.21.0
+2021/08/15 07:42:38 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/15 07:42:38 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/15 07:42:38 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/15 07:42:38 [notice] 1#1: start worker processes
+2021/08/15 07:42:38 [notice] 1#1: start worker process 32
+2021/08/15 07:42:38 [notice] 1#1: start worker process 33
+2021/08/15 07:43:15 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/15 07:43:15 [notice] 33#33: gracefully shutting down
+2021/08/15 07:43:15 [notice] 32#32: gracefully shutting down
+2021/08/15 07:43:15 [notice] 32#32: exiting
+2021/08/15 07:43:15 [notice] 32#32: exit
+2021/08/15 07:43:15 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/08/15 07:43:15 [notice] 1#1: worker process 32 exited with code 0
+2021/08/15 07:43:15 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/15 07:50:52 [notice] 1#1: using the "epoll" event method
+2021/08/15 07:50:52 [notice] 1#1: nginx/1.21.0
+2021/08/15 07:50:52 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/15 07:50:52 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/15 07:50:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/15 07:50:52 [notice] 1#1: start worker processes
+2021/08/15 07:50:52 [notice] 1#1: start worker process 30
+2021/08/15 07:50:52 [notice] 1#1: start worker process 31
+2021/08/15 07:51:30 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/15 07:51:30 [notice] 31#31: gracefully shutting down
+2021/08/15 07:51:30 [notice] 30#30: gracefully shutting down
+2021/08/15 07:51:30 [notice] 30#30: exiting
+2021/08/15 07:51:30 [notice] 30#30: exit
+2021/08/15 07:51:30 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2021/08/15 07:51:30 [notice] 1#1: worker process 30 exited with code 0
+2021/08/15 07:51:30 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/15 07:57:30 [notice] 1#1: using the "epoll" event method
+2021/08/15 07:57:30 [notice] 1#1: nginx/1.21.0
+2021/08/15 07:57:30 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/15 07:57:30 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/15 07:57:30 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/15 07:57:30 [notice] 1#1: start worker processes
+2021/08/15 07:57:30 [notice] 1#1: start worker process 31
+2021/08/15 07:57:30 [notice] 1#1: start worker process 32
+2021/08/21 10:27:11 [warn] 32#32: *2233 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 92.202.215.206, server: 35.75.82.0, request: "GET /packs/js/application-c1bff1e90e32670f2d73.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-c1bff1e90e32670f2d73.js", host: "35.75.82.0", referrer: "http://35.75.82.0/"
+2021/08/21 10:27:11 [warn] 32#32: *2233 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/2/00/0000000002 while reading upstream, client: 92.202.215.206, server: 35.75.82.0, request: "GET /packs/js/application-c1bff1e90e32670f2d73.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-c1bff1e90e32670f2d73.js.map", host: "35.75.82.0"
+2021/08/21 10:27:17 [warn] 32#32: *2237 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/00/0000000003 while reading upstream, client: 106.180.11.15, server: 35.75.82.0, request: "GET /packs/js/application-c1bff1e90e32670f2d73.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-c1bff1e90e32670f2d73.js", host: "35.75.82.0", referrer: "http://35.75.82.0/"
+2021/08/21 10:27:18 [warn] 32#32: *2237 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/4/00/0000000004 while reading upstream, client: 106.180.11.15, server: 35.75.82.0, request: "GET /packs/js/application-c1bff1e90e32670f2d73.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-c1bff1e90e32670f2d73.js.map", host: "35.75.82.0"
+2021/08/21 10:41:09 [warn] 32#32: *2316 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/5/00/0000000005 while reading upstream, client: 92.202.215.206, server: 35.75.82.0, request: "GET /packs/js/application-c1bff1e90e32670f2d73.js.map HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-c1bff1e90e32670f2d73.js.map", host: "35.75.82.0"
+2021/08/21 15:41:15 [warn] 32#32: *2376 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/6/00/0000000006 while reading upstream, client: 106.180.11.15, server: 35.75.82.0, request: "GET /packs/js/application-c1bff1e90e32670f2d73.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-c1bff1e90e32670f2d73.js", host: "35.75.82.0", referrer: "http://35.75.82.0/"
+2021/08/22 10:57:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/22 10:57:53 [notice] 31#31: gracefully shutting down
+2021/08/22 10:57:53 [notice] 31#31: exiting
+2021/08/22 10:57:53 [notice] 31#31: exit
+2021/08/22 10:57:53 [notice] 32#32: gracefully shutting down
+2021/08/22 10:57:53 [notice] 32#32: exiting
+2021/08/22 10:57:53 [notice] 32#32: exit
+2021/08/22 10:57:53 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2021/08/22 10:57:53 [notice] 1#1: worker process 31 exited with code 0
+2021/08/22 10:57:53 [notice] 1#1: worker process 32 exited with code 0
+2021/08/22 10:57:53 [notice] 1#1: exit
+2021/08/22 11:17:31 [notice] 1#1: using the "epoll" event method
+2021/08/22 11:17:31 [notice] 1#1: nginx/1.21.0
+2021/08/22 11:17:31 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/22 11:17:31 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/22 11:17:31 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/22 11:17:31 [notice] 1#1: start worker processes
+2021/08/22 11:17:31 [notice] 1#1: start worker process 30
+2021/08/22 11:17:31 [notice] 1#1: start worker process 31
+2021/08/22 11:18:56 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/22 11:18:56 [notice] 31#31: gracefully shutting down
+2021/08/22 11:18:56 [notice] 30#30: gracefully shutting down
+2021/08/22 11:18:56 [notice] 30#30: exiting
+2021/08/22 11:18:56 [notice] 31#31: exiting
+2021/08/22 11:18:56 [notice] 30#30: exit
+2021/08/22 11:18:56 [notice] 31#31: exit
+2021/08/22 11:18:56 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2021/08/22 11:18:56 [notice] 1#1: worker process 30 exited with code 0
+2021/08/22 11:18:56 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/22 11:18:56 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2021/08/22 11:18:56 [notice] 1#1: worker process 31 exited with code 0
+2021/08/22 11:18:56 [notice] 1#1: exit
+2021/08/22 11:29:15 [notice] 1#1: using the "epoll" event method
+2021/08/22 11:29:15 [notice] 1#1: nginx/1.21.0
+2021/08/22 11:29:15 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6) 
+2021/08/22 11:29:15 [notice] 1#1: OS: Linux 4.14.232-177.418.amzn2.x86_64
+2021/08/22 11:29:15 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:4096
+2021/08/22 11:29:15 [notice] 1#1: start worker processes
+2021/08/22 11:29:15 [notice] 1#1: start worker process 33
+2021/08/22 11:29:15 [notice] 1#1: start worker process 34
+2021/08/22 20:25:29 [warn] 34#34: *132 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/1/00/0000000001 while reading upstream, client: 106.180.11.15, server: 35.75.82.0, request: "GET /packs/js/application-c1bff1e90e32670f2d73.js HTTP/1.1", upstream: "http://unix:///app/tmp/sockets/puma.sock:/packs/js/application-c1bff1e90e32670f2d73.js", host: "35.75.82.0", referrer: "http://35.75.82.0/"
+2021/08/23 09:41:09 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/08/23 09:41:09 [notice] 34#34: gracefully shutting down
+2021/08/23 09:41:09 [notice] 33#33: gracefully shutting down
+2021/08/23 09:41:09 [notice] 34#34: exiting
+2021/08/23 09:41:09 [notice] 33#33: exiting
+2021/08/23 09:41:09 [notice] 34#34: exit
+2021/08/23 09:41:09 [notice] 33#33: exit
+2021/08/23 09:41:09 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/08/23 09:41:09 [notice] 1#1: worker process 34 exited with code 0
+2021/08/23 09:41:09 [notice] 1#1: signal 29 (SIGIO) received
+2021/08/23 09:41:09 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2021/08/23 09:41:09 [notice] 1#1: worker process 33 exited with code 0
+2021/08/23 09:41:09 [notice] 1#1: exit
