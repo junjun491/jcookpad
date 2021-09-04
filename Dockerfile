@@ -49,4 +49,4 @@ RUN ["bundle", "exec", "rails", "webpacker:compile"]
 RUN ["apt-get", "-y", "install", "vim"]
 
 # コンテナ起動時にRailsサーバを起動
-CMD ["bundle", "exec", "rails", "server", "--environment", "production"]
+CMD ["bundle", "exec", "rails", "server"]
