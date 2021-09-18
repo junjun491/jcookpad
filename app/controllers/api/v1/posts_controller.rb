@@ -31,6 +31,20 @@ class Api::V1::PostsController < ApiController
     render json: @post
   end
 
+  def refer
+    input_words = params[:id]
+    words = input_words.to_s.gsub(/(?:[[:space:]%_])+/, " ").split(" ")
+    word_queries = words.map do |w|
+      Post.where('rname LIKE ?', "%#{w}%").or(Post.where('ingredient LIKE ?', "%#{w}%"))
+    end
+    # それらをAND条件で繋げる
+    result = word_queries.inject(Post) do |scope, query|
+      scope.merge(query)
+    end
+    @post = result
+    render json: @post
+  end
+
 
   private
     def post_params
