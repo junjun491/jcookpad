@@ -30,9 +30,12 @@ Rails.application.routes.draw do
   # APIコントローラへのルーティング
   namespace :api, { format: 'json' } do
     namespace :v1 do
+
+      get 'posts/refer/:id', to: 'posts#refer'
+
       resources :posts, only: %i[index show create update]
       resources :likes, only: %i[index show create update]
-      
+
     end
   end
 

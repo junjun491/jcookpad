@@ -172,7 +172,8 @@
         </div>
         <div>
           <input type="text" v-model="keyword" />
-          <ul v-for="post in filteredPosts" :key="post.id">
+          <button type="button" @click="filteredPosts">検索</button>
+          <ul v-for="post in posts" :key="post.id">
             <li>{{ post.rname }}</li>
             <button type="button" @click="add_ingredient(post)">
               材料に追加
@@ -251,24 +252,6 @@ export default {
     };
   },
   computed: {
-    filteredPosts: function () {
-      if (this.keyword === "") {
-        return null;
-      } else var posts = [];
-      for (let i in this.posts) {
-        console.log(`i: ${i}`);
-
-        let post = this.posts[i];
-        console.log(`post: ${JSON.stringify(post)}`);
-        if (post.rname === null) {
-        } else {
-          if (post.rname.indexOf(this.keyword) !== -1) {
-            posts.push(post);
-          }
-        }
-      }
-      return posts;
-    },
     addNutrients: function () {
       let sum_nutrients = {
         Energy: "0",
@@ -350,11 +333,6 @@ export default {
       return sum_nutrients;
     },
   },
-  mounted() {
-    axios
-      .get("/api/v1/posts.json")
-      .then((response) => (this.posts = response.data));
-  },
   methods: {
     selectedFile(e) {
       console.log(e.target.files[0]);
@@ -381,6 +359,14 @@ export default {
       this.post.VitaminB2 = this.addNutrients.VitaminB2;
       this.post.VitaminC = this.addNutrients.VitaminC;
       this.post.Salt_equivalent = this.addNutrients.Salt_equivalent;
+    },
+    filteredPosts: function (keyword) {
+      if (this.keyword === "") {
+        posts = null;
+      } else
+        axios
+          .get("/api/v1/posts/refer/" + this.keyword)
+          .then((response) => (this.posts = response.data));
     },
     createPost: function () {
       const data = new FormData(); // multipart/form-data形式のため、new FormData()を使う
