@@ -40,6 +40,15 @@ under construction
 # Usage
  
 under construction
+
+-local deploy
+git clone https://github.com/junjun491/jcookpad
+
+cd eiyorecipe
+
+docker-compose -f docker-compose-local.yml build
+docker-compose -f docker-compose-local.yml up
+
  
 # Note
  
