@@ -1,24 +1,50 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Eiyo_Recipe
+ 
+"Eiyo_Recipe" is a database of recipes with nutrients chart.
+ 
+# DEMO
+ 
+under construction
+ 
+# Features
+ 
+In Eiyo_Recipe
 
-* Ruby version
+-You can browse the database of recipes.
+You can find the recipe by keyword and nutrients items by search function.
 
-* System dependencies
+-You can check Nutritional value intake standard.
+Eiyo_Recipe provide chart every recipes with its nutrients (if its inputed) and Nutritional value intake standard with.
 
-* Configuration
+-You can make menu as you like.
+If you add some recipes to your favorites, you can check nutrition quantity by calcurate those.
 
-* Database creation
+-You can make recipe with a information, picure, procedure, nutorients.
+If you want, you can reuse past recipes as ingredients and reflect those nutrients in your recipe.
 
-* Database initialization
 
-* How to run the test suite
+ 
+# Requirement
+ 
+* Ruby 2.7
+* vue 2.6
+ 
 
-* Services (job queues, cache servers, search engines, etc.)
+# Installation
+ 
+under construction
+ 
+# Usage
+ 
+under construction
+ 
+# Note
+ 
+under construction
+ 
 
-* Deployment instructions
-
-* ...
+ 
+Thank you!
