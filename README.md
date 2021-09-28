@@ -49,6 +49,8 @@ cd eiyorecipe
 docker-compose -f docker-compose-local.yml build
 docker-compose -f docker-compose-local.yml up
 
+docker-compose exec app rails db:create db:migrate
+docker-compose exec app rails db:seed
  
 # Note
  
