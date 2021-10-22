@@ -25,8 +25,11 @@ If you add some recipes to your favorites, you can check nutrition quantity by c
 -You can make recipe with a information, picure, procedure, nutorients.
 If you want, you can reuse past recipes as ingredients and reflect those nutrients in your recipe.
 
-
- 
+---------when something went wrong at production------------
+ docker-compose run app rails webpacker:install RAILS_ENV=production
+docker-compose run app rails webpacker:install:vue RAILS_ENV=production
+docker-compose run app rails webpacker:compile RAILS_ENV=production
+docker-compose run app rails assets:precompile RAILS_ENV=production
 # Requirement
  
 * Ruby 2.7
