@@ -17,4 +17,8 @@ class User < ApplicationRecord
     self.likes.exists?(post_id: post.id)
   end
 
+  def get_standard
+      Standard.where(sex: self.sex_before_type_cast, min_age: ..self.age, max_age: self.age..).first
+  end
+
 end
