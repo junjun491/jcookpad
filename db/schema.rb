@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_194153) do
+ActiveRecord::Schema.define(version: 2021_11_21_071809) do
 
   create_table "active_admin_comments", charset: "utf8mb3", force: :cascade do |t|
     t.string "namespace"
@@ -81,6 +81,9 @@ ActiveRecord::Schema.define(version: 2021_06_18_194153) do
     t.decimal "xVitaminB2", precision: 7, scale: 2
     t.decimal "xVitaminC", precision: 7, scale: 2
     t.decimal "xSalt_equivalent", precision: 7, scale: 2
+    t.integer "min_age"
+    t.integer "max_age"
+    t.integer "sex"
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
