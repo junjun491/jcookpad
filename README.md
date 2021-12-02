@@ -26,10 +26,18 @@ If you add some recipes to your favorites, you can check nutrition quantity by c
 If you want, you can reuse past recipes as ingredients and reflect those nutrients in your recipe.
 
 ---------when something went wrong at production------------
- docker-compose run app rails webpacker:install RAILS_ENV=production
-docker-compose run app rails webpacker:install:vue RAILS_ENV=production
-docker-compose run app rails webpacker:compile RAILS_ENV=production
-docker-compose run app rails assets:precompile RAILS_ENV=production
+docker-compose -f docker-compose-production.yml run app rails webpacker:install RAILS_ENV=production
+docker-compose -f docker-compose-production.yml run app rails webpacker:install:vue RAILS_ENV=production
+docker-compose -f docker-compose-production.yml run app rails webpacker:compile RAILS_ENV=production
+docker-compose -f docker-compose-production.yml run app rails assets:precompile RAILS_ENV=production
+docker-compose -f docker-compose-production.yml run app rails restart  RAILS_ENV=production
+
+or
+
+docker-compose -f docker-compose-production.yml run app rails tmp:cache:clear
+docker-compose -f docker-compose-production.yml run app bundle exec rake assets:clobber RAILS_ENV=production
+docker-compose -f docker-compose-production.yml run app bundle exec rake assets:precompile RAILS_ENV=production
+docker-compose -f docker-compose-production.yml run app rails restart RAILS_ENV=production
 # Requirement
  
 * Ruby 2.7
