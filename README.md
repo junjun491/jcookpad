@@ -52,6 +52,15 @@ docker-compose exec app rails db:seed
  
  
 ---------when something went wrong at production------------
+
+docker-compose -f docker-compose-production.yml down
+aws reboot
+docker volume rm `docker volume ls -q -f dangling=true`
+docker system prune -f
+docker-compose -f docker-compose-production.yml build
+
+or
+
 docker-compose -f docker-compose-production.yml run app rails webpacker:install RAILS_ENV=production
 docker-compose -f docker-compose-production.yml run app rails webpacker:install:vue RAILS_ENV=production
 docker-compose -f docker-compose-production.yml run app rails webpacker:compile RAILS_ENV=production
