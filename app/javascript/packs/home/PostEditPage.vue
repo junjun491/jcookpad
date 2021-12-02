@@ -166,7 +166,6 @@
           >
             <li>{{ item.rname }}</li>
             <input v-model="$data['q_' + index]" />
-            <p>Message is: {{ $data["q_" + index] }}</p>
           </ul>
         </div>
         <div>
