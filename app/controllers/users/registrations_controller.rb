@@ -33,7 +33,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
      super
    end
-
+   
+  
   # PUT /resource
   def update
     if user_signed_in?
@@ -86,7 +87,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       @std = Standard.where(sex: 0, min_age: ..30, max_age: 30..).first
     end
     @user = User.find_by(id: params[:id])
-  
+  end
     
   def after_sign_up_path_for(_resource)
     "/user/#{current_user.id}"
