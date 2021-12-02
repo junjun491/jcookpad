@@ -13,6 +13,46 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  color: #111111;
+  background-color: #fff;
+  background-image: linear-gradient(
+      transparent 79px,
+      #abced4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(#eee 0.1em, transparent 0.1em);
+  background-size: 100% 1.2em;
+}
+
+.navbar {
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 4px;
+}
+
+.btn {
+  border-radius: 2px;
+}
+.btn {
+  border-radius: 2px;
+}
+
+.btn-small {
+  border-radius: 1px;
+}
+
+.btn-large {
+  border-radius: 3px;
+}
 
 .container-fluid {
   padding-top: 60px;
