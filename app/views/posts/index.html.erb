@@ -6,7 +6,6 @@
   <%= form_tag(search_posts_path,:method => 'get') do %>
     <%= text_field_tag :search %>
 
-
 <%= radio_button_tag("r1", "ascend") %>
 <%= label_tag("order", "昇順") %>
 
@@ -58,56 +57,23 @@
 </div>
   <% end %>
 
-
-
-  
-
-
-
-
 <% @posts.each_with_index do |post, i| %>
-
-<div class="card col-12 col-lg-10">
-
-
-
+<div class="card col-10 col-lg-7">
   <div class="row">
-
-  <div class="card-header  col-12"><%=link_to(post.rname, "/posts/#{post.id}" )%></div>
-  
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      
-    <div class="row">
-      <div class="col-xs-12 col-sm-5 col-md-6 col-lg-4">
+    <div class="card-header  col-12"><%=link_to(post.rname, "/posts/#{post.id}" )%></div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row">
-        
-          <div class="col-6 col-sm-12 col-md-12 col-lg-12" id="<%= i %>">
-            
-            <%= image_tag post.rimage.to_s, class: "img-fluid rounded d-flex align-items-start" %>
-          
+          <div class="card col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center" >
+                <%= image_tag post.rimage.to_s, class: "img-fluid rounded d-flex align-items-start" %>
           </div>
-
-          <div class="col-6 col-sm-12 col-md-12 col-lg-12 d-flex align-items-start">
           
-            <br><%= post.rinformation %>
-          </div>   
-        
+          <div class="card col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+            <canvas class="canvas chart-container" style="position: relative;  width:40vw; height:40vh">
+          </div>
         </div>
       </div>
-
-     <br>
-
-      <div class="col-xs-11 col-sm-7 col-md-6 col-lg-7" >
-
-        <canvas class="canvas chart-container" style="position: relative;  width:60vw; height:60vh">
-      
-      </div>
-
     </div>
-
   </div>
-  </div>
-    
 </div>
 <br>
 <% end %>
@@ -123,10 +89,6 @@
       element.checked = false;
     }
   }
-
-
-
-
 
     var canvases = document.querySelectorAll("canvas.canvas");
     var posts = gon.posts
@@ -170,15 +132,11 @@
         pn_ratio[pn_key] = num1 / num2 * 100;
          console.log(`pn_ratio[pn_key]: ${JSON.stringify(pn_ratio[pn_key])}`)
 
-
-        
         if (pn_ratio[pn_key] === null || pn_ratio[pn_key] < 0) {
           pn_ratio[pn_key] = 0
         }else if(pn_ratio[pn_key] > 150){
           pn_ratio[pn_key] = 150
         }
-
-
       }
 
       new Chart(canvas, {
