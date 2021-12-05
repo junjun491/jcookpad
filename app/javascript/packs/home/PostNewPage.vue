@@ -179,11 +179,14 @@
           </ul>
         </div>
       </div>
-      <button type="button" @click="show = !show">
+      <button type="button" class="button" @click="show = !show">
         既存のレシピを材料に加える
       </button>
     </form>
-    <button v-on:click.preventDefault="createPost">Commit</button>
+    <br />
+    <button class="button" v-on:click.preventDefault="createPost">
+      Commit
+    </button>
   </div>
 </template>
 <script>
