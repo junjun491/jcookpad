@@ -14,19 +14,7 @@ body {
 }
 
 .button {
-  display: block;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  color: #1b1b1b;
-  background: #fff;
-  border: 1px solid #1b1b1b;
-}
-.button:hover {
-  background: #1b1b1b;
-  color: #fff;
-  cursor: pointer;
-  text-decoration: none;
+  border: solid 3px #333;
 }
 
 .navbar {
@@ -38,16 +26,6 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0px 4px;
-}
-
-.button {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #668ad8; /*ボタン色*/
-  color: #fff;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
 }
 
 .anker:active {
