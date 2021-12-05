@@ -1,0 +1,59 @@
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  color: #111111;
+  background-color: #fff;
+  background-image: linear-gradient(
+      transparent 79px,
+      #abced4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(#eee 0.1em, transparent 0.1em);
+  background-size: 100% 1.2em;
+}
+
+.button {
+  display: block;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: #1b1b1b;
+  background: #fff;
+  border: 1px solid #1b1b1b;
+}
+.button:hover {
+  background: #1b1b1b;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar {
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 4px;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8; /*ボタン色*/
+  color: #fff;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+.anker:active {
+  color: #26a69a;
+}
+
+.container-fluid {
+  padding-top: 60px;
+}

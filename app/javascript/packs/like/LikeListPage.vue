@@ -71,8 +71,6 @@
     >
       <li>{{ item.rname }}</li>
       <input v-model="$data['q_' + index]" />
-
-      <p>Message is: {{ $data["q_" + index] }}</p>
     </ul>
 
     <div v-for="(post, i) in posts" :key="i">
