@@ -46,65 +46,65 @@
       <div class="form-row">
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>ｴﾈﾙｷﾞｰ</label><br />
-          <input v-model="post.Energy" type="number" step="0.01" />
+          <input v-model="post.Energy" type="number" step="0.01" />kcal
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>ﾀﾝﾊﾟｸ質</label><br />
-          <input v-model="post.Protein" type="number" step="0.01" />
+          <input v-model="post.Protein" type="number" step="0.01" />g
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>脂質</label><br />
-          <input v-model="post.Lipid" type="number" step="0.01" />
+          <input v-model="post.Lipid" type="number" step="0.01" />g
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>糖質</label><br />
-          <input v-model="post.Carbohydrate" type="number" step="0.01" />
+          <input v-model="post.Carbohydrate" type="number" step="0.01" />g
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>食物繊維</label><br />
-          <input v-model="post.Dietary_fiber" type="number" step="0.01" />
+          <input v-model="post.Dietary_fiber" type="number" step="0.01" />g
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>ｶﾘｳﾑ</label><br />
-          <input v-model="post.Potassium" type="number" step="0.01" />
+          <input v-model="post.Potassium" type="number" step="0.01" />mg
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>ｶﾙｼｳﾑ</label><br />
-          <input v-model="post.Calcium" type="number" step="0.01" />
+          <input v-model="post.Calcium" type="number" step="0.01" />mg
         </div>
 
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>鉄</label><br />
-          <input v-model="post.iron" type="number" step="0.01" />
+          <input v-model="post.iron" type="number" step="0.01" />mg
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>亜鉛</label><br />
-          <input v-model="post.Zinc" type="number" step="0.01" />
+          <input v-model="post.Zinc" type="number" step="0.01" />mg
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>ﾋﾞﾀﾐﾝa</label><br />
-          <input v-model="post.VitaminA" type="number" step="0.01" />
+          <input v-model="post.VitaminA" type="number" step="0.01" />μg
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>ﾋﾞﾀﾐﾝb1</label><br />
-          <input v-model="post.VitaminB1" type="number" step="0.01" />
+          <input v-model="post.VitaminB1" type="number" step="0.01" />mg
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>ﾋﾞﾀﾐﾝb2</label><br />
-          <input v-model="post.VitaminB2" type="number" step="0.01" />
+          <input v-model="post.VitaminB2" type="number" step="0.01" />mg
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>ﾋﾞﾀﾐﾝc</label><br />
-          <input v-model="post.VitaminC" type="number" step="0.01" />
+          <input v-model="post.VitaminC" type="number" step="0.01" />mg
         </div>
         <div class="co-xs-2 col-sm-2 col-md-2 col-lg-2">
           <label>塩分相当量</label><br />
-          <input v-model="post.Salt_equivalent" type="number" step="0.01" />
+          <input v-model="post.Salt_equivalent" type="number" step="0.01" />g
         </div>
       </div>
       <div v-show="show">
         <div>
-          <button type="button" @click="Reflect_Nutrients(post)">
+          <button class="button" type="button" @click="Reflect_Nutrients(post)">
             材料を反映
           </button>
           <p>利用する材料の栄養合算</p>
@@ -122,13 +122,13 @@
             </thead>
             <tbody>
               <tr>
-                <td>{{ addNutrients.Energy }}</td>
-                <td>{{ addNutrients.Protein }}</td>
-                <td>{{ addNutrients.Lipid }}</td>
-                <td>{{ addNutrients.Carbohydrate }}</td>
-                <td>{{ addNutrients.Dietary_fiber }}</td>
-                <td>{{ addNutrients.Potassium }}</td>
-                <td>{{ addNutrients.Calcium }}</td>
+                <td>{{ addNutrients.Energy }}kcal</td>
+                <td>{{ addNutrients.Protein }}g</td>
+                <td>{{ addNutrients.Lipid }}g</td>
+                <td>{{ addNutrients.Carbohydrate }}g</td>
+                <td>{{ addNutrients.Dietary_fiber }}g</td>
+                <td>{{ addNutrients.Potassium }}mg</td>
+                <td>{{ addNutrients.Calcium }}mg</td>
               </tr>
             </tbody>
           </table>
@@ -146,13 +146,13 @@
             </thead>
             <tbody>
               <tr>
-                <td>{{ addNutrients.iron }}</td>
-                <td>{{ addNutrients.Zinc }}</td>
-                <td>{{ addNutrients.VitaminA }}</td>
-                <td>{{ addNutrients.VitaminB1 }}</td>
-                <td>{{ addNutrients.VitaminB2 }}</td>
-                <td>{{ addNutrients.VitaminC }}</td>
-                <td>{{ addNutrients.Salt_equivalent }}</td>
+                <td>{{ addNutrients.iron }}mg</td>
+                <td>{{ addNutrients.Zinc }}mg</td>
+                <td>{{ addNutrients.VitaminA }}μg</td>
+                <td>{{ addNutrients.VitaminB1 }}mg</td>
+                <td>{{ addNutrients.VitaminB2 }}mg</td>
+                <td>{{ addNutrients.VitaminC }}mg</td>
+                <td>{{ addNutrients.Salt_equivalent }}g</td>
               </tr>
             </tbody>
           </table>
@@ -170,9 +170,12 @@
         </div>
         <div>
           <input type="text" v-model="keyword" />
-          <ul v-for="post in filteredPosts" :key="post.id">
+          <button class="button" type="button" @click="filteredPosts">
+            検索
+          </button>
+          <ul v-for="post in posts" :key="post.id">
             <li>{{ post.rname }}</li>
-            <button type="button" @click="add_ingredient(post)">
+            <button class="button" type="button" @click="add_ingredient(post)">
               材料に追加
             </button>
           </ul>
@@ -182,6 +185,7 @@
         既存のレシピを材料に加える
       </button>
     </form>
+    <br />
     <button class="button" v-on:click.preventDefault="updatePost">
       Commit
     </button>
@@ -258,24 +262,6 @@ export default {
       .then((response) => (this.post = response.data));
   },
   computed: {
-    filteredPosts: function () {
-      if (this.keyword === "") {
-        return null;
-      } else var posts = [];
-      for (let i in this.posts) {
-        console.log(`i: ${i}`);
-
-        let post = this.posts[i];
-        console.log(`post: ${JSON.stringify(post)}`);
-        if (post.rname === null) {
-        } else {
-          if (post.rname.indexOf(this.keyword) !== -1) {
-            posts.push(post);
-          }
-        }
-      }
-      return posts;
-    },
     addNutrients: function () {
       let sum_nutrients = {
         Energy: "0",
@@ -381,6 +367,14 @@ export default {
       this.post.VitaminB2 = this.addNutrients.VitaminB2;
       this.post.VitaminC = this.addNutrients.VitaminC;
       this.post.Salt_equivalent = this.addNutrients.Salt_equivalent;
+    },
+    filteredPosts: function (keyword) {
+      if (this.keyword === "") {
+        posts = null;
+      } else
+        axios
+          .get("/api/v1/posts/refer/" + this.keyword)
+          .then((response) => (this.posts = response.data));
     },
     updatePost: function () {
       const data = new FormData(); // multipart/form-data形式のため、new FormData()を使う
