@@ -13,8 +13,41 @@ body {
   background-size: 100% 1.2em;
 }
 
+a {
+  color: #38678b !important;
+  transition: color 0.3s !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+}
+
+a:hover {
+  color: #ff7043 !important;
+}
+
+a:visited {
+  color: gray !important;
+}
+
+a:visited:hover {
+  color: #ff7043 !important;
+}
+
 .button {
-  border: solid 3px #333;
+  border: solid 3px #333 !important;
+  color: #fff !important;
+  background: #26a69a !important;
+}
+
+.button.delete {
+  color: #fff !important;
+  padding: 1px 18px !important;
+  background: red !important;
+}
+
+.button.delete:hover {
+  color: #fff !important;
+  padding: 1px 18px !important;
+  background: red !important;
 }
 
 .navbar {
