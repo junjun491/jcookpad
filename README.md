@@ -6,7 +6,7 @@
 "Eiyo_Recipe" is a database of recipes with nutrients chart.
  
 # DEMO
- (https://raw.githubusercontent.com/junjun491/jcookpad/master/Untitled%20Diagram.drawio.png)
+![](https://raw.githubusercontent.com/junjun491/jcookpad/master/Untitled%20Diagram.drawio.png)
 
 under construction
  
