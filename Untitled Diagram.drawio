@@ -1,6 +1,6 @@
-<mxfile modified="2021-12-12T14:13:16.259Z" host="app.diagrams.net" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36" etag="TfM99M-PfhrXdAOiVnq9" version="15.9.4" type="github">
+<mxfile modified="2021-12-12T14:20:49.516Z" host="app.diagrams.net" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36" etag="DhLUjiSL62fRcIpsLhsl" version="15.9.4" type="github">
   <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Page-1">
-    <mxGraphModel dx="3586" dy="2494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="3240" dy="2256" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -97,7 +97,7 @@
           <mxGeometry x="-325" y="-487" width="212" height="32" as="geometry" />
         </mxCell>
         <mxCell id="msttldhm7g2-u0YJvrAc-138" value="&lt;font style=&quot;font-size: 28px&quot;&gt;dns authentication&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=25;" vertex="1" parent="1">
-          <mxGeometry x="-879" y="-489.5" width="300" height="30" as="geometry" />
+          <mxGeometry x="-883" y="-477.5" width="300" height="30" as="geometry" />
         </mxCell>
         <mxCell id="msttldhm7g2-u0YJvrAc-139" value="ssl certificate" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=28;" vertex="1" parent="1">
           <mxGeometry x="-152" y="-425.5" width="180" height="30" as="geometry" />
@@ -108,10 +108,10 @@
         <mxCell id="msttldhm7g2-u0YJvrAc-147" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/essential-app-1/16/key-password-passcode-access-128.png;fontColor=#FF0000;strokeColor=#FF0000;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-929" y="-469" width="52" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="msttldhm7g2-u0YJvrAc-149" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fontColor=#FF0000;entryX=0.29;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=3;" edge="1" parent="1" target="msttldhm7g2-u0YJvrAc-122">
+        <mxCell id="msttldhm7g2-u0YJvrAc-149" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;fontColor=#FF0000;entryX=0.29;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=3;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="-905" y="-492" as="sourcePoint" />
-            <mxPoint x="-515" y="-257" as="targetPoint" />
+            <mxPoint x="-905" y="-480" as="sourcePoint" />
+            <mxPoint x="-460.2000000000003" y="-480.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="msttldhm7g2-u0YJvrAc-161" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/essential-web-2/50/user-add-plus-create-admin-128.png;fontColor=#FF0000;strokeColor=#330000;fillColor=none;" vertex="1" parent="1">
@@ -377,6 +377,15 @@
         </mxCell>
         <mxCell id="msttldhm7g2-u0YJvrAc-554" value="&lt;span style=&quot;font-size: 28px&quot;&gt;data communication&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=25;" vertex="1" parent="1">
           <mxGeometry x="1308" y="-87" width="274.42" height="30.5" as="geometry" />
+        </mxCell>
+        <mxCell id="msttldhm7g2-u0YJvrAc-556" value="" style="endArrow=classic;html=1;rounded=0;fontSize=28;fontColor=#FF8000;strokeWidth=3;jumpStyle=none;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-465" y="-493" as="sourcePoint" />
+            <mxPoint x="-900" y="-493" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msttldhm7g2-u0YJvrAc-557" value="&lt;font style=&quot;font-size: 28px&quot;&gt;resolve &lt;br&gt;FQDN &quot;eiyorecipe.com&quot;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;fontSize=25;" vertex="1" parent="1">
+          <mxGeometry x="-900" y="-550" width="410" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
