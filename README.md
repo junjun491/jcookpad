@@ -4,12 +4,7 @@
 # Eiyo_Recipe
  
 "Eiyo_Recipe" is a database of recipes with nutrients chart.
- 
-# DEMO
-![](https://raw.githubusercontent.com/junjun491/jcookpad/master/Untitled%20Diagram.drawio.png)
 
-under construction
- 
 # Features
  
 In Eiyo_Recipe
@@ -25,11 +20,15 @@ If you add some recipes to your favorites, you can check nutrition quantity by c
 
 -You can make recipe with a information, picure, procedure, nutorients.
 If you want, you can reuse past recipes as ingredients and reflect those nutrients in your recipe.
+
+# diagram
+
+![](https://raw.githubusercontent.com/junjun491/jcookpad/master/Untitled%20Diagram.drawio.png)
+
 # Requirement
  
 * Ruby 2.7
 * vue 2.6
- 
 
 # Installation
  
@@ -39,20 +38,14 @@ under construction
  
 under construction
 
--local deploy
-git clone https://github.com/junjun491/jcookpad
-
-cd eiyorecipe
+-Commands:deploy in development
 
 docker-compose -f docker-compose-local.yml build
 docker-compose -f docker-compose-local.yml up
-
 docker-compose exec app rails db:create db:migrate
 docker-compose exec app rails db:seed
  
- 
- 
----------when something went wrong at production------------
+-Commands:deploy in production
 
 docker-compose -f docker-compose-production.yml down
 aws reboot
