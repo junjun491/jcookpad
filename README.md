@@ -35,13 +35,13 @@ If you want, you can reuse past recipes as ingredients and reflect those nutrien
 * Nginx
 * Puma
 * AWS
- ーVPC
- ーEC2
- ーRDS
- ーRoute53
- ーAWS Certificate Manager
- ーALB
- Docker/Docker-compose
+* -VPC
+* ーEC2
+* ーRDS
+* ーRoute53
+* ーAWS Certificate Manager
+* ーALB
+* Docker/Docker-compose
 
 # Installation
  
