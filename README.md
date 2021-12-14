@@ -26,10 +26,22 @@ If you want, you can reuse past recipes as ingredients and reflect those nutrien
 
 ![](https://raw.githubusercontent.com/junjun491/jcookpad/master/Untitled%20Diagram.drawio.png)
 
-# Requirement
+# Tech
  
 * Ruby 2.7
 * vue 2.6
+* Ruby on Rails 6.1.3.2
+* MySQL 5.7.34
+* Nginx
+* Puma
+* AWS
+ ーVPC
+ ーEC2
+ ーRDS
+ ーRoute53
+ ーAWS Certificate Manager
+ ーALB
+ Docker/Docker-compose
 
 # Installation
  
