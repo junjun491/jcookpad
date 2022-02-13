@@ -1,12 +1,11 @@
 # README
 
-
 # Eiyo_Recipe
- 
+
 "Eiyo_Recipe" is a database of recipes with nutrients chart.
 
 # Features
- 
+
 In Eiyo_Recipe
 
 -You can browse the database of recipes.
@@ -27,44 +26,44 @@ If you want, you can reuse past recipes as ingredients and reflect those nutrien
 ![](https://raw.githubusercontent.com/junjun491/jcookpad/master/Untitled%20Diagram.drawio.png)
 
 # Tech
- 
-* Ruby 2.7
-* vue 2.6
-* Ruby on Rails 6.1.3.2
-* MySQL 5.7.34
-* Nginx
-* Puma
-* AWS
-* -VPC
-* ーEC2
-* ーRDS
-* ーRoute53
-* ーAWS Certificate Manager
-* ーALB
-* Docker/Docker-compose
+
+- Ruby 2.7
+- vue 2.6
+- Ruby on Rails 6.1.3.2
+- MySQL 5.7.34
+- Nginx
+- Puma
+- AWS
+- -VPC
+- ー EC2
+- ー RDS
+- ー Route53
+- ー AWS Certificate Manager
+- ー ALB
+- Docker/Docker-compose
 
 # Installation
- 
+
 under construction
- 
+
 # Usage
- 
+
 under construction
 
 -Commands:deploy in development
 
-docker-compose -f docker-compose-local.yml build  
+docker-compose -f docker-compose-local.yml build --no-cache  
 docker-compose -f docker-compose-local.yml up  
 docker-compose exec app rails db:create db:migrate  
-docker-compose exec app rails db:seed  
- 
+docker-compose exec app rails db:seed
+
 -Commands:deploy in production
 
 docker-compose -f docker-compose-production.yml down  
 aws reboot  
 docker volume rm `docker volume ls -q -f dangling=true`  
 docker system prune -f  
-docker-compose -f docker-compose-production.yml build  
+docker-compose -f docker-compose-production.yml build
 
 or
 
@@ -72,21 +71,17 @@ docker-compose -f docker-compose-production.yml run app rails webpacker:install 
 docker-compose -f docker-compose-production.yml run app rails webpacker:install:vue RAILS_ENV=production  
 docker-compose -f docker-compose-production.yml run app rails webpacker:compile RAILS_ENV=production  
 docker-compose -f docker-compose-production.yml run app rails assets:precompile RAILS_ENV=production  
-docker-compose -f docker-compose-production.yml run app rails restart  RAILS_ENV=production  
+docker-compose -f docker-compose-production.yml run app rails restart RAILS_ENV=production
 
-or  
+or
 
 docker-compose -f docker-compose-production.yml run app rails tmp:cache:clear  
 docker-compose -f docker-compose-production.yml run app bundle exec rake assets:clobber RAILS_ENV=production  
 docker-compose -f docker-compose-production.yml run app bundle exec rake assets:precompile RAILS_ENV=production  
-docker-compose -f docker-compose-production.yml run app rails restart RAILS_ENV=production  
+docker-compose -f docker-compose-production.yml run app rails restart RAILS_ENV=production
 
- 
- 
 # Note
- 
-under construction
- 
 
- 
+under construction
+
 Thank you!

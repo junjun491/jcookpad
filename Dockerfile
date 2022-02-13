@@ -44,9 +44,7 @@ VOLUME $APP_HOME/tmp
 
 # Railsサーバを準備
 RUN ["npm", "rebuild", "node-sass"]
-RUN ["bundle", "exec", "rails", "webpacker:compile"]
 RUN ["apt-get", "-y", "install", "vim"]
-
 
 # コンテナ起動時にRailsサーバを起動
 CMD ["bundle", "exec", "rails", "server"]
