@@ -53,33 +53,33 @@ under construction
 
 -Commands:deploy in development
 
-docker-compose -f docker-compose-local.yml build
-docker-compose -f docker-compose-local.yml up
-docker-compose exec app rails db:create db:migrate
-docker-compose exec app rails db:seed
+docker-compose -f docker-compose-local.yml build  
+docker-compose -f docker-compose-local.yml up  
+docker-compose exec app rails db:create db:migrate  
+docker-compose exec app rails db:seed  
  
 -Commands:deploy in production
 
-docker-compose -f docker-compose-production.yml down
-aws reboot
-docker volume rm `docker volume ls -q -f dangling=true`
-docker system prune -f
-docker-compose -f docker-compose-production.yml build
+docker-compose -f docker-compose-production.yml down  
+aws reboot  
+docker volume rm `docker volume ls -q -f dangling=true`  
+docker system prune -f  
+docker-compose -f docker-compose-production.yml build  
 
 or
 
-docker-compose -f docker-compose-production.yml run app rails webpacker:install RAILS_ENV=production
-docker-compose -f docker-compose-production.yml run app rails webpacker:install:vue RAILS_ENV=production
-docker-compose -f docker-compose-production.yml run app rails webpacker:compile RAILS_ENV=production
-docker-compose -f docker-compose-production.yml run app rails assets:precompile RAILS_ENV=production
-docker-compose -f docker-compose-production.yml run app rails restart  RAILS_ENV=production
+docker-compose -f docker-compose-production.yml run app rails webpacker:install RAILS_ENV=production  
+docker-compose -f docker-compose-production.yml run app rails webpacker:install:vue RAILS_ENV=production  
+docker-compose -f docker-compose-production.yml run app rails webpacker:compile RAILS_ENV=production  
+docker-compose -f docker-compose-production.yml run app rails assets:precompile RAILS_ENV=production  
+docker-compose -f docker-compose-production.yml run app rails restart  RAILS_ENV=production  
 
-or
+or  
 
-docker-compose -f docker-compose-production.yml run app rails tmp:cache:clear
-docker-compose -f docker-compose-production.yml run app bundle exec rake assets:clobber RAILS_ENV=production
-docker-compose -f docker-compose-production.yml run app bundle exec rake assets:precompile RAILS_ENV=production
-docker-compose -f docker-compose-production.yml run app rails restart RAILS_ENV=production
+docker-compose -f docker-compose-production.yml run app rails tmp:cache:clear  
+docker-compose -f docker-compose-production.yml run app bundle exec rake assets:clobber RAILS_ENV=production  
+docker-compose -f docker-compose-production.yml run app bundle exec rake assets:precompile RAILS_ENV=production  
+docker-compose -f docker-compose-production.yml run app rails restart RAILS_ENV=production  
 
  
  
