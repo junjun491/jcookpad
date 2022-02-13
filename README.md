@@ -53,7 +53,7 @@ under construction
 
 -Commands:deploy in development
 
-docker-compose -f docker-compose-local.yml build  
+docker-compose -f docker-compose-local.yml build --no-cache  
 docker-compose -f docker-compose-local.yml up  
 docker-compose exec app rails db:create db:migrate  
 docker-compose exec app rails db:seed  
