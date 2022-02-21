@@ -2,7 +2,7 @@
 FROM ruby:2.7.2
 
 # Node.jsをインストール
-RUN curl -sL RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+RUN curl -sL RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
     apt install nodejs
 
 # 公式では以下のコマンドを推奨しているが、Node.jsのバージョンが低くてBootstrapが使えない
