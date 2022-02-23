@@ -241,9 +241,11 @@ export default {
   mounted() {
     const url = location.pathname;
     const id = url.replace(/[^0-9]/g, "");
+    console.log(`this.post_1: ${JSON.stringify(this.post)}`);
     axios
       .get(`/api/v1/posts/${id}.json`)
       .then((response) => (this.post = response.data));
+    console.log(`this.post_2: ${JSON.stringify(this.post)}`);
   },
   computed: {
     addNutrients: function () {
