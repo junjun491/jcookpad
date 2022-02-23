@@ -208,8 +208,14 @@ export default {
       q_8: "1",
       q_9: "1",
       q_10: "1",
-      post: {},
-      sum_nutrients: {
+      post: {
+        rname: "",
+        rinformation: "",
+        rimage: "",
+        ingredient: "",
+        procedure_1: "",
+        procedure_2: "",
+        procedure_3: "",
         Energy: "",
         Protein: "",
         Lipid: "",
