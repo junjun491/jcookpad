@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_21_071809) do
+ActiveRecord::Schema.define(version: 2022_04_02_034348) do
 
   create_table "active_admin_comments", charset: "utf8mb3", force: :cascade do |t|
     t.string "namespace"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_11_21_071809) do
     t.decimal "VitaminB2", precision: 7, scale: 2
     t.decimal "VitaminC", precision: 7, scale: 2
     t.decimal "Salt_equivalent", precision: 7, scale: 2
+    t.decimal "quantity", precision: 7, scale: 2, default: "1.0"
     t.index ["user_id"], name: "fk_rails_5b5ddfd518"
   end
 
