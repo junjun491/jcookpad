@@ -1,3 +1,0 @@
-current directory: /Users/nakaseatsushi/workspace/new/vendor/bundle/ruby/2.7.0/gems/mimemagic-0.3.10/ext/mimemagic
-/Users/nakaseatsushi/.rbenv/versions/2.7.2/bin/ruby -I/Users/nakaseatsushi/.rbenv/versions/2.7.2/lib/ruby/2.7.0/rubygems -rrubygems /Users/nakaseatsushi/workspace/new/vendor/bundle/ruby/2.7.0/gems/rake-13.0.3/exe/rake RUBYARCHDIR\=/Users/nakaseatsushi/workspace/new/vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-19/2.7.0/mimemagic-0.3.10 RUBYLIBDIR\=/Users/nakaseatsushi/workspace/new/vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-19/2.7.0/mimemagic-0.3.10
-mkdir -p /Users/nakaseatsushi/workspace/new/vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-19/2.7.0/mimemagic-0.3.10/mimemagic
