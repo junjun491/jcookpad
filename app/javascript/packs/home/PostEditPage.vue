@@ -8,7 +8,7 @@
           </li>
         </ul>
       </div>
-      <h2>レシピ編集</h2>
+      <h2>レシピ編集test</h2>
 
       <div>
         <label>レシピ名</label><br />
