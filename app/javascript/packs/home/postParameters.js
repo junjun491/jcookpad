@@ -1,0 +1,25 @@
+const postParameters = [
+  "rname",
+  "rinformation",
+  "ingredient",
+  "procedure_1",
+  "procedure_2",
+  "procedure_3",
+  "rimage",
+  "Energy",
+  "Protein",
+  "Lipid",
+  "Carbohydrate",
+  "Dietary_fiber",
+  "Potassium",
+  "Calcium",
+  "iron",
+  "Zinc",
+  "VitaminA",
+  "VitaminB1",
+  "VitaminB2",
+  "VitaminC",
+  "Salt_equivalent",
+];
+
+export default postParameters;

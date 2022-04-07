@@ -1,26 +1,30 @@
 class PostsController < ApplicationController
   def index
+
     @posts = Kaminari.paginate_array(Post.all.reverse).page(params[:page]).per(10)
+    gon.posts = @posts
 
     if user_signed_in?
       @std = current_user.get_standard
     else
       @std = Standard.where(sex: 0, min_age: ..30, max_age: 30..).first
     end
-
     gon.std = @std
-    gon.posts = @posts
 
   end
 
   def new
+
     @post = Post.new
+    
   end
 
   def create
+
     @post = current_user.posts.build(post_params)
     @post.save
     redirect_to action: 'index'
+
   end
 
   def search
@@ -37,19 +41,22 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
-    @like = Like.new
-    @user = current_user
-    @stds = Standard.all
 
+    @post = Post.find_by(id: params[:id])
+    gon.post = @post
+
+    @like = Like.new
+
+    @user = current_user
+
+    @stds = Standard.all
     if user_signed_in?
       @std = current_user.get_standard
     else
       @std = Standard.where(sex: 0, min_age: ..30, max_age: 30..).first
-    end
-    
+    end    
     gon.std = @std
-    gon.post = @post
+
   end
 
   def edit
@@ -58,6 +65,7 @@ class PostsController < ApplicationController
 
   def list
     @posts = Kaminari.paginate_array(Post.where(user_id: current_user.id ).reverse).page(params[:page]).per(10)
+    gon.posts = @posts
 
     if user_signed_in?
       @std = current_user.get_standard
@@ -65,17 +73,18 @@ class PostsController < ApplicationController
       @std = Standard.where(sex: 0, min_age: ..30, max_age: 30..).first
     end
     gon.std = @std
-    gon.posts = @posts
 
   end
 
   def update
+
     @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to request.referer
     else
       render :new
     end 
+
   end
 
   def guest_sign_in
@@ -89,13 +98,17 @@ class PostsController < ApplicationController
   end
 
   def destroy
+
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to request.referer
+
   end
 
   private
     def post_params
+
       params.permit(:rname, :rinformation, :rimage, :rimage_cache, :ingredient, :procedure_1, :procedure_2, :procedure_3)
+      
     end
 end
