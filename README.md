@@ -58,6 +58,7 @@ docker-compose exec app rails db:create db:migrate
 docker-compose exec app rails db:seed
 
 -Commands:deploy in production
+*dont forget RAILS_ENV=production
 
 docker-compose -f docker-compose-production.yml down  
 aws reboot  
@@ -81,6 +82,9 @@ docker-compose -f docker-compose-production.yml run app bundle exec rake assets:
 docker-compose -f docker-compose-production.yml run app rails restart RAILS_ENV=production
 
 # Note
+
+connect docker
+docker-compose -f docker-compose-production.yml exec app /bin/bash
 
 under construction
 
