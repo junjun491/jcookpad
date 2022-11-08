@@ -23,7 +23,7 @@ If you want, you can reuse past recipes as ingredients and reflect those nutrien
 
 # diagram
 
-![](https://raw.githubusercontent.com/junjun491/jcookpad/master/Untitled%20Diagram.drawio.png)
+![](https://raw.githubusercontent.com/junjun491/jcookpad/master/Diagramdrawiorev02.png)
 
 # Tech
 
