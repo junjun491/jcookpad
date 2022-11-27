@@ -61,7 +61,11 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem "factory_bot_rails"
   gem 'faker'
-  gem 'rspec-rails'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0.0'
+  gem 'spring'
 end
 
 
