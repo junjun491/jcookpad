@@ -4,10 +4,13 @@ class Api::V1::PostsController < ApiController
   rescue_from Exception, with: :render_status_500
   # ActiveRecordのレコードが見つからなければ404 not foundを応答する
   rescue_from ActiveRecord::RecordNotFound, with: :render_status_404
-  def index
-    @posts = Post.all
-    render json: @posts
-  end
+  
+  #def index
+  #  @posts = Post.all
+  #  render json: @posts
+  #end
+  
+
   def create
 
     post = current_user.posts.build(post_params)
