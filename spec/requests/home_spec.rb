@@ -4,12 +4,10 @@ RSpec.describe "Home", type: :request do
 
     describe 'GET #index' do
 
-      before do
-        get posts_path
-      end
+      before { get posts_path }
 
       context 'ログインしているとき' do
-        let(:login_user) { create :user }
+        let!(:login_user) { create :user }
         before { sign_in(login_user) }
 
         it 'ログインユーザの年齢と性別に応じて適切な栄養摂取基準を取得できること' do
